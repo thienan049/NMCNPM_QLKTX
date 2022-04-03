@@ -29,12 +29,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {          
-            //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
-            sinhVienTableAdapter.Update(ql_KTX_DS.SINHVIEN);
-        }
-
         private void qlsv_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {          
             // Click btn Add
