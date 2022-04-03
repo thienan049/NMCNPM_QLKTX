@@ -51,6 +51,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             else if (e.Button == qlsv_ActionBtnPanel.Buttons[1])
             {
                 // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+                if (qlsv_GridVw.IsEditing)
+                    qlsv_GridVw.CloseEditor();
+       
                 sinhVienBdS.EndEdit();
 
                 // Update dữ liệu vào CSDL
@@ -86,7 +89,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
         private void qlsv_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            // Click btn Add
+            // Click btn Reload
             if (e.Button == qlsv_ActionBtnPanel2.Buttons[0])
             {
                 // Lấy data từ CSDL về DataTable ql_KTX_DS.SINHVIEN
