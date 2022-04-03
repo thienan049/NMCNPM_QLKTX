@@ -30,18 +30,19 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLySinhVien));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.qlsv_HeaderPanel = new DevExpress.XtraEditors.PanelControl();
             this.qlsv_ActionBtnPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.ql_KTX_DS = new NMCNPM_QuanLyKTX.ql_KTXDataSet();
             this.sinhVienBdS = new System.Windows.Forms.BindingSource(this.components);
             this.sinhVienTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SINHVIENTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
-            this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.qlsv_GridCtl = new DevExpress.XtraGrid.GridControl();
+            this.qlsv_GridVw = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,34 +54,36 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colVIPHAMNOIQUY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAQL = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            this.qlsv_ActionBtnPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_HeaderPanel)).BeginInit();
+            this.qlsv_HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ql_KTX_DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBdS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_GridCtl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_GridVw)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelControl1
+            // qlsv_HeaderPanel
             // 
-            this.panelControl1.Controls.Add(this.qlsv_ActionBtnPanel);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(845, 100);
-            this.panelControl1.TabIndex = 2;
+            this.qlsv_HeaderPanel.Controls.Add(this.qlsv_ActionBtnPanel2);
+            this.qlsv_HeaderPanel.Controls.Add(this.qlsv_ActionBtnPanel);
+            this.qlsv_HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.qlsv_HeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.qlsv_HeaderPanel.Name = "qlsv_HeaderPanel";
+            this.qlsv_HeaderPanel.Size = new System.Drawing.Size(845, 100);
+            this.qlsv_HeaderPanel.TabIndex = 2;
             // 
             // qlsv_ActionBtnPanel
             // 
             this.qlsv_ActionBtnPanel.ButtonInterval = 50;
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
             windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
-            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
-            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
             this.qlsv_ActionBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.qlsv_ActionBtnPanel.Location = new System.Drawing.Point(246, 22);
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.qlsv_ActionBtnPanel.Location = new System.Drawing.Point(48, 23);
             this.qlsv_ActionBtnPanel.Name = "qlsv_ActionBtnPanel";
             this.qlsv_ActionBtnPanel.Size = new System.Drawing.Size(361, 72);
             this.qlsv_ActionBtnPanel.TabIndex = 1;
@@ -116,21 +119,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.VT_PHONGTableAdapter = null;
             // 
-            // sINHVIENGridControl
+            // qlsv_GridCtl
             // 
-            this.sINHVIENGridControl.DataSource = this.sinhVienBdS;
-            this.sINHVIENGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sINHVIENGridControl.Location = new System.Drawing.Point(0, 100);
-            this.sINHVIENGridControl.MainView = this.gridView1;
-            this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(845, 390);
-            this.sINHVIENGridControl.TabIndex = 2;
-            this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.qlsv_GridCtl.DataSource = this.sinhVienBdS;
+            this.qlsv_GridCtl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.qlsv_GridCtl.Location = new System.Drawing.Point(0, 100);
+            this.qlsv_GridCtl.MainView = this.qlsv_GridVw;
+            this.qlsv_GridCtl.Name = "qlsv_GridCtl";
+            this.qlsv_GridCtl.Size = new System.Drawing.Size(845, 390);
+            this.qlsv_GridCtl.TabIndex = 2;
+            this.qlsv_GridCtl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.qlsv_GridVw});
             // 
-            // gridView1
+            // qlsv_GridVw
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.qlsv_GridVw.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMASV,
             this.colHO,
             this.colTEN,
@@ -142,9 +145,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colVIPHAMNOIQUY,
             this.colMALOP,
             this.colMAQL});
-            this.gridView1.GridControl = this.sINHVIENGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.qlsv_GridVw.GridControl = this.qlsv_GridCtl;
+            this.qlsv_GridVw.Name = "qlsv_GridVw";
+            this.qlsv_GridVw.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNGAYSINH, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colMASV
@@ -248,33 +251,46 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colMAQL.VisibleIndex = 10;
             this.colMAQL.Width = 51;
             // 
+            // qlsv_ActionBtnPanel2
+            // 
+            this.qlsv_ActionBtnPanel2.ButtonInterval = 50;
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            this.qlsv_ActionBtnPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Reload", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.qlsv_ActionBtnPanel2.Location = new System.Drawing.Point(448, 23);
+            this.qlsv_ActionBtnPanel2.Name = "qlsv_ActionBtnPanel2";
+            this.qlsv_ActionBtnPanel2.Size = new System.Drawing.Size(361, 72);
+            this.qlsv_ActionBtnPanel2.TabIndex = 2;
+            this.qlsv_ActionBtnPanel2.Text = "windowsUIButtonPanel1";
+            this.qlsv_ActionBtnPanel2.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.qlsv_ActionBtnPanel2_ButtonClick);
+            // 
             // UC_QuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.sINHVIENGridControl);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.qlsv_GridCtl);
+            this.Controls.Add(this.qlsv_HeaderPanel);
             this.Name = "UC_QuanLySinhVien";
             this.Size = new System.Drawing.Size(845, 490);
             this.Load += new System.EventHandler(this.UC_QuanLySinhVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_HeaderPanel)).EndInit();
+            this.qlsv_HeaderPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ql_KTX_DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBdS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_GridCtl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlsv_GridVw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl qlsv_HeaderPanel;
         private ql_KTXDataSet ql_KTX_DS;
         private System.Windows.Forms.BindingSource sinhVienBdS;
         private ql_KTXDataSetTableAdapters.SINHVIENTableAdapter sinhVienTableAdapter;
         private ql_KTXDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl sINHVIENGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl qlsv_GridCtl;
+        private DevExpress.XtraGrid.Views.Grid.GridView qlsv_GridVw;
         private DevExpress.XtraGrid.Columns.GridColumn colMASV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN;
@@ -287,5 +303,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
         private DevExpress.XtraGrid.Columns.GridColumn colMAQL;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel qlsv_ActionBtnPanel;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel qlsv_ActionBtnPanel2;
     }
 }

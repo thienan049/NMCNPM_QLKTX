@@ -18,17 +18,26 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             InitializeComponent();
         }
 
-        // 
+        /// <summary>
+        /// Xử lý onLoad form QuanLySinhVien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UC_QuanLySinhVien_Load(object sender, EventArgs e)
         {
             ql_KTX_DS.EnforceConstraints = false;
 
-            // TODO: This line of code loads data into the 'qLVTDataSet.Kho' table. You can move, or remove it, as needed.
+            // Lấy data từ CSDL về DataTable ql_KTX_DS.SINHVIEN
             sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
             sinhVienTableAdapter.Fill(ql_KTX_DS.SINHVIEN);
 
         }
 
+        /// <summary>
+        /// Xử lý khi nhấn các button trong qlsv_ActionBtnPanel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void qlsv_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {          
             // Click btn Add
@@ -59,7 +68,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // Click btn Delete
             else
             {
-                // Xóa dòng dữ liệu
+                // Xóa dòng dữ liệu hiện tại
                 sinhVienBdS.RemoveCurrent();
 
                 // Update dữ liệu vào CSDL
@@ -73,6 +82,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void qlsv_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            // Click btn Add
+            if (e.Button == qlsv_ActionBtnPanel2.Buttons[0])
+            {
+                // Lấy data từ CSDL về DataTable ql_KTX_DS.SINHVIEN
+                sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                sinhVienTableAdapter.Fill(ql_KTX_DS.SINHVIEN);
+            }
+            
         }
     }
 }
