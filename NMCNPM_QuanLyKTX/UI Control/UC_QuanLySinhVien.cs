@@ -40,21 +40,35 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // Click btn Add
             if (e.Button == qlsv_ActionBtnPanel.Buttons[0])
             {
+                // Thêm dòng dữ liệu trống mới
                 sinhVienBdS.AddNew();
                 
             }
             // Click btn Save (Update)
             else if (e.Button == qlsv_ActionBtnPanel.Buttons[1])
             {
+                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
                 sinhVienBdS.EndEdit();
 
+                // Update dữ liệu vào CSDL
                 //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                sinhVienTableAdapter.Update(ql_KTX_DS.SINHVIEN);
+                try
+                {
+                    sinhVienTableAdapter.Update(ql_KTX_DS.SINHVIEN);
+                }
+                catch(System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
             // Click btn Delete
             else
             {
+                // Xóa dòng dữ liệu
                 sinhVienBdS.RemoveCurrent();
+
+                // Update dữ liệu vào CSDL
                 //sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
                 sinhVienTableAdapter.Update(this.ql_KTX_DS.SINHVIEN);
             }
