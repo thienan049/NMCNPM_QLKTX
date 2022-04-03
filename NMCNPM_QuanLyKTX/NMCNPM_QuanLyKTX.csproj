@@ -36,12 +36,17 @@
     <Reference Include="DevExpress.BonusSkins.v20.1" />
     <Reference Include="DevExpress.Data.Desktop.v20.1" />
     <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.1.Core" />
     <Reference Include="DevExpress.Utils.v20.1" />
     <Reference Include="DevExpress.XtraBars.v20.1" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v20.1" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +66,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ql_KTXDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLyPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLyPhong.Designer.cs">
+      <DependentUpon>UC_QuanLyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLySinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLySinhVien.Designer.cs">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI Control\UC_QuanLyPhong.resx">
+      <DependentUpon>UC_QuanLyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\UC_QuanLySinhVien.resx">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +112,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ql_KTXDataSet.xsc">
+      <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ql_KTXDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_KTXDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_KTXDataSet.xss">
+      <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
