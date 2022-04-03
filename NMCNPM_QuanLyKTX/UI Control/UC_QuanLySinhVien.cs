@@ -70,7 +70,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
                 // Update dữ liệu vào CSDL
                 //sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                sinhVienTableAdapter.Update(this.ql_KTX_DS.SINHVIEN);
+                try
+                {
+                    sinhVienTableAdapter.Update(ql_KTX_DS.SINHVIEN);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
