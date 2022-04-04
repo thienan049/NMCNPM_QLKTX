@@ -44,16 +44,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             if (e.Button == qlsv_ActionBtnPanel.Buttons[0])
             {
                 // Thêm dòng dữ liệu trống mới
-                sinhVienBdS.AddNew();
-                
+                sinhVienBdS.AddNew();              
             }
             // Click btn Save (Update)
             else if (e.Button == qlsv_ActionBtnPanel.Buttons[1])
             {
                 // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-                if (qlsv_GridVw.IsEditing)
-                    qlsv_GridVw.CloseEditor();
-       
+                this.Validate();
                 sinhVienBdS.EndEdit();
 
                 // Update dữ liệu vào CSDL
@@ -65,8 +62,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
                 catch(System.Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
-                
+                }             
             }
             // Click btn Delete
             else
@@ -87,6 +83,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             }
         }
 
+        /// <summary>
+        /// Xử lý khi nhấn các button trong qlsv_ActionBtnPanel2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void qlsv_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             // Click btn Reload

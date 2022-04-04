@@ -20,6 +20,9 @@ namespace NMCNPM_QuanLyKTX
         // QuanLyPhong user control
         UC_QuanLyPhong UC_QLP = null;
 
+        // QuanLyTaiKhoan user control
+        UC_QuanLyTaiKhoan UC_QLTK = null;
+
         // Khởi tạo form
         public FormMain()
         {
@@ -68,6 +71,27 @@ namespace NMCNPM_QuanLyKTX
             else
             {
                 this.UC_QLP.BringToFront();
+            }
+        }
+
+        private void acCtlEle_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLTK == null)
+            {
+                this.UC_QLTK = new UC_QuanLyTaiKhoan
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLTK);
+                this.UC_QLTK.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLTK.BringToFront();
             }
         }
 

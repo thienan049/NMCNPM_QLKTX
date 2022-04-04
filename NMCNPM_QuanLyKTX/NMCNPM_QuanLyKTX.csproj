@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,15 @@
     <Compile Include="UI Control\UC_QuanLySinhVien.Designer.cs">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\UC_QuanLyTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\UC_QuanLySinhVien.resx">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\UC_QuanLyTaiKhoan.resx">
+      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

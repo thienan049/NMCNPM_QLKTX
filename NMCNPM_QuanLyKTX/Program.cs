@@ -27,6 +27,9 @@ namespace NMCNPM_QuanLyKTX
         public static string Login = "sa";
         public static string Password = "asd";
 
+        // Các đối tượng liên quan đến user
+        public static string Username = "";
+
         /// <summary>
         /// Mở kết nối đến DB
         /// </summary>
@@ -61,7 +64,15 @@ namespace NMCNPM_QuanLyKTX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+
+            /*
+             * Display the login form
+             * Login succeed -> Run MainForm application
+             */
+            if (new FormLogin().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormMain());
+            }
         }
     }
 }

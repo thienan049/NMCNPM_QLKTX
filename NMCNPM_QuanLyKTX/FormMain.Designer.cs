@@ -42,9 +42,13 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -81,7 +85,8 @@ namespace NMCNPM_QuanLyKTX
             this.accordionControlElement4,
             this.acCtlQuanLyPhong,
             this.accordionControlElement1,
-            this.accordionControlElement5});
+            this.accordionControlElement5,
+            this.accordionControlElement7});
             this.accCtlSidebar.Location = new System.Drawing.Point(0, 30);
             this.accCtlSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accCtlSidebar.Name = "accCtlSidebar";
@@ -170,6 +175,22 @@ namespace NMCNPM_QuanLyKTX
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Text = "Quản lý điện";
             // 
+            // accordionControlElement7
+            // 
+            this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlEle_TaiKhoan});
+            this.accordionControlElement7.Expanded = true;
+            this.accordionControlElement7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement7.ImageOptions.SvgImage")));
+            this.accordionControlElement7.Name = "accordionControlElement7";
+            this.accordionControlElement7.Text = "ADMIN";
+            // 
+            // acCtlEle_TaiKhoan
+            // 
+            this.acCtlEle_TaiKhoan.Name = "acCtlEle_TaiKhoan";
+            this.acCtlEle_TaiKhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_TaiKhoan.Text = "Thông tin tài khoản";
+            this.acCtlEle_TaiKhoan.Click += new System.EventHandler(this.acCtlEle_TaiKhoan_Click);
+            // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
@@ -196,6 +217,17 @@ namespace NMCNPM_QuanLyKTX
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1});
             this.fluentFormDefaultManager1.MaxItemId = 1;
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Text = "Element6";
+            // 
+            // accordionControlElement8
+            // 
+            this.accordionControlElement8.Name = "accordionControlElement8";
+            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Text = "Element8";
             // 
             // FormMain
             // 
@@ -236,6 +268,10 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinPhong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_TaiKhoan;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
     }
 }
 
