@@ -77,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\UC_QuanLyHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLyHopDong.Designer.cs">
+      <DependentUpon>UC_QuanLyHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\UC_QuanLyPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI Control\UC_QuanLyHopDong.resx">
+      <DependentUpon>UC_QuanLyHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\UC_QuanLyPhong.resx">
       <DependentUpon>UC_QuanLyPhong.cs</DependentUpon>
     </EmbeddedResource>

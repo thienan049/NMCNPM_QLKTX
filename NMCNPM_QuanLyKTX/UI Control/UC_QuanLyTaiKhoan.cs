@@ -148,7 +148,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             else
             {
                 // InputDialog nhập mật khẩu xác thực Admin
-                string adminPasswordInput = XtraInputBox.Show("Nhập mật khẩu: ", "Xác thực quyền Admin", "Default");
+                string adminPasswordInput = ShowInputBox("Xác thực quyền admin", "Nhập mật khẩu:");
 
                 /*
                  * Thực hiện verify dựa trên username của TK đã login và mật khẩu xác thực
@@ -219,10 +219,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         {
             // Thêm data cho control [ComboBox] cột [PHANQUYEN]
             List<string> listPQ = GetListPhanQuyen();
+            maPQCbBoxCol.Items.Clear();
             foreach (string item in listPQ)
             {
-                maPQComboBox.Items.Add(item); maPQComboBox.TextEditStyle = TextEditStyles.DisableTextEditor;
+                maPQCbBoxCol.Items.Add(item); 
             }
+
+            maPQCbBoxCol.TextEditStyle = TextEditStyles.DisableTextEditor;
+        }
+        
+        /// <summary>
+        /// Custom InputBox
+        /// </summary>
+        /// <param name="caption"></param>
+        /// <param name="messageText"></param>
+        /// <returns></returns>
+        private string ShowInputBox(string caption, string messageText)
+        {
+            XtraInputBoxArgs args = new XtraInputBoxArgs();
+            TextEdit input = new TextEdit();
+            input.Properties.UseSystemPasswordChar = true;
+            args.Editor = input;
+            args.Caption = caption;
+            args.Prompt = messageText;
+            args.DefaultResponse = "";
+
+            return (string)XtraInputBox.Show(args);
         }
     }
 }

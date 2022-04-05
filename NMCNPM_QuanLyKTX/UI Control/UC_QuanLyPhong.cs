@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         {
             // Lấy data từ CSDL
             FillDataFromDatabase();
+
+            // Set data cho ComboBox column [LOAIPHONG] để sử dụng
+            ApplyPredefinedDataToControl();
         }
 
         /// <summary>
@@ -84,7 +88,25 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             {
                 // Lấy data từ CSDL về DataTable ql_KTX_DS.PHONG
                 FillDataFromDatabase();
+
+                // Set data cho ComboBox column [LOAIPHONG] để sử dụng
+                ApplyPredefinedDataToControl();
             }
+        }
+
+        /// <summary>
+        /// Get danh sách các loại phòng hiện có
+        /// </summary>
+        private List<string> GetListLoaiPhong()
+        {
+            DataRowCollection tableRows = ql_KTX_DS.LOAIPHONG.Rows;
+
+            List<string> listLP = new List<string>(tableRows.Count);
+
+            foreach (DataRow row in tableRows)
+                listLP.Add((string)row[0]);
+
+            return listLP;
         }
 
         /// <summary>
@@ -96,8 +118,25 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.PHONG]
             phongTableAdapter.Fill(ql_KTX_DS.PHONG);
+
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.LOAIPHONG]
+            loaiPhongTableAdapter.Fill(ql_KTX_DS.LOAIPHONG);
         }
 
-        
+        /// <summary>
+        /// Thực hiện thêm các data có sẵn vào control cần sử dụng
+        /// </summary>
+        private void ApplyPredefinedDataToControl()
+        {
+            // Thêm data cho control [ComboBox] cột [LOAIPHONG]
+            List<string> listLP = GetListLoaiPhong();
+            loaiPhongCbBoxCol.Items.Clear();
+            foreach (string item in listLP)
+            {               
+                loaiPhongCbBoxCol.Items.Add(item);
+            }
+
+            loaiPhongCbBoxCol.TextEditStyle = TextEditStyles.DisableTextEditor;
+        }
     }
 }

@@ -30,11 +30,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyPhong));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.qlp_HeaderPanel = new DevExpress.XtraEditors.PanelControl();
             this.qlp_ActionBtnPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.qlp_ActionBtnPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -45,17 +45,26 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.qlp_GridCtl = new DevExpress.XtraGrid.GridControl();
             this.qlp_GridVw = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.maPhongTextEditCol = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSUCCHUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOAIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAQL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.loaiPhongBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.loaiPhongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.LOAIPHONGTableAdapter();
+            this.loaiPhongCbBoxCol = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.qlp_HeaderPanel)).BeginInit();
             this.qlp_HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ql_KTX_DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBdS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlp_GridCtl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlp_GridVw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maPhongTextEditCol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongBdS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongCbBoxCol)).BeginInit();
             this.SuspendLayout();
             // 
             // qlp_HeaderPanel
@@ -65,15 +74,15 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.qlp_HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.qlp_HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.qlp_HeaderPanel.Name = "qlp_HeaderPanel";
-            this.qlp_HeaderPanel.Size = new System.Drawing.Size(833, 100);
+            this.qlp_HeaderPanel.Size = new System.Drawing.Size(833, 115);
             this.qlp_HeaderPanel.TabIndex = 3;
             // 
             // qlp_ActionBtnPanel2
             // 
             this.qlp_ActionBtnPanel2.ButtonInterval = 50;
-            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
             this.qlp_ActionBtnPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Reload", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Reload", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.qlp_ActionBtnPanel2.Location = new System.Drawing.Point(448, 23);
             this.qlp_ActionBtnPanel2.Name = "qlp_ActionBtnPanel2";
             this.qlp_ActionBtnPanel2.Size = new System.Drawing.Size(361, 72);
@@ -84,13 +93,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // qlp_ActionBtnPanel
             // 
             this.qlp_ActionBtnPanel.ButtonInterval = 50;
-            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
-            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
-            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
+            windowsUIButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions7.Image")));
+            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
             this.qlp_ActionBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.qlp_ActionBtnPanel.Location = new System.Drawing.Point(48, 23);
             this.qlp_ActionBtnPanel.Name = "qlp_ActionBtnPanel";
             this.qlp_ActionBtnPanel.Size = new System.Drawing.Size(361, 72);
@@ -131,10 +140,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.qlp_GridCtl.DataSource = this.phongBdS;
             this.qlp_GridCtl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qlp_GridCtl.Location = new System.Drawing.Point(0, 100);
+            this.qlp_GridCtl.Location = new System.Drawing.Point(0, 115);
             this.qlp_GridCtl.MainView = this.qlp_GridVw;
             this.qlp_GridCtl.Name = "qlp_GridCtl";
-            this.qlp_GridCtl.Size = new System.Drawing.Size(833, 389);
+            this.qlp_GridCtl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1,
+            this.maPhongTextEditCol,
+            this.loaiPhongCbBoxCol});
+            this.qlp_GridCtl.Size = new System.Drawing.Size(833, 374);
             this.qlp_GridCtl.TabIndex = 4;
             this.qlp_GridCtl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.qlp_GridVw});
@@ -157,10 +170,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colMAPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAPHONG.AppearanceHeader.Options.UseFont = true;
             this.colMAPHONG.Caption = "Mã phòng";
+            this.colMAPHONG.ColumnEdit = this.maPhongTextEditCol;
             this.colMAPHONG.FieldName = "MAPHONG";
             this.colMAPHONG.Name = "colMAPHONG";
             this.colMAPHONG.Visible = true;
             this.colMAPHONG.VisibleIndex = 0;
+            this.colMAPHONG.Width = 104;
+            // 
+            // maPhongTextEditCol
+            // 
+            this.maPhongTextEditCol.AutoHeight = false;
+            this.maPhongTextEditCol.MaxLength = 3;
+            this.maPhongTextEditCol.Name = "maPhongTextEditCol";
             // 
             // colTINHTRANG
             // 
@@ -171,6 +192,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 1;
+            this.colTINHTRANG.Width = 129;
             // 
             // colSUCCHUA
             // 
@@ -181,6 +203,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colSUCCHUA.Name = "colSUCCHUA";
             this.colSUCCHUA.Visible = true;
             this.colSUCCHUA.VisibleIndex = 2;
+            this.colSUCCHUA.Width = 129;
             // 
             // colKHU
             // 
@@ -191,16 +214,19 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colKHU.Name = "colKHU";
             this.colKHU.Visible = true;
             this.colKHU.VisibleIndex = 3;
+            this.colKHU.Width = 129;
             // 
             // colMALOAIPHONG
             // 
             this.colMALOAIPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMALOAIPHONG.AppearanceHeader.Options.UseFont = true;
             this.colMALOAIPHONG.Caption = "Loại phòng";
+            this.colMALOAIPHONG.ColumnEdit = this.loaiPhongCbBoxCol;
             this.colMALOAIPHONG.FieldName = "MALOAIPHONG";
             this.colMALOAIPHONG.Name = "colMALOAIPHONG";
             this.colMALOAIPHONG.Visible = true;
             this.colMALOAIPHONG.VisibleIndex = 4;
+            this.colMALOAIPHONG.Width = 190;
             // 
             // colMAQL
             // 
@@ -211,6 +237,28 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colMAQL.Name = "colMAQL";
             this.colMAQL.Visible = true;
             this.colMAQL.VisibleIndex = 5;
+            this.colMAQL.Width = 125;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // loaiPhongBdS
+            // 
+            this.loaiPhongBdS.DataMember = "LOAIPHONG";
+            this.loaiPhongBdS.DataSource = this.ql_KTX_DS;
+            // 
+            // loaiPhongTableAdapter
+            // 
+            this.loaiPhongTableAdapter.ClearBeforeFill = true;
+            // 
+            // loaiPhongCbBoxCol
+            // 
+            this.loaiPhongCbBoxCol.AutoHeight = false;
+            this.loaiPhongCbBoxCol.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.loaiPhongCbBoxCol.Name = "loaiPhongCbBoxCol";
             // 
             // UC_QuanLyPhong
             // 
@@ -227,6 +275,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.phongBdS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlp_GridCtl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlp_GridVw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maPhongTextEditCol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongBdS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongCbBoxCol)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +300,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraGrid.Columns.GridColumn colKHU;
         private DevExpress.XtraGrid.Columns.GridColumn colMALOAIPHONG;
         private DevExpress.XtraGrid.Columns.GridColumn colMAQL;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit maPhongTextEditCol;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox loaiPhongCbBoxCol;
+        private System.Windows.Forms.BindingSource loaiPhongBdS;
+        private ql_KTXDataSetTableAdapters.LOAIPHONGTableAdapter loaiPhongTableAdapter;
     }
 }

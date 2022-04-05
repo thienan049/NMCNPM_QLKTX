@@ -30,12 +30,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyTaiKhoan));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.qltk_HeaderPanel = new DevExpress.XtraEditors.PanelControl();
             this.qltk_ActionBtnPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.qltk_ActionBtnPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -48,7 +48,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colUSERNAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPASSWORD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAPQ = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.maPQComboBox = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.maPQCbBoxCol = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.phanQuyenBdS = new System.Windows.Forms.BindingSource(this.components);
@@ -59,7 +59,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBdS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridCtl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridVw)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maPQComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maPQCbBoxCol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBdS)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +77,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // qltk_ActionBtnPanel2
             // 
             this.qltk_ActionBtnPanel2.ButtonInterval = 50;
-            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
-            windowsUIButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions7.SvgImage")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
             this.qltk_ActionBtnPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Reload", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Show Password", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Reload", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Show Password", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.qltk_ActionBtnPanel2.Location = new System.Drawing.Point(448, 23);
             this.qltk_ActionBtnPanel2.Name = "qltk_ActionBtnPanel2";
             this.qltk_ActionBtnPanel2.Size = new System.Drawing.Size(361, 72);
@@ -92,13 +92,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // qltk_ActionBtnPanel
             // 
             this.qltk_ActionBtnPanel.ButtonInterval = 50;
-            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
-            windowsUIButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions9.Image")));
-            windowsUIButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions10.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
             this.qltk_ActionBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.qltk_ActionBtnPanel.Location = new System.Drawing.Point(48, 23);
             this.qltk_ActionBtnPanel.Name = "qltk_ActionBtnPanel";
             this.qltk_ActionBtnPanel.Size = new System.Drawing.Size(361, 72);
@@ -143,7 +143,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.qltk_GridCtl.MainView = this.qltk_GridVw;
             this.qltk_GridCtl.Name = "qltk_GridCtl";
             this.qltk_GridCtl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.maPQComboBox});
+            this.maPQCbBoxCol});
             this.qltk_GridCtl.Size = new System.Drawing.Size(828, 647);
             this.qltk_GridCtl.TabIndex = 4;
             this.qltk_GridCtl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -185,18 +185,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colMAPQ.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAPQ.AppearanceHeader.Options.UseFont = true;
             this.colMAPQ.Caption = "Mã phân quyền";
-            this.colMAPQ.ColumnEdit = this.maPQComboBox;
+            this.colMAPQ.ColumnEdit = this.maPQCbBoxCol;
             this.colMAPQ.FieldName = "MAPQ";
             this.colMAPQ.Name = "colMAPQ";
             this.colMAPQ.Visible = true;
             this.colMAPQ.VisibleIndex = 2;
             // 
-            // maPQComboBox
+            // maPQCbBoxCol
             // 
-            this.maPQComboBox.AutoHeight = false;
-            this.maPQComboBox.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.maPQCbBoxCol.AutoHeight = false;
+            this.maPQCbBoxCol.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.maPQComboBox.Name = "maPQComboBox";
+            this.maPQCbBoxCol.Name = "maPQCbBoxCol";
             // 
             // colTINHTRANG
             // 
@@ -241,7 +241,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBdS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridCtl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridVw)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maPQComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maPQCbBoxCol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBdS)).EndInit();
             this.ResumeLayout(false);
@@ -262,7 +262,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraGrid.Columns.GridColumn colPASSWORD;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPQ;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox maPQComboBox;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox maPQCbBoxCol;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.BindingSource phanQuyenBdS;
         private ql_KTXDataSetTableAdapters.PHANQUYENTableAdapter phanQuyenTableAdapter;

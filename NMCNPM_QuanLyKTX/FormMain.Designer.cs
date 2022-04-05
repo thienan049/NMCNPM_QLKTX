@@ -38,6 +38,7 @@ namespace NMCNPM_QuanLyKTX
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongTinHD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -134,11 +135,19 @@ namespace NMCNPM_QuanLyKTX
             // 
             // accordionControlElement4
             // 
+            this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlEle_ThongTinHD});
             this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "Quản lý hợp đồng";
-            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
+            // 
+            // acCtlEle_ThongTinHD
+            // 
+            this.acCtlEle_ThongTinHD.Name = "acCtlEle_ThongTinHD";
+            this.acCtlEle_ThongTinHD.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinHD.Text = "Thông tin hợp đồng";
+            this.acCtlEle_ThongTinHD.Click += new System.EventHandler(this.acCtlEle_ThongTinHD_Click);
             // 
             // acCtlQuanLyPhong
             // 
@@ -272,6 +281,7 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_TaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinHD;
     }
 }
 

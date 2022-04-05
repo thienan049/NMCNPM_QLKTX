@@ -17,6 +17,9 @@ namespace NMCNPM_QuanLyKTX
         // QuanLySinhVien user control
         UC_QuanLySinhVien UC_QLSV = null;
 
+        // QuanLyHopDong user control
+        UC_QuanLyHopDong UC_QLHD = null;
+
         // QuanLyPhong user control
         UC_QuanLyPhong UC_QLP = null;
 
@@ -95,9 +98,25 @@ namespace NMCNPM_QuanLyKTX
             }
         }
 
-        private void accordionControlElement4_Click(object sender, EventArgs e)
+        private void acCtlEle_ThongTinHD_Click(object sender, EventArgs e)
         {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLHD == null)
+            {
+                this.UC_QLHD = new UC_QuanLyHopDong();
+                {
+                    Dock = DockStyle.Fill;
+                };
 
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLHD);
+                this.UC_QLHD.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLHD.BringToFront();
+            }
         }
     }
 }
