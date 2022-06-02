@@ -20,9 +20,9 @@ namespace NMCNPM_QuanLyKTX {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ql_KTXDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("QLKTXDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ql_KTXDataSet : global::System.Data.DataSet {
+    public partial class QLKTXDataSet : global::System.Data.DataSet {
         
         private HOADONDIENDataTable tableHOADONDIEN;
         
@@ -88,7 +88,7 @@ namespace NMCNPM_QuanLyKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ql_KTXDataSet() {
+        public QLKTXDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -99,7 +99,7 @@ namespace NMCNPM_QuanLyKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected ql_KTXDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected QLKTXDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -354,7 +354,7 @@ namespace NMCNPM_QuanLyKTX {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ql_KTXDataSet cln = ((ql_KTXDataSet)(base.Clone()));
+            QLKTXDataSet cln = ((QLKTXDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -559,9 +559,9 @@ namespace NMCNPM_QuanLyKTX {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ql_KTXDataSet";
+            this.DataSetName = "QLKTXDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ql_KTXDataSet.xsd";
+            this.Namespace = "http://tempuri.org/QLKTXDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHOADONDIEN = new HOADONDIENDataTable();
@@ -753,7 +753,7 @@ namespace NMCNPM_QuanLyKTX {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ql_KTXDataSet ds = new ql_KTXDataSet();
+            QLKTXDataSet ds = new QLKTXDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1153,7 +1153,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1545,7 +1545,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1850,7 +1850,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2124,7 +2124,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2406,7 +2406,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2681,7 +2681,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3025,7 +3025,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3350,7 +3350,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3649,7 +3649,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4050,7 +4050,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4339,7 +4339,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4648,7 +4648,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4993,7 +4993,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5241,7 +5241,7 @@ namespace NMCNPM_QuanLyKTX {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ql_KTXDataSet ds = new ql_KTXDataSet();
+                QLKTXDataSet ds = new QLKTXDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7190,7 +7190,7 @@ namespace NMCNPM_QuanLyKTX {
         }
     }
 }
-namespace NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters {
+namespace NMCNPM_QuanLyKTX.QLKTXDataSetTableAdapters {
     
     
     /// <summary>
@@ -7395,7 +7395,7 @@ SELECT MAHDD, CHISOTRUOC, CHISOSAU, TONGTIEN, TIENNO, NGAYTAO, MAPHONG, MAQL FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.HOADONDIENDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.HOADONDIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7408,9 +7408,9 @@ SELECT MAHDD, CHISOTRUOC, CHISOSAU, TONGTIEN, TIENNO, NGAYTAO, MAPHONG, MAQL FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.HOADONDIENDataTable GetData() {
+        public virtual QLKTXDataSet.HOADONDIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.HOADONDIENDataTable dataTable = new ql_KTXDataSet.HOADONDIENDataTable();
+            QLKTXDataSet.HOADONDIENDataTable dataTable = new QLKTXDataSet.HOADONDIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7418,14 +7418,14 @@ SELECT MAHDD, CHISOTRUOC, CHISOSAU, TONGTIEN, TIENNO, NGAYTAO, MAPHONG, MAQL FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.HOADONDIENDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.HOADONDIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "HOADONDIEN");
         }
         
@@ -7895,7 +7895,7 @@ SELECT MAHD, NGAYTAO, SOTIEN, NAMHOC, HOCKY, TIENNO, MAPHONG, MASV, MAQL FROM HO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.HOPDONGDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.HOPDONGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7908,9 +7908,9 @@ SELECT MAHD, NGAYTAO, SOTIEN, NAMHOC, HOCKY, TIENNO, MAPHONG, MASV, MAQL FROM HO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.HOPDONGDataTable GetData() {
+        public virtual QLKTXDataSet.HOPDONGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.HOPDONGDataTable dataTable = new ql_KTXDataSet.HOPDONGDataTable();
+            QLKTXDataSet.HOPDONGDataTable dataTable = new QLKTXDataSet.HOPDONGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7918,14 +7918,14 @@ SELECT MAHD, NGAYTAO, SOTIEN, NAMHOC, HOCKY, TIENNO, MAPHONG, MASV, MAQL FROM HO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.HOPDONGDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.HOPDONGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "HOPDONG");
         }
         
@@ -8412,7 +8412,7 @@ SELECT MALOAIPHONG, DICHVU, MUCDIENHOTRO_KWh, GIALOAIPHONG FROM LOAIPHONG WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.LOAIPHONGDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.LOAIPHONGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8425,9 +8425,9 @@ SELECT MALOAIPHONG, DICHVU, MUCDIENHOTRO_KWh, GIALOAIPHONG FROM LOAIPHONG WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.LOAIPHONGDataTable GetData() {
+        public virtual QLKTXDataSet.LOAIPHONGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.LOAIPHONGDataTable dataTable = new ql_KTXDataSet.LOAIPHONGDataTable();
+            QLKTXDataSet.LOAIPHONGDataTable dataTable = new QLKTXDataSet.LOAIPHONGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8435,14 +8435,14 @@ SELECT MALOAIPHONG, DICHVU, MUCDIENHOTRO_KWh, GIALOAIPHONG FROM LOAIPHONG WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.LOAIPHONGDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.LOAIPHONGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LOAIPHONG");
         }
         
@@ -8761,7 +8761,7 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.PERMISSIONDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.PERMISSIONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8774,9 +8774,9 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.PERMISSIONDataTable GetData() {
+        public virtual QLKTXDataSet.PERMISSIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.PERMISSIONDataTable dataTable = new ql_KTXDataSet.PERMISSIONDataTable();
+            QLKTXDataSet.PERMISSIONDataTable dataTable = new QLKTXDataSet.PERMISSIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8784,14 +8784,14 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.PERMISSIONDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.PERMISSIONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PERMISSION");
         }
         
@@ -9105,7 +9105,7 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.PHANCONGVIECDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.PHANCONGVIECDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9118,9 +9118,9 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.PHANCONGVIECDataTable GetData() {
+        public virtual QLKTXDataSet.PHANCONGVIECDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.PHANCONGVIECDataTable dataTable = new ql_KTXDataSet.PHANCONGVIECDataTable();
+            QLKTXDataSet.PHANCONGVIECDataTable dataTable = new QLKTXDataSet.PHANCONGVIECDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9128,14 +9128,14 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.PHANCONGVIECDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.PHANCONGVIECDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PHANCONGVIEC");
         }
         
@@ -9445,7 +9445,7 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.PHANQUYENDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.PHANQUYENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9458,9 +9458,9 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.PHANQUYENDataTable GetData() {
+        public virtual QLKTXDataSet.PHANQUYENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.PHANQUYENDataTable dataTable = new ql_KTXDataSet.PHANQUYENDataTable();
+            QLKTXDataSet.PHANQUYENDataTable dataTable = new QLKTXDataSet.PHANQUYENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9468,14 +9468,14 @@ SELECT MAPMS, CONGVIEC FROM PERMISSION WHERE (MAPMS = @MAPMS)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.PHANQUYENDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.PHANQUYENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PHANQUYEN");
         }
         
@@ -9806,7 +9806,7 @@ SELECT MAPHONG, TINHTRANG, SUCCHUA, KHU, MALOAIPHONG, MAQL FROM PHONG WHERE (MAP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.PHONGDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.PHONGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9819,9 +9819,9 @@ SELECT MAPHONG, TINHTRANG, SUCCHUA, KHU, MALOAIPHONG, MAQL FROM PHONG WHERE (MAP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.PHONGDataTable GetData() {
+        public virtual QLKTXDataSet.PHONGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.PHONGDataTable dataTable = new ql_KTXDataSet.PHONGDataTable();
+            QLKTXDataSet.PHONGDataTable dataTable = new QLKTXDataSet.PHONGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9829,14 +9829,14 @@ SELECT MAPHONG, TINHTRANG, SUCCHUA, KHU, MALOAIPHONG, MAQL FROM PHONG WHERE (MAP
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.PHONGDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.PHONGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "PHONG");
         }
         
@@ -10238,7 +10238,7 @@ SELECT MAQL, HO, TEN, NGAYNHANVIEC, USERNAME FROM QUANLY WHERE (MAQL = @MAQL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.QUANLYDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.QUANLYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10251,9 +10251,9 @@ SELECT MAQL, HO, TEN, NGAYNHANVIEC, USERNAME FROM QUANLY WHERE (MAQL = @MAQL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.QUANLYDataTable GetData() {
+        public virtual QLKTXDataSet.QUANLYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.QUANLYDataTable dataTable = new ql_KTXDataSet.QUANLYDataTable();
+            QLKTXDataSet.QUANLYDataTable dataTable = new QLKTXDataSet.QUANLYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10261,14 +10261,14 @@ SELECT MAQL, HO, TEN, NGAYNHANVIEC, USERNAME FROM QUANLY WHERE (MAQL = @MAQL)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.QUANLYDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.QUANLYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "QUANLY");
         }
         
@@ -10635,7 +10635,7 @@ SELECT USERNAME, MAPQ, NGAYSET FROM QUYENTAIKHOAN WHERE (MAPQ = @MAPQ) AND (NGAY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.QUYENTAIKHOANDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.QUYENTAIKHOANDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10648,9 +10648,9 @@ SELECT USERNAME, MAPQ, NGAYSET FROM QUYENTAIKHOAN WHERE (MAPQ = @MAPQ) AND (NGAY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.QUYENTAIKHOANDataTable GetData() {
+        public virtual QLKTXDataSet.QUYENTAIKHOANDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.QUYENTAIKHOANDataTable dataTable = new ql_KTXDataSet.QUYENTAIKHOANDataTable();
+            QLKTXDataSet.QUYENTAIKHOANDataTable dataTable = new QLKTXDataSet.QUYENTAIKHOANDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10658,14 +10658,14 @@ SELECT USERNAME, MAPQ, NGAYSET FROM QUYENTAIKHOAN WHERE (MAPQ = @MAPQ) AND (NGAY
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.QUYENTAIKHOANDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.QUYENTAIKHOANDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "QUYENTAIKHOAN");
         }
         
@@ -11024,7 +11024,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, SDT, GIOITINH, XETDIEUKIEN, VIPHAMNOIQUY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.SINHVIENDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.SINHVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11037,9 +11037,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, SDT, GIOITINH, XETDIEUKIEN, VIPHAMNOIQUY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.SINHVIENDataTable GetData() {
+        public virtual QLKTXDataSet.SINHVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.SINHVIENDataTable dataTable = new ql_KTXDataSet.SINHVIENDataTable();
+            QLKTXDataSet.SINHVIENDataTable dataTable = new QLKTXDataSet.SINHVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11047,14 +11047,14 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, SDT, GIOITINH, XETDIEUKIEN, VIPHAMNOIQUY
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.SINHVIENDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.SINHVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "SINHVIEN");
         }
         
@@ -11575,7 +11575,7 @@ SELECT USERNAME, PASSWORD, TINHTRANGSUDUNG FROM TAIKHOAN WHERE (USERNAME = @USER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.TAIKHOANDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.TAIKHOANDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11588,9 +11588,9 @@ SELECT USERNAME, PASSWORD, TINHTRANGSUDUNG FROM TAIKHOAN WHERE (USERNAME = @USER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.TAIKHOANDataTable GetData() {
+        public virtual QLKTXDataSet.TAIKHOANDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.TAIKHOANDataTable dataTable = new ql_KTXDataSet.TAIKHOANDataTable();
+            QLKTXDataSet.TAIKHOANDataTable dataTable = new QLKTXDataSet.TAIKHOANDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11598,14 +11598,14 @@ SELECT USERNAME, PASSWORD, TINHTRANGSUDUNG FROM TAIKHOAN WHERE (USERNAME = @USER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.TAIKHOANDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.TAIKHOANDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TAIKHOAN");
         }
         
@@ -11953,7 +11953,7 @@ SELECT MAVT, TENVT, GIATIEN, MAQL FROM VATTU WHERE (MAVT = @MAVT)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.VATTUDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.VATTUDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11966,9 +11966,9 @@ SELECT MAVT, TENVT, GIATIEN, MAQL FROM VATTU WHERE (MAVT = @MAVT)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.VATTUDataTable GetData() {
+        public virtual QLKTXDataSet.VATTUDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.VATTUDataTable dataTable = new ql_KTXDataSet.VATTUDataTable();
+            QLKTXDataSet.VATTUDataTable dataTable = new QLKTXDataSet.VATTUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11976,14 +11976,14 @@ SELECT MAVT, TENVT, GIATIEN, MAQL FROM VATTU WHERE (MAVT = @MAVT)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.VATTUDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.VATTUDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "VATTU");
         }
         
@@ -12342,7 +12342,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.VT_PHONGDataTable dataTable) {
+        public virtual int Fill(QLKTXDataSet.VT_PHONGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12355,9 +12355,9 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.VT_PHONGDataTable GetData() {
+        public virtual QLKTXDataSet.VT_PHONGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ql_KTXDataSet.VT_PHONGDataTable dataTable = new ql_KTXDataSet.VT_PHONGDataTable();
+            QLKTXDataSet.VT_PHONGDataTable dataTable = new QLKTXDataSet.VT_PHONGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12365,14 +12365,14 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet.VT_PHONGDataTable dataTable) {
+        public virtual int Update(QLKTXDataSet.VT_PHONGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ql_KTXDataSet dataSet) {
+        public virtual int Update(QLKTXDataSet dataSet) {
             return this.Adapter.Update(dataSet, "VT_PHONG");
         }
         
@@ -12696,7 +12696,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ql_KTXDataSet.SP_DOLOGINDataTable dataTable, string USERNAME, string PASSWORD) {
+        public virtual int Fill(QLKTXDataSet.SP_DOLOGINDataTable dataTable, string USERNAME, string PASSWORD) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERNAME == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -12721,7 +12721,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ql_KTXDataSet.SP_DOLOGINDataTable GetData(string USERNAME, string PASSWORD) {
+        public virtual QLKTXDataSet.SP_DOLOGINDataTable GetData(string USERNAME, string PASSWORD) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERNAME == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -12735,7 +12735,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(PASSWORD));
             }
-            ql_KTXDataSet.SP_DOLOGINDataTable dataTable = new ql_KTXDataSet.SP_DOLOGINDataTable();
+            QLKTXDataSet.SP_DOLOGINDataTable dataTable = new QLKTXDataSet.SP_DOLOGINDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13108,7 +13108,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(ql_KTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(QLKTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tAIKHOANTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TAIKHOAN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -13235,7 +13235,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(ql_KTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(QLKTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tAIKHOANTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TAIKHOAN.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -13349,7 +13349,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(ql_KTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(QLKTXDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._vT_PHONGTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.VT_PHONG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -13487,7 +13487,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(ql_KTXDataSet dataSet) {
+        public virtual int UpdateAll(QLKTXDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

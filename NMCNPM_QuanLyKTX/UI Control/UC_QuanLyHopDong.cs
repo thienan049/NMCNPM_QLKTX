@@ -52,5 +52,70 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             hocKyCbBoxCol.TextEditStyle = TextEditStyles.DisableTextEditor;
         }
+
+        /// <summary>
+        /// Xử lý khi nhấn các button trong qlhd_ActionBtnPanel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void qlhd_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            // Click btn Add
+            if (e.Button == qlhd_ActionBtnPanel.Buttons[0])
+            {
+                // Thêm dòng dữ liệu trống mới
+                hopDongBdS.AddNew();
+            }
+            // Click btn Save (Update)
+            else if (e.Button == qlhd_ActionBtnPanel.Buttons[1])
+            {
+                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+                this.Validate();
+                hopDongBdS.EndEdit();
+
+                // Update dữ liệu vào CSDL
+                //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    hopDongTableAdapter.Update(ql_KTX_DS.HOPDONG);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            // Click btn Delete
+            else
+            {
+                // Xóa dòng dữ liệu hiện tại
+                hopDongBdS.RemoveCurrent();
+
+                // Update dữ liệu vào CSDL
+                //sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    hopDongTableAdapter.Update(ql_KTX_DS.HOPDONG);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn các button trong qlhd_ActionBtnPanel2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void qlhd_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            // Click btn Reload
+            if (e.Button == qlhd_ActionBtnPanel2.Buttons[0])
+            {
+                // Lấy data từ CSDL về DataTable ql_KTX_DS.HOPDONG
+                FillDataFromDatabase();
+            }
+        }
     }
 }

@@ -1,6 +1,11 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraEditors;
+using NMCNPM_QuanLyKTX.Common.Service;
 using NMCNPM_QuanLyKTX.UI_Control;
+using NMCNPM_QuanLyKTX.UI_Control.Setting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +37,13 @@ namespace NMCNPM_QuanLyKTX
             InitializeComponent();
 
             Program.ConnectDB();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            // Lưu lại trạng thái tyle mặc định của chương trình
+            CommonService.SaveDefaultApplicationStyle();
+            SendKeys.Send("{CAPSLOCK}");
         }
 
         // Hiển thị QLSV user control
@@ -118,5 +130,18 @@ namespace NMCNPM_QuanLyKTX
                 this.UC_QLHD.BringToFront();
             }
         }
+        /// <summary>
+        /// Display setting windows
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_ProgramSetting_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            new SettingDialog().ShowDialog();
+            WindowsFormsSettings.PopupAnimation = PopupAnimation.System;
+            //WindowsFormsSettings.DefaultLookAndFeel.SetSkinStyle(new DevExpress.LookAndFeel.SkinStyle("ads"));
+        }
+
     }
 }

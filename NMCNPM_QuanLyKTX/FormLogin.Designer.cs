@@ -29,8 +29,8 @@ namespace NMCNPM_QuanLyKTX
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.loginTitleLbl = new DevExpress.XtraEditors.LabelControl();
             this.usernameTxtEd = new DevExpress.XtraEditors.TextEdit();
@@ -67,6 +67,7 @@ namespace NMCNPM_QuanLyKTX
             // 
             // usernameTxtEd
             // 
+            this.usernameTxtEd.EditValue = "admin";
             this.usernameTxtEd.Location = new System.Drawing.Point(89, 6);
             this.usernameTxtEd.Name = "usernameTxtEd";
             this.usernameTxtEd.Properties.AllowFocused = false;
@@ -124,6 +125,7 @@ namespace NMCNPM_QuanLyKTX
             // 
             // passwordTxtEd
             // 
+            this.passwordTxtEd.EditValue = "asd";
             this.passwordTxtEd.Location = new System.Drawing.Point(87, 3);
             this.passwordTxtEd.Name = "passwordTxtEd";
             this.passwordTxtEd.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -143,7 +145,7 @@ namespace NMCNPM_QuanLyKTX
             this.doLoginBtnPanel.AppearanceButton.Hovered.BackColor = System.Drawing.Color.Silver;
             this.doLoginBtnPanel.AppearanceButton.Hovered.Options.UseBackColor = true;
             this.doLoginBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LoginBtn", false, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LoginBtn", false, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.doLoginBtnPanel.Location = new System.Drawing.Point(153, 357);
             this.doLoginBtnPanel.Name = "doLoginBtnPanel";
             this.doLoginBtnPanel.Size = new System.Drawing.Size(100, 80);
@@ -167,9 +169,9 @@ namespace NMCNPM_QuanLyKTX
             // 
             // exitLoginBtnPanel
             // 
-            windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
             this.exitLoginBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("ExitBtn", false, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("ExitBtn", false, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.exitLoginBtnPanel.Location = new System.Drawing.Point(354, 3);
             this.exitLoginBtnPanel.Name = "exitLoginBtnPanel";
             this.exitLoginBtnPanel.Size = new System.Drawing.Size(43, 34);

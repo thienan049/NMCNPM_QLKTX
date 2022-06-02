@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ql_KTXDataSet" targetNamespace="http://tempuri.org/ql_KTXDataSet.xsd" xmlns:mstns="http://tempuri.org/ql_KTXDataSet.xsd" xmlns="http://tempuri.org/ql_KTXDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="QLKTXDataSet" targetNamespace="http://tempuri.org/QLKTXDataSet.xsd" xmlns:mstns="http://tempuri.org/QLKTXDataSet.xsd" xmlns="http://tempuri.org/QLKTXDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -860,7 +860,7 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ql_KTXDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ql_KTXDataSet" msprop:Generator_UserDSName="ql_KTXDataSet">
+  <xs:element name="QLKTXDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLKTXDataSet" msprop:Generator_UserDSName="QLKTXDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="HOADONDIEN" msprop:Generator_TableClassName="HOADONDIENDataTable" msprop:Generator_TableVarName="tableHOADONDIEN" msprop:Generator_TablePropName="HOADONDIEN" msprop:Generator_RowDeletingName="HOADONDIENRowDeleting" msprop:Generator_RowChangingName="HOADONDIENRowChanging" msprop:Generator_RowEvHandlerName="HOADONDIENRowChangeEventHandler" msprop:Generator_RowDeletedName="HOADONDIENRowDeleted" msprop:Generator_UserTableName="HOADONDIEN" msprop:Generator_RowChangedName="HOADONDIENRowChanged" msprop:Generator_RowEvArgName="HOADONDIENRowChangeEvent" msprop:Generator_RowClassName="HOADONDIENRow">

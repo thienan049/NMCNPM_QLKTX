@@ -1,4 +1,5 @@
-﻿using DevExpress.Skins;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
 using DevExpress.UserSkins;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,22 @@ namespace NMCNPM_QuanLyKTX
 {
     static class Program
     {
+        //
+        private static string defaultSkin = "";
+
+        public static string DefaultSkin
+        {
+            get { return defaultSkin; }
+            set { defaultSkin = value; }
+        }
+
+        public static string defaultPalette = "";
+
+        public static string DefaultPalette
+        {
+            get { return defaultPalette; }
+            set { defaultPalette = value; }
+        }
 
         // SQL connection
         // Đối tượng connect DB

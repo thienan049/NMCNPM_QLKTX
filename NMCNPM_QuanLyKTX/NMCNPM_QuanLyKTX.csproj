@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Const\CommonConstant.cs" />
+    <Compile Include="Common\Service\CommonCustomUIComponent.cs" />
+    <Compile Include="Common\Service\CommonService.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +80,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\Setting\SettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Control\Setting\SettingDialog.Designer.cs">
+      <DependentUpon>SettingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\UC_QuanLyHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +103,9 @@
     </Compile>
     <Compile Include="UI Control\UC_QuanLySinhVien.Designer.cs">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\UC_QuanLySinhVien.Validation.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI Control\UC_QuanLyTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +129,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI Control\Setting\SettingDialog.resx">
+      <DependentUpon>SettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\UC_QuanLyHopDong.resx">
       <DependentUpon>UC_QuanLyHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,9 +167,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="accessories\images\delete-document.png" />
-    <Content Include="accessories\images\save-document.png" />
+    <Content Include="Accessories\images\delete-document.png" />
+    <Content Include="Accessories\images\save-document.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
