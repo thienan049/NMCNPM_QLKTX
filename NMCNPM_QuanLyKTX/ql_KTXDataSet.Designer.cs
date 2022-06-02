@@ -56,11 +56,11 @@ namespace NMCNPM_QuanLyKTX {
         
         private global::System.Data.DataRelation relationFK_HOADONDIEN_QUANLY;
         
+        private global::System.Data.DataRelation relationFK_HOPDONG_SINHVIEN;
+        
         private global::System.Data.DataRelation relationFK_HOPDONG_PHONG;
         
         private global::System.Data.DataRelation relationFK_HOPDONG_QUANLY;
-        
-        private global::System.Data.DataRelation relationFK_HOPDONG_SINHVIEN;
         
         private global::System.Data.DataRelation relationFK_PHANCONGVIEC_PERMISSION;
         
@@ -80,9 +80,9 @@ namespace NMCNPM_QuanLyKTX {
         
         private global::System.Data.DataRelation relationFK_VATTU_QUANLY;
         
-        private global::System.Data.DataRelation relationFK_VT_PHONG_PHONG;
-        
         private global::System.Data.DataRelation relationFK_VT_PHONG_VATTU;
+        
+        private global::System.Data.DataRelation relationFK_VT_PHONG_PHONG;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -540,9 +540,9 @@ namespace NMCNPM_QuanLyKTX {
             }
             this.relationFK_HOADONDIEN_PHONG = this.Relations["FK_HOADONDIEN_PHONG"];
             this.relationFK_HOADONDIEN_QUANLY = this.Relations["FK_HOADONDIEN_QUANLY"];
+            this.relationFK_HOPDONG_SINHVIEN = this.Relations["FK_HOPDONG_SINHVIEN"];
             this.relationFK_HOPDONG_PHONG = this.Relations["FK_HOPDONG_PHONG"];
             this.relationFK_HOPDONG_QUANLY = this.Relations["FK_HOPDONG_QUANLY"];
-            this.relationFK_HOPDONG_SINHVIEN = this.Relations["FK_HOPDONG_SINHVIEN"];
             this.relationFK_PHANCONGVIEC_PERMISSION = this.Relations["FK_PHANCONGVIEC_PERMISSION"];
             this.relationFK_PHANCONGVIEC_PHANQUYEN = this.Relations["FK_PHANCONGVIEC_PHANQUYEN"];
             this.relationFK_PHONG_LOAIPHONG = this.Relations["FK_PHONG_LOAIPHONG"];
@@ -552,8 +552,8 @@ namespace NMCNPM_QuanLyKTX {
             this.relationFK_QUYENTAIKHOAN_TAIKHOAN = this.Relations["FK_QUYENTAIKHOAN_TAIKHOAN"];
             this.relationFK_SINHVIEN_QUANLY = this.Relations["FK_SINHVIEN_QUANLY"];
             this.relationFK_VATTU_QUANLY = this.Relations["FK_VATTU_QUANLY"];
-            this.relationFK_VT_PHONG_PHONG = this.Relations["FK_VT_PHONG_PHONG"];
             this.relationFK_VT_PHONG_VATTU = this.Relations["FK_VT_PHONG_VATTU"];
+            this.relationFK_VT_PHONG_PHONG = this.Relations["FK_VT_PHONG_PHONG"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -592,6 +592,119 @@ namespace NMCNPM_QuanLyKTX {
             base.Tables.Add(this.tableVT_PHONG);
             this.tableSP_DOLOGIN = new SP_DOLOGINDataTable();
             base.Tables.Add(this.tableSP_DOLOGIN);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOADONDIEN_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADONDIEN.MAPHONGColumn});
+            this.tableHOADONDIEN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOADONDIEN_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADONDIEN.MAQLColumn});
+            this.tableHOADONDIEN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MASVColumn});
+            this.tableHOPDONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MAPHONGColumn});
+            this.tableHOPDONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MAQLColumn});
+            this.tableHOPDONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGVIEC_PERMISSION", new global::System.Data.DataColumn[] {
+                        this.tablePERMISSION.MAPMSColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGVIEC.MAPMSColumn});
+            this.tablePHANCONGVIEC.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGVIEC_PHANQUYEN", new global::System.Data.DataColumn[] {
+                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGVIEC.MAPQColumn});
+            this.tablePHANCONGVIEC.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHONG_LOAIPHONG", new global::System.Data.DataColumn[] {
+                        this.tableLOAIPHONG.MALOAIPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MALOAIPHONGColumn});
+            this.tablePHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAQLColumn});
+            this.tablePHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUANLY_TAIKHOAN1", new global::System.Data.DataColumn[] {
+                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.USERNAMEColumn});
+            this.tableQUANLY.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_PHANQUYEN", new global::System.Data.DataColumn[] {
+                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUYENTAIKHOAN.MAPQColumn});
+            this.tableQUYENTAIKHOAN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_TAIKHOAN", new global::System.Data.DataColumn[] {
+                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUYENTAIKHOAN.USERNAMEColumn});
+            this.tableQUYENTAIKHOAN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_SINHVIEN_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MAQLColumn});
+            this.tableSINHVIEN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_VATTU_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVATTU.MAQLColumn});
+            this.tableVATTU.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_VT_PHONG_VATTU", new global::System.Data.DataColumn[] {
+                        this.tableVATTU.MAVTColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVT_PHONG.MAVTColumn});
+            this.tableVT_PHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVT_PHONG.MAPHONGColumn});
+            this.tableVT_PHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_HOADONDIEN_PHONG = new global::System.Data.DataRelation("FK_HOADONDIEN_PHONG", new global::System.Data.DataColumn[] {
                         this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOADONDIEN.MAPHONGColumn}, false);
@@ -600,6 +713,10 @@ namespace NMCNPM_QuanLyKTX {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOADONDIEN.MAQLColumn}, false);
             this.Relations.Add(this.relationFK_HOADONDIEN_QUANLY);
+            this.relationFK_HOPDONG_SINHVIEN = new global::System.Data.DataRelation("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MASVColumn}, false);
+            this.Relations.Add(this.relationFK_HOPDONG_SINHVIEN);
             this.relationFK_HOPDONG_PHONG = new global::System.Data.DataRelation("FK_HOPDONG_PHONG", new global::System.Data.DataColumn[] {
                         this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOPDONG.MAPHONGColumn}, false);
@@ -608,10 +725,6 @@ namespace NMCNPM_QuanLyKTX {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOPDONG.MAQLColumn}, false);
             this.Relations.Add(this.relationFK_HOPDONG_QUANLY);
-            this.relationFK_HOPDONG_SINHVIEN = new global::System.Data.DataRelation("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
-                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOPDONG.MASVColumn}, false);
-            this.Relations.Add(this.relationFK_HOPDONG_SINHVIEN);
             this.relationFK_PHANCONGVIEC_PERMISSION = new global::System.Data.DataRelation("FK_PHANCONGVIEC_PERMISSION", new global::System.Data.DataColumn[] {
                         this.tablePERMISSION.MAPMSColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHANCONGVIEC.MAPMSColumn}, false);
@@ -648,14 +761,14 @@ namespace NMCNPM_QuanLyKTX {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
                         this.tableVATTU.MAQLColumn}, false);
             this.Relations.Add(this.relationFK_VATTU_QUANLY);
-            this.relationFK_VT_PHONG_PHONG = new global::System.Data.DataRelation("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVT_PHONG.MAPHONGColumn}, false);
-            this.Relations.Add(this.relationFK_VT_PHONG_PHONG);
             this.relationFK_VT_PHONG_VATTU = new global::System.Data.DataRelation("FK_VT_PHONG_VATTU", new global::System.Data.DataColumn[] {
                         this.tableVATTU.MAVTColumn}, new global::System.Data.DataColumn[] {
                         this.tableVT_PHONG.MAVTColumn}, false);
             this.Relations.Add(this.relationFK_VT_PHONG_VATTU);
+            this.relationFK_VT_PHONG_PHONG = new global::System.Data.DataRelation("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVT_PHONG.MAPHONGColumn}, false);
+            this.Relations.Add(this.relationFK_VT_PHONG_PHONG);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5562,6 +5675,17 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SINHVIENRow SINHVIENRow {
+                get {
+                    return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PHONGRow PHONGRow {
                 get {
                     return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_PHONG"])));
@@ -5579,17 +5703,6 @@ namespace NMCNPM_QuanLyKTX {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_QUANLY"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SINHVIENRow SINHVIENRow {
-                get {
-                    return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"]);
                 }
             }
             
@@ -5838,23 +5951,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PHANCONGVIECRow[] GetPHANCONGVIECRows() {
-                if ((this.Table.ChildRelations["FK_PHANCONGVIEC_PHANQUYEN"] == null)) {
-                    return new PHANCONGVIECRow[0];
-                }
-                else {
-                    return ((PHANCONGVIECRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PHANCONGVIEC_PHANQUYEN"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public QUYENTAIKHOANRow[] GetQUYENTAIKHOANRows() {
                 if ((this.Table.ChildRelations["FK_QUYENTAIKHOAN_PHANQUYEN"] == null)) {
                     return new QUYENTAIKHOANRow[0];
                 }
                 else {
                     return ((QUYENTAIKHOANRow[])(base.GetChildRows(this.Table.ChildRelations["FK_QUYENTAIKHOAN_PHANQUYEN"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PHANCONGVIECRow[] GetPHANCONGVIECRows() {
+                if ((this.Table.ChildRelations["FK_PHANCONGVIEC_PHANQUYEN"] == null)) {
+                    return new PHANCONGVIECRow[0];
+                }
+                else {
+                    return ((PHANCONGVIECRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PHANCONGVIEC_PHANQUYEN"])));
                 }
             }
         }
@@ -5963,12 +6076,12 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOADONDIENRow[] GetHOADONDIENRows() {
-                if ((this.Table.ChildRelations["FK_HOADONDIEN_PHONG"] == null)) {
-                    return new HOADONDIENRow[0];
+            public VT_PHONGRow[] GetVT_PHONGRows() {
+                if ((this.Table.ChildRelations["FK_VT_PHONG_PHONG"] == null)) {
+                    return new VT_PHONGRow[0];
                 }
                 else {
-                    return ((HOADONDIENRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOADONDIEN_PHONG"])));
+                    return ((VT_PHONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_VT_PHONG_PHONG"])));
                 }
             }
             
@@ -5985,12 +6098,12 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VT_PHONGRow[] GetVT_PHONGRows() {
-                if ((this.Table.ChildRelations["FK_VT_PHONG_PHONG"] == null)) {
-                    return new VT_PHONGRow[0];
+            public HOADONDIENRow[] GetHOADONDIENRows() {
+                if ((this.Table.ChildRelations["FK_HOADONDIEN_PHONG"] == null)) {
+                    return new HOADONDIENRow[0];
                 }
                 else {
-                    return ((VT_PHONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_VT_PHONG_PHONG"])));
+                    return ((HOADONDIENRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOADONDIEN_PHONG"])));
                 }
             }
         }
@@ -6077,34 +6190,12 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOADONDIENRow[] GetHOADONDIENRows() {
-                if ((this.Table.ChildRelations["FK_HOADONDIEN_QUANLY"] == null)) {
-                    return new HOADONDIENRow[0];
+            public VATTURow[] GetVATTURows() {
+                if ((this.Table.ChildRelations["FK_VATTU_QUANLY"] == null)) {
+                    return new VATTURow[0];
                 }
                 else {
-                    return ((HOADONDIENRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOADONDIEN_QUANLY"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HOPDONGRow[] GetHOPDONGRows() {
-                if ((this.Table.ChildRelations["FK_HOPDONG_QUANLY"] == null)) {
-                    return new HOPDONGRow[0];
-                }
-                else {
-                    return ((HOPDONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOPDONG_QUANLY"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PHONGRow[] GetPHONGRows() {
-                if ((this.Table.ChildRelations["FK_PHONG_QUANLY"] == null)) {
-                    return new PHONGRow[0];
-                }
-                else {
-                    return ((PHONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PHONG_QUANLY"])));
+                    return ((VATTURow[])(base.GetChildRows(this.Table.ChildRelations["FK_VATTU_QUANLY"])));
                 }
             }
             
@@ -6121,12 +6212,34 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VATTURow[] GetVATTURows() {
-                if ((this.Table.ChildRelations["FK_VATTU_QUANLY"] == null)) {
-                    return new VATTURow[0];
+            public PHONGRow[] GetPHONGRows() {
+                if ((this.Table.ChildRelations["FK_PHONG_QUANLY"] == null)) {
+                    return new PHONGRow[0];
                 }
                 else {
-                    return ((VATTURow[])(base.GetChildRows(this.Table.ChildRelations["FK_VATTU_QUANLY"])));
+                    return ((PHONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PHONG_QUANLY"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public HOPDONGRow[] GetHOPDONGRows() {
+                if ((this.Table.ChildRelations["FK_HOPDONG_QUANLY"] == null)) {
+                    return new HOPDONGRow[0];
+                }
+                else {
+                    return ((HOPDONGRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOPDONG_QUANLY"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public HOADONDIENRow[] GetHOADONDIENRows() {
+                if ((this.Table.ChildRelations["FK_HOADONDIEN_QUANLY"] == null)) {
+                    return new HOADONDIENRow[0];
+                }
+                else {
+                    return ((HOADONDIENRow[])(base.GetChildRows(this.Table.ChildRelations["FK_HOADONDIEN_QUANLY"])));
                 }
             }
         }
@@ -6465,23 +6578,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public QUANLYRow[] GetQUANLYRows() {
-                if ((this.Table.ChildRelations["FK_QUANLY_TAIKHOAN1"] == null)) {
-                    return new QUANLYRow[0];
-                }
-                else {
-                    return ((QUANLYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_QUANLY_TAIKHOAN1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public QUYENTAIKHOANRow[] GetQUYENTAIKHOANRows() {
                 if ((this.Table.ChildRelations["FK_QUYENTAIKHOAN_TAIKHOAN"] == null)) {
                     return new QUYENTAIKHOANRow[0];
                 }
                 else {
                     return ((QUYENTAIKHOANRow[])(base.GetChildRows(this.Table.ChildRelations["FK_QUYENTAIKHOAN_TAIKHOAN"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public QUANLYRow[] GetQUANLYRows() {
+                if ((this.Table.ChildRelations["FK_QUANLY_TAIKHOAN1"] == null)) {
+                    return new QUANLYRow[0];
+                }
+                else {
+                    return ((QUANLYRow[])(base.GetChildRows(this.Table.ChildRelations["FK_QUANLY_TAIKHOAN1"])));
                 }
             }
         }
@@ -6649,23 +6762,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PHONGRow PHONGRow {
-                get {
-                    return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_PHONG"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_PHONG"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VATTURow VATTURow {
                 get {
                     return ((VATTURow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_VATTU"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_VATTU"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PHONGRow PHONGRow {
+                get {
+                    return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_PHONG"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_PHONG"]);
                 }
             }
         }
