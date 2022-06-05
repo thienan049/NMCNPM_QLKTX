@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.EditForm.Helpers.Controls;
+using NMCNPM_QuanLyKTX.Common.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +27,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             FillDataFromDatabase();
 
             // Set data cho ComboBox column [HOCKY] để sử dụng
-            ApplyPredefinedDataToControl();
+            CommonService.InitHocKyBoxRepoItem(QLHD_HocKyCb_RepoItem);
         }
 
         /// <summary>
@@ -33,51 +35,37 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// </summary>
         private void FillDataFromDatabase()
         {
-            ql_KTX_DS.EnforceConstraints = false;
+            QL_KTXDataSet.EnforceConstraints = false;
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
-            hopDongTableAdapter.Fill(ql_KTX_DS.HOPDONG);
+            HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
         }
 
-        /// <summary>
-        /// Thực hiện thêm các data có sẵn vào control cần sử dụng
-        /// </summary>
-        private void ApplyPredefinedDataToControl()
-        {
-            // Thêm data cho control [ComboBox] cột [HOCKY]
-            hocKyCbBoxCol.Items.Add("1");
-            hocKyCbBoxCol.Items.Add("2");
-            hocKyCbBoxCol.Items.Add("3");
-
-
-            hocKyCbBoxCol.TextEditStyle = TextEditStyles.DisableTextEditor;
-        }
-
-        /// <summary>
+        // <summary>
         /// Xử lý khi nhấn các button trong qlhd_ActionBtnPanel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void qlhd_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QLHD_ActionBtnPanel_ButtonClick_1(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             // Click btn Add
-            if (e.Button == qlhd_ActionBtnPanel.Buttons[0])
+            if (e.Button == QLHD_ActionBtnPanel.Buttons[0])
             {
                 // Thêm dòng dữ liệu trống mới
-                hopDongBdS.AddNew();
+                HopDongBDS.AddNew();
             }
             // Click btn Save (Update)
-            else if (e.Button == qlhd_ActionBtnPanel.Buttons[1])
+            else if (e.Button == QLHD_ActionBtnPanel.Buttons[1])
             {
                 // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
                 this.Validate();
-                hopDongBdS.EndEdit();
+                HopDongBDS.EndEdit();
 
                 // Update dữ liệu vào CSDL
                 //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
                 try
                 {
-                    hopDongTableAdapter.Update(ql_KTX_DS.HOPDONG);
+                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
                 }
                 catch (System.Exception ex)
                 {
@@ -88,13 +76,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             else
             {
                 // Xóa dòng dữ liệu hiện tại
-                hopDongBdS.RemoveCurrent();
+                HopDongBDS.RemoveCurrent();
 
                 // Update dữ liệu vào CSDL
                 //sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
                 try
                 {
-                    hopDongTableAdapter.Update(ql_KTX_DS.HOPDONG);
+                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
                 }
                 catch (System.Exception ex)
                 {
@@ -108,14 +96,36 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void qlhd_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QLHD_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             // Click btn Reload
-            if (e.Button == qlhd_ActionBtnPanel2.Buttons[0])
+            if (e.Button == QLHD_ActionBtnPanel.Buttons[0])
             {
                 // Lấy data từ CSDL về DataTable ql_KTX_DS.HOPDONG
                 FillDataFromDatabase();
             }
+        }
+
+        private void QLHD_View_GridView_EditFormPrepared(object sender, DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventArgs e)
+        {
+            TextEdit sampleControl = (TextEdit)e.BindableControls["MAHD"];
+
+            foreach (Control control in e.BindableControls)
+            {
+                if (control is TextEdit)
+                {
+                    (control as TextEdit).AutoSize = true;
+                    (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
+                    //var x = (control as TextEdit).Size;
+                    //var y = (control as TextEdit).CalcBestSize();
+                    (control as TextEdit).Size = new Size((control as TextEdit).Size.Width, 22);
+                }
+            }
+
+            EditFormContainer container = (e.Panel as EditFormContainer);
+            TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
+            layoutPane.AutoSize = true;
+            layoutPane.Size = new Size(container.Size.Width, 110);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLySinhVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongKeSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinHD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -109,7 +109,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLySinhVien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinSV,
             this.accordionControlElement2,
-            this.accordionControlElement3});
+            this.acCtlEle_ThongKeSV});
             this.acCtlQuanLySinhVien.Expanded = true;
             this.acCtlQuanLySinhVien.Hint = "Quản lý sinh viên";
             this.acCtlQuanLySinhVien.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
@@ -130,11 +130,12 @@ namespace NMCNPM_QuanLyKTX
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Danh sách theo phòng";
             // 
-            // accordionControlElement3
+            // acCtlEle_ThongKeSV
             // 
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Text = "Element3";
+            this.acCtlEle_ThongKeSV.Name = "acCtlEle_ThongKeSV";
+            this.acCtlEle_ThongKeSV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongKeSV.Text = "Thống kê";
+            this.acCtlEle_ThongKeSV.Click += new System.EventHandler(this.acCtlEle_ThongKeSV_Click);
             // 
             // accordionControlElement4
             // 
@@ -289,7 +290,7 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongKeSV;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinPhong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;

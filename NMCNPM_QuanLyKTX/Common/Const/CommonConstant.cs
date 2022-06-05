@@ -13,6 +13,8 @@ namespace NMCNPM_QuanLyKTX.Common.Const
     {
         public static string[] GioiTinh = { "Nam", "Nữ", "Khác"};
 
+        public static string[] HocKy = { "1", "2", "3" };
+
         /// <summary>
         /// Chứa các RegEx Patterns được sử dụng 
         /// </summary>

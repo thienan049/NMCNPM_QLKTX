@@ -5,6 +5,7 @@ using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using NMCNPM_QuanLyKTX.Common.Service;
 using NMCNPM_QuanLyKTX.UI_Control;
+using NMCNPM_QuanLyKTX.UI_Control.QLSV;
 using NMCNPM_QuanLyKTX.UI_Control.Setting;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,9 @@ namespace NMCNPM_QuanLyKTX
 
         // QuanLySinhVien user control
         UC_QuanLySinhVien UC_QLSV = null;
+
+        // QuanLySinhVien_ThongKe user control
+        UC_QLSV_ThongKe UC_QLSV_TK = null;
 
         // QuanLyHopDong user control
         UC_QuanLyHopDong UC_QLHD = null;
@@ -115,9 +119,9 @@ namespace NMCNPM_QuanLyKTX
             // Nếu chưa tồn tại, tạo đối tượng mới
             if (this.UC_QLHD == null)
             {
-                this.UC_QLHD = new UC_QuanLyHopDong();
+                this.UC_QLHD = new UC_QuanLyHopDong
                 {
-                    Dock = DockStyle.Fill;
+                    Dock = DockStyle.Fill
                 };
 
                 // Thêm đối tượng vừa tạo vào khu vực content container
@@ -143,5 +147,25 @@ namespace NMCNPM_QuanLyKTX
             //WindowsFormsSettings.DefaultLookAndFeel.SetSkinStyle(new DevExpress.LookAndFeel.SkinStyle("ads"));
         }
 
+        private void acCtlEle_ThongKeSV_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLSV_TK == null)
+            {
+                this.UC_QLSV_TK = new UC_QLSV_ThongKe
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLSV_TK);
+                this.UC_QLSV_TK.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLSV_TK.BringToFront();
+            }
+        }
     }
 }

@@ -40,5 +40,17 @@ namespace NMCNPM_QuanLyKTX.Common.Service
                 comboBox.Items.Add(gender);
             }
         }
+
+        /// <summary>
+        /// Thêm giá trị cho ComboBox [Giới tính] trong EditView
+        /// </summary>
+        /// <param name="comboBox"></param>
+        public static void InitHocKyBoxRepoItem(RepositoryItemComboBox comboBox)
+        {
+            foreach (string hk in CommonConstant.HocKy)
+            {
+                comboBox.Items.Add(hk);
+            }
+        }
     }
 }

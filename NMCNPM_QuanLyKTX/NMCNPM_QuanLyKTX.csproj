@@ -80,37 +80,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\Custom EditForm\UC_QLSV_EditForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\Custom EditForm\UC_QLSV_EditForm.Designer.cs">
+      <DependentUpon>UC_QLSV_EditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.Designer.cs">
+      <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\Setting\SettingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Control\Setting\SettingDialog.Designer.cs">
       <DependentUpon>SettingDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyHopDong.cs">
+    <Compile Include="UI Control\QLHD\UC_QuanLyHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyHopDong.Designer.cs">
+    <Compile Include="UI Control\QLHD\UC_QuanLyHopDong.Designer.cs">
       <DependentUpon>UC_QuanLyHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyPhong.cs">
+    <Compile Include="UI Control\QLP\UC_QuanLyPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyPhong.Designer.cs">
+    <Compile Include="UI Control\QLP\UC_QuanLyPhong.Designer.cs">
       <DependentUpon>UC_QuanLyPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLySinhVien.cs">
+    <Compile Include="UI Control\QLSV\UC_QuanLySinhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLySinhVien.Designer.cs">
+    <Compile Include="UI Control\QLSV\UC_QuanLySinhVien.Designer.cs">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLySinhVien.Validation.cs">
+    <Compile Include="UI Control\QLSV\UC_QuanLySinhVien.Validation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyTaiKhoan.cs">
+    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Control\UC_QuanLyTaiKhoan.Designer.cs">
+    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
@@ -129,19 +141,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI Control\Custom EditForm\UC_QLSV_EditForm.resx">
+      <DependentUpon>UC_QLSV_EditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLSV\UC_QLSV_ThongKe.resx">
+      <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\Setting\SettingDialog.resx">
       <DependentUpon>SettingDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Control\UC_QuanLyHopDong.resx">
+    <EmbeddedResource Include="UI Control\QLHD\UC_QuanLyHopDong.resx">
       <DependentUpon>UC_QuanLyHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Control\UC_QuanLyPhong.resx">
+    <EmbeddedResource Include="UI Control\QLP\UC_QuanLyPhong.resx">
       <DependentUpon>UC_QuanLyPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Control\UC_QuanLySinhVien.resx">
+    <EmbeddedResource Include="UI Control\QLSV\UC_QuanLySinhVien.resx">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Control\UC_QuanLyTaiKhoan.resx">
+    <EmbeddedResource Include="UI Control\QLTK\UC_QuanLyTaiKhoan.resx">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />

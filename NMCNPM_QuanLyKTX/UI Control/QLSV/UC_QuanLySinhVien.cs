@@ -2,9 +2,11 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.EditForm.Helpers.Controls;
 using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using NMCNPM_QuanLyKTX.Common.Service;
+using NMCNPM_QuanLyKTX.UI_Control.Custom_EditForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,8 +43,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             FillDataFromDatabase();
 
             // Khởi tạo giá trị cho các ComboBox
-            CommonService.InitGenderBoxRepoItem(repositoryItemComboBox1);
-            tblSinhVienDataView = new DataView(QL_KTXDataSet.SINHVIEN);                   
+            CommonService.InitGenderBoxRepoItem(QLSV_GioiTinhCb_RepoItem);
+            //tblSinhVienDataView = new DataView(QL_KTXDataSet.SINHVIEN);
+            //UC_QLSV_EditForm qlsvEditForm = new UC_QLSV_EditForm();
+            //qlsvEditForm.InitDataBinding(this.SinhVienBdS);
+
+           // QLSV_View_GridView.OptionsEditForm.CustomEditFormLayout = qlsvEditForm;
+           // QLSV_View_GridView.OptionsEditForm.ActionOnModifiedRowChange = EditFormModifiedAction.Default;
+
         }
 
         /// <summary>
@@ -51,25 +59,23 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void qlsv_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {          
+        {
             // Click btn Add
             if (e.Button == qlsv_ActionBtnPanel.Buttons[0])
             {
                 // Thêm dòng dữ liệu trống mới
                 SinhVienBdS.AddNew();
-                var x = QL_KTXDataSet.SINHVIEN;
             }
             // Click btn Save (Update)
             else if (e.Button == qlsv_ActionBtnPanel.Buttons[1])
             {
                 // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
                 this.Validate();
-                
+
                 SinhVienBdS.EndEdit();
-                var x = QL_KTXDataSet.SINHVIEN; 
                 //tblSinhVienDataView.RowStateFilter = DataViewRowState.OriginalRows;
                 // Update dữ liệu vào CSDL
-                //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                this.SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
                 try
                 {
                     /*if (HasChanges())
@@ -77,13 +83,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
                         XtraMessageBox.Show("u have hanges");
                     }*/
                     //tblSinhVienDataView.Table
-                    
-                    //SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+
+                    SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
                 }
-                catch(System.Exception ex)
+                catch (System.Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }             
+                }
             }
             // Click btn Delete
             else
@@ -124,8 +130,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             else
             {
                 Validate();
-                
-                SinhVienBdS.DataSource = tblSinhVienDataView;              
+
+                SinhVienBdS.DataSource = tblSinhVienDataView;
             }
         }
 
@@ -145,7 +151,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             else if (e.Button == QLSV_ChangeViewBtnPanel.Buttons[1])
             {
                 //this.QLSV_GridControl.MainView = this.QLSV_View_CardView;
-                    
+
             }
             // Change view to LayoutView
             else if (e.Button == QLSV_ChangeViewBtnPanel.Buttons[2])
@@ -168,6 +174,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             // Lấy data từ CSDL về DataTable [QL_KTXDataSet.SINHVIEN]
             SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
+            HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
 
         }
 
@@ -240,7 +247,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
                 // Hủy áp dụng [AppearanceEvenRow]
                 if (QLSV_View_GridView.OptionsView.EnableAppearanceEvenRow)
                     QLSV_View_GridView.OptionsView.EnableAppearanceEvenRow = false; ;
-            }                     
+            }
         }
 
         /// <summary>
@@ -262,7 +269,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
                 // Áp dụng [EvenRow]
                 QLSV_View_GridView.OptionsView.EnableAppearanceOddRow = false;
                 QLSV_View_GridView.OptionsView.EnableAppearanceEvenRow = true;
-            }               
+            }
         }
 
         /// <summary>
@@ -276,5 +283,28 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             QLSV_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
             QLSV_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
+
+        private void QLSV_View_GridView_EditFormPrepared(object sender, EditFormPreparedEventArgs e)
+        {
+            TextEdit sampleControl = (TextEdit)e.BindableControls["MASV"];
+
+            foreach (Control control in e.BindableControls)
+            {
+                if (control is TextEdit)
+                {
+                    (control as TextEdit).AutoSize = true;
+                    (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
+                    //var x = (control as TextEdit).Size;
+                    //var y = (control as TextEdit).CalcBestSize();
+                    (control as TextEdit).Size = new Size((control as TextEdit).Size.Width, 22);
+                }
+            }
+
+            EditFormContainer container = (e.Panel as EditFormContainer);
+            TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
+            layoutPane.AutoSize = true;
+            layoutPane.Size = new Size(container.Size.Width, 110);
+        }
     }
+    
 }
