@@ -183,6 +183,9 @@
     <None Include="ql_KTXDataSet.xss">
       <DependentUpon>ql_KTXDataSet.xsd</DependentUpon>
     </None>
+    <Compile Include="UI Control\QLHD\UC_QuanLyHopDong.Validation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Accessories\images\delete-document.png" />

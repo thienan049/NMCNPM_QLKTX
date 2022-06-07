@@ -12,15 +12,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 {
-    public partial class UC_QuanLyHopDong : DevExpress.XtraEditors.XtraUserControl
+    public partial class UC_QuanLyHopDong : XtraUserControl
     {
+        DataView tblHopDongDataView = null;
+
+        // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
+        private bool isSidePaneCollapsed = true;
+
         public UC_QuanLyHopDong()
         {
             InitializeComponent();
         }
-
+      
         private void UC_QuanLyHopDong_Load(object sender, EventArgs e)
         {
             // Lấy data từ CSDL
@@ -41,72 +46,77 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
         }
 
-        // <summary>
-        /// Xử lý khi nhấn các button trong qlhd_ActionBtnPanel
+        /// <summary>
+        /// Xử lý khi nhấn Btn Add
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLHD_ActionBtnPanel_ButtonClick_1(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QLHD_Add_Btn_Click(object sender, EventArgs e)
         {
             // Click btn Add
-            if (e.Button == QLHD_ActionBtnPanel.Buttons[0])
-            {
-                // Thêm dòng dữ liệu trống mới
-                HopDongBDS.AddNew();
-            }
+            // Thêm dòng dữ liệu trống mới
+            HopDongBdS.AddNew();
+
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Save
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_Save_Btn_Click(object sender, EventArgs e)
+        {
             // Click btn Save (Update)
-            else if (e.Button == QLHD_ActionBtnPanel.Buttons[1])
-            {
-                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-                this.Validate();
-                HopDongBDS.EndEdit();
+            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+            this.Validate();
+            HopDongBdS.EndEdit();
 
-                // Update dữ liệu vào CSDL
-                //this.userTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                try
-                {
-                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            // Update dữ liệu vào CSDL
+            try
+            {
+                HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
             }
-            // Click btn Delete
-            else
+            catch (System.Exception ex)
             {
-                // Xóa dòng dữ liệu hiện tại
-                HopDongBDS.RemoveCurrent();
-
-                // Update dữ liệu vào CSDL
-                //sinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                try
-                {
-                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 
         /// <summary>
-        /// Xử lý khi nhấn các button trong qlhd_ActionBtnPanel2
+        /// Xử lý khi nhấn Btn Delete
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLHD_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QLHD_Delete_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Reload
-            if (e.Button == QLHD_ActionBtnPanel.Buttons[0])
+            // Click btn Delete
+            // Xóa dòng dữ liệu hiện tại
+            HopDongBdS.RemoveCurrent();
+
+            // Update dữ liệu vào CSDL
+            try
             {
-                // Lấy data từ CSDL về DataTable ql_KTX_DS.HOPDONG
-                FillDataFromDatabase();
+                HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void QLHD_View_GridView_EditFormPrepared(object sender, DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventArgs e)
+        /// <summary>
+        /// Xử lý khi nhấn Btn Reload
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_Reload_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn Reload
+            // Lấy data từ CSDL về DataTable ql_KTX_DS.HOPDONG
+            FillDataFromDatabase();
+        }
+
+        private void QLHD_View_GridView_EditFormPrepared_1(object sender, DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventArgs e)
         {
             TextEdit sampleControl = (TextEdit)e.BindableControls["MAHD"];
 
@@ -126,6 +136,140 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
             layoutPane.AutoSize = true;
             layoutPane.Size = new Size(container.Size.Width, 110);
+        }
+
+        /// <summary>
+        /// Toggle open/close custom DetailViewSetting side panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_CustomViewSettingBtn_Click(object sender, EventArgs e)
+        {
+            // Nếu SidePanel là đóng, mở ra và hiển thị các lựa chọn
+            if (isSidePaneCollapsed)
+            {
+                QLHD_CustomViewSettingSidePane.Width = 75;
+                QLHD_CVSControlsPanel.Visible = true;
+                isSidePaneCollapsed = false;
+            }
+            // Nếu SidePanel là mở, đóng lại và ẩn các lựa chọn
+            else
+            {
+                QLHD_CustomViewSettingSidePane.Width = 30;
+                QLHD_CVSControlsPanel.Visible = false;
+                // Chỉ ẩn các lựa chọn custom khi ToggleSwitch là [Off]
+                if (!QLHD_CVSToggleSwitch.IsOn)
+                    QLHD_CVSMainControlsPanel.Visible = false;
+                isSidePaneCollapsed = true;
+            }
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Search Filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_FilterSearchBtn_Click(object sender, EventArgs e)
+        {
+            String condition = MakeFilterCondition();
+
+            FillDataFromDatabase();
+
+            if (condition == null)
+            {
+                HopDongBdS.DataSource = QL_KTXDataSet;
+                HopDongBdS.DataMember = "HOPDONG";
+            }
+            else
+            {
+                tblHopDongDataView = new DataView(QL_KTXDataSet.HOPDONG);
+                tblHopDongDataView.RowFilter = condition;
+                HopDongBdS.DataSource = tblHopDongDataView;
+            }
+        }
+
+        /// <summary>
+        /// Tạo câu điều kiện để search filter
+        /// </summary>
+        /// <returns></returns>
+        private String MakeFilterCondition()
+        {
+            String filterExpression = null;
+
+            if (!QLHD_Filter_MaHDTxt.Text.Equals(""))
+            {
+                filterExpression += "MAHD LIKE '%" + QLHD_Filter_MaSVTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLHD_Filter_SoTienTxt.Text.Equals(""))
+            {
+                filterExpression += "AND SOTIEN = '" + QLHD_Filter_SoTienTxt.Text.Trim() + "' ";
+            }
+
+            if (!QLHD_Filter_TienNoTxt.Text.Equals(""))
+            {
+                filterExpression += "AND TIENNO = '" + QLHD_Filter_TienNoTxt.Text.Trim() + "' ";
+            }
+
+            if (!QLHD_Filter_NgayTaoDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '*/" + QLHD_Filter_NgayTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
+            }
+
+            if (!QLHD_Filter_ThangTaoDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '" + QLHD_Filter_ThangTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
+            }
+
+            if (!QLHD_Filter_NamTaoDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '*/" + QLHD_Filter_NamTaoDate.Text.TrimStart("0".ToCharArray()) + "*' ";
+            }
+
+            if (!QLHD_Filter_NamHocTuTxt.Text.Equals(""))
+            {
+                filterExpression += "AND NAMHOC LIKE '" + QLHD_Filter_NamHocTuTxt.Text.Trim() + "-%' ";
+            }
+
+            if (!QLHD_Filter_NamHocDenTxt.Text.Equals(""))
+            {
+                filterExpression += "AND NAMHOC LIKE '%-" + QLHD_Filter_NamHocDenTxt.Text.Trim() + "' ";
+            }
+
+            if (!QLHD_Filter_HocKyCb.Text.Equals("") && !QLHD_Filter_HocKyCb.Text.Equals("--"))
+            {
+                filterExpression += "AND HOCKY = '" + QLHD_Filter_HocKyCb.Text.Trim() + "' ";
+            }
+
+            if (!QLHD_Filter_MaSVTxt.Text.Equals(""))
+            {
+                filterExpression += "AND MASV LIKE '%" + QLHD_Filter_MaSVTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLHD_Filter_MaPhongTxt.Text.Equals(""))
+            {
+                filterExpression += "AND MAPHONG LIKE '%" + QLHD_Filter_MaPhongTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLHD_Filter_MaQLTxt.Text.Equals(""))
+            {
+                filterExpression += "AND MAQL LIKE '%" + QLHD_Filter_MaQLTxt.Text.Trim() + "%' ";
+            }
+            return (filterExpression != null && filterExpression.StartsWith("AND ")) ? filterExpression.Remove(0, 4) : filterExpression;
+        }
+
+        private void QLHD_MaPhongPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
+        {
+            QL_KTXDataSet.EnforceConstraints = false;
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
+            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
+
+            QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(549, 223);
+        }
+
+        private void QLHD_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
+        {
+            e.Value = ((DataRowView)PhongBdS[PhongBdS.Position])["MAPHONG"].ToString();
         }
     }
 }

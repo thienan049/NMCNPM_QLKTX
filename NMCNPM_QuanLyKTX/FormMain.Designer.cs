@@ -35,7 +35,6 @@ namespace NMCNPM_QuanLyKTX
             this.accCtlSidebar = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.acCtlQuanLySinhVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongKeSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinHD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -59,10 +58,10 @@ namespace NMCNPM_QuanLyKTX
             // contentContainer
             // 
             this.contentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentContainer.Location = new System.Drawing.Point(257, 30);
+            this.contentContainer.Location = new System.Drawing.Point(240, 30);
             this.contentContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contentContainer.Name = "contentContainer";
-            this.contentContainer.Size = new System.Drawing.Size(843, 670);
+            this.contentContainer.Size = new System.Drawing.Size(960, 670);
             this.contentContainer.TabIndex = 0;
             // 
             // accCtlSidebar
@@ -94,7 +93,7 @@ namespace NMCNPM_QuanLyKTX
             this.accCtlSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accCtlSidebar.Name = "accCtlSidebar";
             this.accCtlSidebar.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accCtlSidebar.Size = new System.Drawing.Size(257, 670);
+            this.accCtlSidebar.Size = new System.Drawing.Size(240, 670);
             this.accCtlSidebar.TabIndex = 1;
             this.accCtlSidebar.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -108,7 +107,6 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLySinhVien.Appearance.Pressed.Options.UseFont = true;
             this.acCtlQuanLySinhVien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinSV,
-            this.accordionControlElement2,
             this.acCtlEle_ThongKeSV});
             this.acCtlQuanLySinhVien.Expanded = true;
             this.acCtlQuanLySinhVien.Hint = "Quản lý sinh viên";
@@ -123,12 +121,6 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinSV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acCtlEle_ThongTinSV.Text = "Thông tin sinh viên";
             this.acCtlEle_ThongTinSV.Click += new System.EventHandler(this.acCtlEle_ThongTinSV_Click);
-            // 
-            // accordionControlElement2
-            // 
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Danh sách theo phòng";
             // 
             // acCtlEle_ThongKeSV
             // 
@@ -193,6 +185,7 @@ namespace NMCNPM_QuanLyKTX
             // 
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_TaiKhoan});
+            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement7.ImageOptions.SvgImage")));
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "ADMIN";
@@ -214,7 +207,7 @@ namespace NMCNPM_QuanLyKTX
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1100, 30);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1200, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.Btn_ProgramSetting);
@@ -259,7 +252,7 @@ namespace NMCNPM_QuanLyKTX
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlContainer = this.contentContainer;
             this.Controls.Add(this.contentContainer);
             this.Controls.Add(this.accCtlSidebar);
@@ -289,7 +282,6 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinSV;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongKeSV;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinPhong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;

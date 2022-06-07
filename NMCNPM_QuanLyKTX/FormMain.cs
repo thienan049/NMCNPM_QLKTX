@@ -5,6 +5,7 @@ using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using NMCNPM_QuanLyKTX.Common.Service;
 using NMCNPM_QuanLyKTX.UI_Control;
+using NMCNPM_QuanLyKTX.UI_Control.QLHD;
 using NMCNPM_QuanLyKTX.UI_Control.QLSV;
 using NMCNPM_QuanLyKTX.UI_Control.Setting;
 using System;

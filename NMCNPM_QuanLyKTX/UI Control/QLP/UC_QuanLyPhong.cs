@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using NMCNPM_QuanLyKTX.Common.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace NMCNPM_QuanLyKTX.UI_Control
 {
-    public partial class UC_QuanLyPhong : DevExpress.XtraEditors.XtraUserControl
+    public partial class UC_QuanLyPhong : XtraUserControl
     {
         public UC_QuanLyPhong()
         {
@@ -25,88 +26,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             FillDataFromDatabase();
 
             // Set data cho ComboBox column [LOAIPHONG] để sử dụng
-            ApplyPredefinedDataToControl();
-        }
-
-        /// <summary>
-        /// Xử lý khi nhấn các buttons trong [qlp_ActionBtnPanel]
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void qlp_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            // Click btn [Add]
-            if (e.Button == qlp_ActionBtnPanel.Buttons[0])
-            {
-                // Thêm dòng dữ liệu trống mới
-                phongBdS.AddNew();
-            }
-            // Click btn [Save] (Update)
-            else if (e.Button == qlp_ActionBtnPanel.Buttons[1])
-            {
-                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-                this.Validate();
-                phongBdS.EndEdit();
-
-                // Update dữ liệu vào CSDL
-                try
-                {
-                    phongTableAdapter.Update(ql_KTX_DS.PHONG);
-                }
-                catch (System.Exception ex)
-                {
-                    XtraMessageBox.Show(ex.Message);
-                }
-            }
-            // Click btn [Delete]
-            else
-            {
-                // Xóa dòng dữ liệu hiện tại
-                phongBdS.RemoveCurrent();
-
-                // Update dữ liệu vào CSDL
-                try
-                {
-                    phongTableAdapter.Update(ql_KTX_DS.PHONG);
-                }
-                catch (System.Exception ex)
-                {
-                    XtraMessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Xử lý khi nhấn các button trong [qlp_ActionBtnPanel2]
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void qlp_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            // Click btn [Reload]
-            if (e.Button == qlp_ActionBtnPanel2.Buttons[0])
-            {
-                // Lấy data từ CSDL về DataTable ql_KTX_DS.PHONG
-                FillDataFromDatabase();
-
-                // Set data cho ComboBox column [LOAIPHONG] để sử dụng
-                ApplyPredefinedDataToControl();
-            }
-        }
-
-        /// <summary>
-        /// Get danh sách các loại phòng hiện có
-        /// </summary>
-        private List<string> GetListLoaiPhong()
-        {
-            DataRowCollection tableRows = ql_KTX_DS.LOAIPHONG.Rows;
-
-            List<string> listLP = new List<string>(tableRows.Count);
-
-            foreach (DataRow row in tableRows)
-                listLP.Add((string)row[0]);
-
-            return listLP;
+            CommonService.InitDSLoaiPhongBox(QLP_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
         }
 
         /// <summary>
@@ -114,29 +34,74 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// </summary>
         private void FillDataFromDatabase()
         {
-            ql_KTX_DS.EnforceConstraints = false;
+            QL_KTXDataSet.EnforceConstraints = false;
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.PHONG]
-            phongTableAdapter.Fill(ql_KTX_DS.PHONG);
+            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.LOAIPHONG]
-            loaiPhongTableAdapter.Fill(ql_KTX_DS.LOAIPHONG);
+            LoaiPhongTableAdapter.Fill(QL_KTXDataSet.LOAIPHONG); 
         }
 
         /// <summary>
-        /// Thực hiện thêm các data có sẵn vào control cần sử dụng
+        /// Xử lý khi nhấn nút [Add] thông tin phòng mới
         /// </summary>
-        private void ApplyPredefinedDataToControl()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLP_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Thêm data cho control [ComboBox] cột [LOAIPHONG]
-            List<string> listLP = GetListLoaiPhong();
-            loaiPhongCbBoxCol.Items.Clear();
-            foreach (string item in listLP)
-            {               
-                loaiPhongCbBoxCol.Items.Add(item);
-            }
+            // Click btn [Add]
+            // Thêm dòng dữ liệu trống mới
+            PhongBdS.AddNew();
+        }
 
-            loaiPhongCbBoxCol.TextEditStyle = TextEditStyles.DisableTextEditor;
+        /// <summary>
+        /// Xử lý khi nhấn nút [Save] thông tin phòng vào DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLP_Save_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn [Save] (Update)
+            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+            this.Validate();
+            PhongBdS.EndEdit();
+
+            // Update dữ liệu vào CSDL
+            try
+            {
+                PhongTableAdapter.Update(QL_KTXDataSet.PHONG);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn nút [Delete] thông tin phòng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLP_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            // Xóa dòng dữ liệu hiện tại
+            PhongBdS.RemoveCurrent();
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn nút [Reload] thông tin phòng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLP_Reload_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn [Reload]
+            // Lấy data từ CSDL về DataTable ql_KTX_DS.PHONG
+            FillDataFromDatabase();
+
+            // Set data cho ComboBox column [LOAIPHONG] để sử dụng
+            CommonService.InitDSLoaiPhongBox(QLP_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
         }
     }
 }

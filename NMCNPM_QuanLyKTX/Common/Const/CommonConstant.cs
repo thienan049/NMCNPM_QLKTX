@@ -11,9 +11,15 @@ namespace NMCNPM_QuanLyKTX.Common.Const
     /// </summary>
     public class CommonConstant
     {
-        public static string[] GioiTinh = { "Nam", "Nữ", "Khác"};
+        public static string[] GioiTinh = { "Nam", "Nữ" };
 
         public static string[] HocKy = { "1", "2", "3" };
+
+        public static string[] LoaiThongKe = 
+        {
+            "Sinh viên vi phạm", 
+            "Sinh viên theo phòng" 
+        };
 
         /// <summary>
         /// Chứa các RegEx Patterns được sử dụng 
@@ -25,6 +31,12 @@ namespace NMCNPM_QuanLyKTX.Common.Const
 
             // RegEx cho họ tên
             public const string PhoneNumberPattern = "^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$";
+
+            // RegEx cho input số
+            public const string NumeicInputPattern = "^\\d$";
+
+            // RegEx cho năm học
+            public const string NamHocPattern = "^(\\d){4}-(\\d){4}$";
         }
        
     }

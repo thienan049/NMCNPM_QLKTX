@@ -44,95 +44,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             // Khởi tạo giá trị cho các ComboBox
             CommonService.InitGenderBoxRepoItem(QLSV_GioiTinhCb_RepoItem);
+            CommonService.InitGenderBox(QLSV_Filter_GioiTinhCb, true);
             //tblSinhVienDataView = new DataView(QL_KTXDataSet.SINHVIEN);
             //UC_QLSV_EditForm qlsvEditForm = new UC_QLSV_EditForm();
             //qlsvEditForm.InitDataBinding(this.SinhVienBdS);
 
-           // QLSV_View_GridView.OptionsEditForm.CustomEditFormLayout = qlsvEditForm;
-           // QLSV_View_GridView.OptionsEditForm.ActionOnModifiedRowChange = EditFormModifiedAction.Default;
-
-        }
-
-        /// <summary>
-        /// Xử lý khi nhấn các button trong qlsv_ActionBtnPanel
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void qlsv_ActionBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            // Click btn Add
-            if (e.Button == qlsv_ActionBtnPanel.Buttons[0])
-            {
-                // Thêm dòng dữ liệu trống mới
-                SinhVienBdS.AddNew();
-            }
-            // Click btn Save (Update)
-            else if (e.Button == qlsv_ActionBtnPanel.Buttons[1])
-            {
-                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-                this.Validate();
-
-                SinhVienBdS.EndEdit();
-                //tblSinhVienDataView.RowStateFilter = DataViewRowState.OriginalRows;
-                // Update dữ liệu vào CSDL
-                this.SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                try
-                {
-                    /*if (HasChanges())
-                    {
-                        XtraMessageBox.Show("u have hanges");
-                    }*/
-                    //tblSinhVienDataView.Table
-
-                    SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            // Click btn Delete
-            else
-            {
-                // Xóa dòng dữ liệu hiện tại
-                SinhVienBdS.RemoveCurrent();
-                //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
-                // Update dữ liệu vào CSDL
-                //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-                try
-                {
-                    SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Xử lý khi nhấn các button trong qlsv_ActionBtnPanel2
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void qlsv_ActionBtnPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            // Click btn Reload
-            if (e.Button == qlsv_ActionBtnPanel2.Buttons[0])
-            {
-                // Lấy data từ CSDL về DataTable QL_KTXDataSet.SINHVIEN
-
-                SinhVienBdS.DataSource = QL_KTXDataSet;
-                SinhVienBdS.DataMember = "SINHVIEN";
-
-                FillDataFromDatabase();
-            }
-            else
-            {
-                Validate();
-
-                SinhVienBdS.DataSource = tblSinhVienDataView;
-            }
+            // QLSV_View_GridView.OptionsEditForm.CustomEditFormLayout = qlsvEditForm;
+            // QLSV_View_GridView.OptionsEditForm.ActionOnModifiedRowChange = EditFormModifiedAction.Default;
         }
 
         /// <summary>
@@ -175,7 +93,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // Lấy data từ CSDL về DataTable [QL_KTXDataSet.SINHVIEN]
             SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
             HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
-
         }
 
         public bool HasChanges()
@@ -304,6 +221,190 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
             layoutPane.AutoSize = true;
             layoutPane.Size = new Size(container.Size.Width, 110);
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Add
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_Add_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn Add
+            // Thêm dòng dữ liệu trống mới
+            SinhVienBdS.AddNew();
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Save
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_Save_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn Save (Update)
+            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+            this.Validate();
+
+            SinhVienBdS.EndEdit();
+            //tblSinhVienDataView.RowStateFilter = DataViewRowState.OriginalRows;
+            // Update dữ liệu vào CSDL
+            this.SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+            try
+            {
+                /*if (HasChanges())
+                {
+                    XtraMessageBox.Show("u have hanges");
+                }*/
+                //tblSinhVienDataView.Table
+
+                SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Delete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn Delete
+
+            // Xóa dòng dữ liệu hiện tại
+            SinhVienBdS.RemoveCurrent();
+            //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
+            // Update dữ liệu vào CSDL
+            //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+            try
+            {
+                SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }         
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Reload
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_Reload_Btn_Click(object sender, EventArgs e)
+        {
+            // Click btn Reload
+            // Lấy data từ CSDL về DataTable QL_KTXDataSet.SINHVIEN
+            SinhVienBdS.DataSource = QL_KTXDataSet;
+            SinhVienBdS.DataMember = "SINHVIEN";
+
+            FillDataFromDatabase();
+        }
+
+        /// <summary>
+        /// Xử lý khi nhấn Btn Search Filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_FilterSearchBtn_Click(object sender, EventArgs e)
+        {
+            String condition = MakeFilterCondition();
+
+            FillDataFromDatabase();
+
+            if (condition == null)
+            {
+                SinhVienBdS.DataSource = QL_KTXDataSet;
+                SinhVienBdS.DataMember = "SINHVIEN";
+            }
+            else
+            {
+                tblSinhVienDataView = new DataView(QL_KTXDataSet.SINHVIEN);
+                tblSinhVienDataView.RowFilter = condition;
+                SinhVienBdS.DataSource = tblSinhVienDataView;
+            }          
+        }
+
+        /// <summary>
+        /// Tạo câu điều kiện để search filter
+        /// </summary>
+        /// <returns></returns>
+        private String MakeFilterCondition()
+        {
+            String filterExpression = null;
+
+            if (!QLSV_Filter_MaSVTxt.Text.Equals(""))
+            {
+                filterExpression += "MASV LIKE '%" + QLSV_Filter_MaSVTxt.Text.Trim() + "%' "; 
+            }
+
+            if (!QLSV_Filter_HoTxt.Text.Equals(""))
+            {
+                filterExpression += "AND HO LIKE '%" + QLSV_Filter_HoTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLSV_Filter_TenTxt.Text.Equals(""))
+            {
+                filterExpression += "AND TEN LIKE '%" + QLSV_Filter_TenTxt.Text.Trim() + "%' ";
+            }
+
+            // Nếu [CheckState] = [Checked] thì chọn đủ dk
+            if (QLSV_Filter_XetDKChk.CheckState == CheckState.Checked)
+            {
+                filterExpression += "AND XETDIEUKIEN = 'TRUE' ";
+            }
+            // Nếu [CheckState] = [Unchecked] thì chọn ko đủ dk
+            else if (QLSV_Filter_XetDKChk.CheckState == CheckState.Unchecked)
+            {
+                filterExpression += "AND XETDIEUKIEN = 'FALSE' ";
+            }
+            // Trường hợp còn lại nếu [CheckState] = [Indeterminate] thì chọn tất cả
+            //else if (QLSV_Filter_XetDKChk.CheckState == CheckState.Indeterminate)
+
+            if (!QLSV_Filter_NgaySinhDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '%/" + QLSV_Filter_NgaySinhDate.Text.TrimStart("0".ToCharArray()) + "/%' ";
+            }
+
+            if (!QLSV_Filter_ThangSinhDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '" + QLSV_Filter_ThangSinhDate.Text.TrimStart("0".ToCharArray()) + "/%' ";
+            }
+
+            if (!QLSV_Filter_NamSinhDate.Text.Equals(""))
+            {
+                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '%/" + QLSV_Filter_NamSinhDate.Text.TrimStart("0".ToCharArray()) + "%' ";
+            }
+
+            if (!QLSV_Filter_SDTTxt.Text.Equals(""))
+            {
+                filterExpression += "AND SDT LIKE '%" + QLSV_Filter_SDTTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLSV_Filter_GioiTinhCb.Text.Equals("") && !QLSV_Filter_GioiTinhCb.Text.Equals("--"))
+            {
+                filterExpression += "AND GIOITINH LIKE '%" + QLSV_Filter_GioiTinhCb.Text.Trim() + "%' ";
+            }
+
+            if (!QLSV_Filter_VPNQTxt.Text.Equals(""))
+            {
+                filterExpression += "AND VIPHAMNOIQUY LIKE '%" + QLSV_Filter_VPNQTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLSV_Filter_DiaChiTxt.Text.Equals(""))
+            {
+                filterExpression += "AND DIACHI LIKE '%" + QLSV_Filter_DiaChiTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLSV_Filter_MaQLTxt.Text.Equals(""))
+            {
+                filterExpression += "AND MAQL LIKE '%" + QLSV_Filter_MaQLTxt.Text.Trim() + "%' ";
+            }
+            return (filterExpression != null && filterExpression.StartsWith("AND ")) ? filterExpression.TrimStart("AND ".ToCharArray()) : filterExpression;
         }
     }
     
