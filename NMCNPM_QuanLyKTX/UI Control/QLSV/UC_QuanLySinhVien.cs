@@ -240,6 +240,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                 QL_KTXDataSet.SINHVIEN.Rows.InsertAt(newRow.Row, 0);
                 SinhVienBdS.Position = 0;
 
+                newRow["XETDIEUKIEN"] = true;
                 CommonService.ApplyCurrentMaQL(newRow);
                 QLSV_View_GridView.ShowEditForm();
             }
@@ -306,6 +307,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                 // Click btn Delete
                 // Xóa dòng dữ liệu hiện tại
                 SinhVienBdS.RemoveCurrent();
+                SinhVienBdS.EndEdit();
                 //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
                 // Update dữ liệu vào CSDL
                 //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
@@ -320,6 +322,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                     if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint \"FK_HOPDONG_SINHVIEN\""))
                         XtraMessageBox.Show("Lỗi: Không thể xóa vì còn tồn tại\nhợp đồng của sinh viên này!", "Thông báo");
                     SinhVienBdS.CancelEdit();
+                    QL_KTXDataSet.SINHVIEN.RejectChanges();
+                    SinhVienBdS.MovePrevious();
                 }
             }
             else if (confirm == DialogResult.No)
