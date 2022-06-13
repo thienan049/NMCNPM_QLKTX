@@ -28,7 +28,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             if (fieldName.Equals("SOTIEN") || fieldName.Equals("TIENNO"))
             {
-                if (!Regex.IsMatch(e.Value as string, CommonConstant.RegEx.NumeicInputPattern))
+                if (!Regex.IsMatch(e.Value.ToString(), CommonConstant.RegEx.NumeicInputPattern))
                 {
                     e.Valid = false;
                     e.ErrorText = "Số tiền không hợp lệ!";

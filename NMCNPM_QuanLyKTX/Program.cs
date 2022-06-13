@@ -1,12 +1,14 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using NMCNPM_QuanLyKTX.Common.Const;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using static NMCNPM_QuanLyKTX.Common.Const.CommonConstant;
 
 namespace NMCNPM_QuanLyKTX
 {
@@ -29,6 +31,9 @@ namespace NMCNPM_QuanLyKTX
             set { defaultPalette = value; }
         }
 
+        // Check login
+        public static LoginMode AccessMode = LoginMode.Login;
+
         // SQL connection
         // Đối tượng connect DB
         public static SqlConnection DBConnection = new SqlConnection();
@@ -46,6 +51,10 @@ namespace NMCNPM_QuanLyKTX
 
         // Các đối tượng liên quan đến user
         public static string Username = "";
+        public static string HoUser = "";
+        public static string TenUser = "";
+        public static string NgayNhanViec = "";
+        public static string MaQL = "";
 
         /// <summary>
         /// Mở kết nối đến DB

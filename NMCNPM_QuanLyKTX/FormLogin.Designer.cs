@@ -29,8 +29,9 @@ namespace NMCNPM_QuanLyKTX
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.loginTitleLbl = new DevExpress.XtraEditors.LabelControl();
             this.usernameTxtEd = new DevExpress.XtraEditors.TextEdit();
@@ -43,6 +44,8 @@ namespace NMCNPM_QuanLyKTX
             this.usernameUnderline = new DevExpress.XtraEditors.SeparatorControl();
             this.passwordUnderline = new DevExpress.XtraEditors.SeparatorControl();
             this.exitLoginBtnPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.SkipLoginBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.Btn_styleCtl = new DevExpress.XtraEditors.StyleController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usernameTxtEd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernameStPanel)).BeginInit();
             this.usernameStPanel.SuspendLayout();
@@ -51,6 +54,7 @@ namespace NMCNPM_QuanLyKTX
             ((System.ComponentModel.ISupportInitialize)(this.passwordTxtEd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernameUnderline)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordUnderline)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_styleCtl)).BeginInit();
             this.SuspendLayout();
             // 
             // loginTitleLbl
@@ -145,7 +149,7 @@ namespace NMCNPM_QuanLyKTX
             this.doLoginBtnPanel.AppearanceButton.Hovered.BackColor = System.Drawing.Color.Silver;
             this.doLoginBtnPanel.AppearanceButton.Hovered.Options.UseBackColor = true;
             this.doLoginBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LoginBtn", false, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LoginBtn", false, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.doLoginBtnPanel.Location = new System.Drawing.Point(153, 357);
             this.doLoginBtnPanel.Name = "doLoginBtnPanel";
             this.doLoginBtnPanel.Size = new System.Drawing.Size(100, 80);
@@ -169,9 +173,9 @@ namespace NMCNPM_QuanLyKTX
             // 
             // exitLoginBtnPanel
             // 
-            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
+            windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
             this.exitLoginBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("ExitBtn", false, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("ExitBtn", false, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.exitLoginBtnPanel.Location = new System.Drawing.Point(354, 3);
             this.exitLoginBtnPanel.Name = "exitLoginBtnPanel";
             this.exitLoginBtnPanel.Size = new System.Drawing.Size(43, 34);
@@ -180,6 +184,37 @@ namespace NMCNPM_QuanLyKTX
             this.exitLoginBtnPanel.UseButtonBackgroundImages = false;
             this.exitLoginBtnPanel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.exitLoginBtnPanel_ButtonClick);
             // 
+            // SkipLoginBtn
+            // 
+            this.SkipLoginBtn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.SkipLoginBtn.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.SkipLoginBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SkipLoginBtn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.SkipLoginBtn.Appearance.Options.UseBackColor = true;
+            this.SkipLoginBtn.Appearance.Options.UseBorderColor = true;
+            this.SkipLoginBtn.Appearance.Options.UseFont = true;
+            this.SkipLoginBtn.Appearance.Options.UseForeColor = true;
+            this.SkipLoginBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.SkipLoginBtn.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
+            this.SkipLoginBtn.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SkipLoginBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.SkipLoginBtn.AppearanceHovered.Options.UseBorderColor = true;
+            this.SkipLoginBtn.AppearanceHovered.Options.UseFont = true;
+            this.SkipLoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SkipLoginBtn.Location = new System.Drawing.Point(165, 444);
+            this.SkipLoginBtn.Name = "SkipLoginBtn";
+            this.SkipLoginBtn.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.SkipLoginBtn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.SkipLoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.SkipLoginBtn.StyleController = this.Btn_styleCtl;
+            this.SkipLoginBtn.TabIndex = 10;
+            this.SkipLoginBtn.Text = "Skip";
+            this.SkipLoginBtn.Click += new System.EventHandler(this.SkipLoginBtn_Click);
+            // 
+            // Btn_styleCtl
+            // 
+            this.Btn_styleCtl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            // 
             // FormLogin
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -187,6 +222,7 @@ namespace NMCNPM_QuanLyKTX
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 500);
+            this.Controls.Add(this.SkipLoginBtn);
             this.Controls.Add(this.exitLoginBtnPanel);
             this.Controls.Add(this.passwordUnderline);
             this.Controls.Add(this.doLoginBtnPanel);
@@ -210,6 +246,7 @@ namespace NMCNPM_QuanLyKTX
             ((System.ComponentModel.ISupportInitialize)(this.passwordTxtEd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernameUnderline)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordUnderline)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_styleCtl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +264,7 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraEditors.SeparatorControl usernameUnderline;
         private DevExpress.XtraEditors.SeparatorControl passwordUnderline;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel exitLoginBtnPanel;
+        private DevExpress.XtraEditors.SimpleButton SkipLoginBtn;
+        private DevExpress.XtraEditors.StyleController Btn_styleCtl;
     }
 }

@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.EditForm.Helpers.Controls;
 using NMCNPM_QuanLyKTX.Common.Service;
@@ -33,6 +34,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             // Set data cho ComboBox column [HOCKY] để sử dụng
             CommonService.InitHocKyBoxRepoItem(QLHD_HocKyCb_RepoItem);
+
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if (!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLHD_View_GridView, QLHD_ActionBtn_Panel);
         }
 
         /// <summary>
@@ -44,6 +49,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
             HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
+
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.PHONG]
+            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
+
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.SINHVIEN]
+            SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
         }
 
         /// <summary>
@@ -113,17 +124,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             // Click btn Reload
             // Lấy data từ CSDL về DataTable ql_KTX_DS.HOPDONG
+            HopDongBdS.DataSource = QL_KTXDataSet;
+            HopDongBdS.DataMember = "HOPDONG";
+
             FillDataFromDatabase();
         }
 
         private void QLHD_View_GridView_EditFormPrepared_1(object sender, DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventArgs e)
         {
-            TextEdit sampleControl = (TextEdit)e.BindableControls["MAHD"];
+            //FillDataFromDatabase();
 
             foreach (Control control in e.BindableControls)
             {
                 if (control is TextEdit)
                 {
+                    InitDetailEditFormComponent(control);
                     (control as TextEdit).AutoSize = true;
                     (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
                     //var x = (control as TextEdit).Size;
@@ -198,7 +213,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             if (!QLHD_Filter_MaHDTxt.Text.Equals(""))
             {
-                filterExpression += "MAHD LIKE '%" + QLHD_Filter_MaSVTxt.Text.Trim() + "%' ";
+                filterExpression += "MAHD LIKE '%" + QLHD_Filter_MaHDTxt.Text.Trim() + "%' ";
             }
 
             if (!QLHD_Filter_SoTienTxt.Text.Equals(""))
@@ -213,32 +228,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             if (!QLHD_Filter_NgayTaoDate.Text.Equals(""))
             {
-                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '*/" + QLHD_Filter_NgayTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
+                filterExpression += "AND Convert(NGAYTAO, 'System.String') LIKE '*/" + QLHD_Filter_NgayTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
             }
 
             if (!QLHD_Filter_ThangTaoDate.Text.Equals(""))
             {
-                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '" + QLHD_Filter_ThangTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
+                filterExpression += "AND Convert(NGAYTAO, 'System.String') LIKE '" + QLHD_Filter_ThangTaoDate.Text.TrimStart("0".ToCharArray()) + "/*' ";
             }
 
             if (!QLHD_Filter_NamTaoDate.Text.Equals(""))
             {
-                filterExpression += "AND Convert(NGAYSINH, 'System.String') LIKE '*/" + QLHD_Filter_NamTaoDate.Text.TrimStart("0".ToCharArray()) + "*' ";
-            }
-
-            if (!QLHD_Filter_NamHocTuTxt.Text.Equals(""))
-            {
-                filterExpression += "AND NAMHOC LIKE '" + QLHD_Filter_NamHocTuTxt.Text.Trim() + "-%' ";
-            }
-
-            if (!QLHD_Filter_NamHocDenTxt.Text.Equals(""))
-            {
-                filterExpression += "AND NAMHOC LIKE '%-" + QLHD_Filter_NamHocDenTxt.Text.Trim() + "' ";
+                filterExpression += "AND Convert(NGAYTAO, 'System.String') LIKE '*/" + QLHD_Filter_NamTaoDate.Text.TrimStart("0".ToCharArray()) + "*' ";
             }
 
             if (!QLHD_Filter_HocKyCb.Text.Equals("") && !QLHD_Filter_HocKyCb.Text.Equals("--"))
             {
                 filterExpression += "AND HOCKY = '" + QLHD_Filter_HocKyCb.Text.Trim() + "' ";
+            }
+
+            if (!QLHD_Filter_NamHocTuTxt.Text.Equals(""))
+            {
+                filterExpression += "AND SUBSTRING(NAMHOC, 1, 4) LIKE '%" + QLHD_Filter_NamHocTuTxt.Text.Trim() + "%' ";
+            }
+
+            if (!QLHD_Filter_NamHocDenTxt.Text.Equals(""))
+            {
+                filterExpression += "AND SUBSTRING(NAMHOC, 6, 4) LIKE '%" + QLHD_Filter_NamHocDenTxt.Text.Trim() + "%' ";
             }
 
             if (!QLHD_Filter_MaSVTxt.Text.Equals(""))
@@ -258,6 +273,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             return (filterExpression != null && filterExpression.StartsWith("AND ")) ? filterExpression.Remove(0, 4) : filterExpression;
         }
 
+        /// <summary>
+        /// Lấy data cho sub-gridcontrol [QLHD_SubPhong_GridControl] ở detail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
         {
             QL_KTXDataSet.EnforceConstraints = false;
@@ -267,9 +287,154 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(549, 223);
         }
 
+        /// <summary>
+        /// Trả về mã phòng khi chọn phòng ở detail sub-gridcontrol [QLHD_SubPhong_GridControl]
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
         {
-            e.Value = ((DataRowView)PhongBdS[PhongBdS.Position])["MAPHONG"].ToString();
+            e.Value = ((DataRowView)Sub_PhongBdS[Sub_PhongBdS.Position])["MAPHONG"].ToString();
+        }
+
+        /// <summary>
+        /// Clear các điều kiện search filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_FilterClearBtn_Click(object sender, EventArgs e)
+        {
+            QLHD_Filter_MaHDTxt.Text = String.Empty;
+            QLHD_Filter_SoTienTxt.Text = String.Empty;
+            QLHD_Filter_TienNoTxt.Text = String.Empty;
+            QLHD_Filter_NgayTaoDate.Text = String.Empty;
+            QLHD_Filter_NgayTaoDate.EditValue = null;
+            QLHD_Filter_ThangTaoDate.Text = String.Empty;
+            QLHD_Filter_ThangTaoDate.EditValue = null;
+            QLHD_Filter_NamTaoDate.Text = String.Empty;
+            QLHD_Filter_NamTaoDate.EditValue = null;
+            QLHD_Filter_HocKyCb.SelectedItem = "--";
+            QLHD_Filter_NamHocTuTxt.Text = String.Empty;
+            QLHD_Filter_NamHocDenTxt.Text = String.Empty;
+            QLHD_Filter_MaSVTxt.Text = String.Empty;
+            QLHD_Filter_MaPhongTxt.Text = String.Empty;
+            QLHD_Filter_MaQLTxt.Text = String.Empty;
+        }
+
+        private void InitFilterComponent()
+        {
+            // Set data cho ComboBox column [HOCKY_Filter] để sử dụng
+            CommonService.InitHocKyBox(QLHD_Filter_HocKyCb, true);
+
+            FillDataFromDatabase();
+
+            QLHD_Filter_MaPhongTxt.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            QLHD_Filter_MaPhongTxt.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            QLHD_Filter_MaPhongTxt.MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSPhongCollection(QL_KTXDataSet.PHONG);
+
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.QUANLY]
+            QuanLyTableAdapter.Fill(QL_KTXDataSet.QUANLY);
+            QLHD_Filter_MaQLTxt.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            QLHD_Filter_MaQLTxt.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            QLHD_Filter_MaQLTxt.MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSQuanLyCollection(QL_KTXDataSet.QUANLY);
+        }
+
+        private void QLHD_HeaderNavigationTab_SelectedPageIndexChanged(object sender, EventArgs e)
+        {
+            if((sender as TabPane).SelectedPageIndex == 1)
+            {
+                InitFilterComponent();
+            }
+        }
+
+        private void InitDetailEditFormComponent(Control control)
+        {
+            if (control.Tag.Equals("EditValue/MAHD"))
+            {
+                (control as TextEdit).MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                (control as TextEdit).MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaHDCollection(QL_KTXDataSet.HOPDONG);
+            }
+            else if (control.Tag.Equals("EditValue/SOTIEN") || control.Tag.Equals("EditValue/TIENNO"))
+            {
+                (control as TextEdit).Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                (control as TextEdit).Properties.Mask.EditMask = "n0";
+                (control as TextEdit).Properties.Mask.UseMaskAsDisplayFormat = true;
+            }
+            else if (control.Tag.Equals("EditValue/MASV"))
+            {
+                (control as TextEdit).MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                (control as TextEdit).MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaSVCollection(QL_KTXDataSet.SINHVIEN);
+            }
+        }
+
+        /// <summary>
+        /// Toggle áp dụng/không áp dụng tính năng phân chia [EvenRow/OddRow]
+        /// Nếu có áp dụng, cung cấp thêm các lựa chọn cho việc custom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_CVSToggleSwitch_Toggled(object sender, EventArgs e)
+        {
+            /*
+             * Nếu ToggleSwitch là [On] -> có áp dụng [EvenRow/OddRow]
+             * Hiển thị các lựa chọn custom
+             * Nếu ToggleSwitch là [Off] -> không áp dụng [EvenRow/OddRow]
+             * Không hiển thị các lựa chọn custom
+             */
+            if (QLHD_CVSToggleSwitch.IsOn)
+            {
+                QLHD_CVSMainControlsPanel.Visible = true;
+
+                // Áp dụng [AppearanceOddRow] (Mặc đinh)
+                QLHD_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+            }
+            else
+            {
+                QLHD_CVSMainControlsPanel.Visible = false;
+
+                // Hủy áp dụng [AppearanceOddRow]
+                if (QLHD_View_GridView.OptionsView.EnableAppearanceOddRow)
+                    QLHD_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                // Hủy áp dụng [AppearanceEvenRow]
+                if (QLHD_View_GridView.OptionsView.EnableAppearanceEvenRow)
+                    QLHD_View_GridView.OptionsView.EnableAppearanceEvenRow = false; ;
+            }
+        }
+
+        /// <summary>
+        /// Nếu có áp dụng [EvenRow/OddRow]
+        /// Cho phép lựa chọn [EvenRow] hoặc [OddRow]
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_CVSRowStyleBtn_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button == QLHD_CVSRowStyleBtn.Buttons[0])
+            {
+                // Áp dụng [OddRow]
+                QLHD_View_GridView.OptionsView.EnableAppearanceEvenRow = false;
+                QLHD_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+            }
+            else
+            {
+                // Áp dụng [EvenRow]
+                QLHD_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                QLHD_View_GridView.OptionsView.EnableAppearanceEvenRow = true;
+            }
+        }
+
+        /// <summary>
+        /// Set màu được chọn cho [OddRow/EvenRow] nếu đang được áp dụng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_CVSColorPickEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            ColorPickEdit cVSColorPickEdit = sender as ColorPickEdit;
+            QLHD_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
+            QLHD_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
     }
 }

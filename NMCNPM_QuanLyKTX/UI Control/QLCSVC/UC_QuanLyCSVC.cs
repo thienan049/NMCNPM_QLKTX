@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.EditForm.Helpers.Controls;
 using NMCNPM_QuanLyKTX.Common.Service;
 using System;
 using System.Collections.Generic;
@@ -12,25 +13,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NMCNPM_QuanLyKTX.UI_Control.QLP
+namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
 {
-    public partial class UC_QuanLyPhong : XtraUserControl
+    public partial class UC_QuanLyCSVC : XtraUserControl
     {
         // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
         private bool isSidePaneCollapsed = true;
 
-        public UC_QuanLyPhong()
+        public UC_QuanLyCSVC()
         {
             InitializeComponent();
         }
 
-        private void UC_QuanLyPhong_Load(object sender, EventArgs e)
+        private void UC_QuanLyCSVC_Load(object sender, EventArgs e)
         {
             // Lấy data từ CSDL
             FillDataFromDatabase();
-
-            // Set data cho ComboBox column [LOAIPHONG] để sử dụng
-            CommonService.InitDSLoaiPhongBox(QLP_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
         }
 
         /// <summary>
@@ -41,10 +39,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
             QL_KTXDataSet.EnforceConstraints = false;
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.PHONG]
-            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
-
-            // Lấy data từ CSDL về DataTable [ql_KTX_DS.LOAIPHONG]
-            LoaiPhongTableAdapter.Fill(QL_KTXDataSet.LOAIPHONG); 
+            VatTuTableAdapter.Fill(QL_KTXDataSet.VATTU);
         }
 
         /// <summary>
@@ -52,11 +47,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_Add_Btn_Click(object sender, EventArgs e)
+        private void QLCSVC_Add_Btn_Click(object sender, EventArgs e)
         {
             // Click btn [Add]
             // Thêm dòng dữ liệu trống mới
-            PhongBdS.AddNew();
+            VatTuBdS.AddNew();
         }
 
         /// <summary>
@@ -64,17 +59,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_Save_Btn_Click(object sender, EventArgs e)
+        private void QLCSVC_Save_Btn_Click(object sender, EventArgs e)
         {
             // Click btn [Save] (Update)
             // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+
             this.Validate();
-            PhongBdS.EndEdit();
+            VatTuBdS.EndEdit();
 
             // Update dữ liệu vào CSDL
             try
             {
-                PhongTableAdapter.Update(QL_KTXDataSet.PHONG);
+                VatTuTableAdapter.Update(QL_KTXDataSet.VATTU);
             }
             catch (Exception ex)
             {
@@ -87,10 +83,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_Delete_Btn_Click(object sender, EventArgs e)
+        private void QLCSVC_Delete_Btn_Click(object sender, EventArgs e)
         {
             // Xóa dòng dữ liệu hiện tại
-            PhongBdS.RemoveCurrent();
+            VatTuBdS.RemoveCurrent();
         }
 
         /// <summary>
@@ -98,14 +94,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_Reload_Btn_Click(object sender, EventArgs e)
+        private void QLCSVC_Reload_Btn_Click(object sender, EventArgs e)
         {
             // Click btn [Reload]
             // Lấy data từ CSDL về DataTable ql_KTX_DS.PHONG
             FillDataFromDatabase();
 
             // Set data cho ComboBox column [LOAIPHONG] để sử dụng
-            CommonService.InitDSLoaiPhongBox(QLP_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
+            //CommonService.InitDSLoaiPhongBox(QLCSVC_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
         }
 
         /// <summary>
@@ -113,23 +109,23 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_CustomViewSettingBtn_Click(object sender, EventArgs e)
+        private void QLCSVC_CustomViewSettingBtn_Click(object sender, EventArgs e)
         {
             // Nếu SidePanel là đóng, mở ra và hiển thị các lựa chọn
             if (isSidePaneCollapsed)
             {
-                QLP_CustomViewSettingSidePane.Width = 75;
-                QLP_CVSControlsPanel.Visible = true;
+                QLCSVC_CustomViewSettingSidePane.Width = 75;
+                QLCSVC_CVSControlsPanel.Visible = true;
                 isSidePaneCollapsed = false;
             }
             // Nếu SidePanel là mở, đóng lại và ẩn các lựa chọn
             else
             {
-                QLP_CustomViewSettingSidePane.Width = 30;
-                QLP_CVSControlsPanel.Visible = false;
+                QLCSVC_CustomViewSettingSidePane.Width = 30;
+                QLCSVC_CVSControlsPanel.Visible = false;
                 // Chỉ ẩn các lựa chọn custom khi ToggleSwitch là [Off]
-                if (!QLP_CVSToggleSwitch.IsOn)
-                    QLP_CVSMainControlsPanel.Visible = false;
+                if (!QLCSVC_CVSToggleSwitch.IsOn)
+                    QLCSVC_CVSMainControlsPanel.Visible = false;
                 isSidePaneCollapsed = true;
             }
         }
@@ -140,7 +136,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_CVSToggleSwitch_Toggled(object sender, EventArgs e)
+        private void QLCSVC_CVSToggleSwitch_Toggled(object sender, EventArgs e)
         {
             /*
              * Nếu ToggleSwitch là [On] -> có áp dụng [EvenRow/OddRow]
@@ -148,23 +144,23 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
              * Nếu ToggleSwitch là [Off] -> không áp dụng [EvenRow/OddRow]
              * Không hiển thị các lựa chọn custom
              */
-            if (QLP_CVSToggleSwitch.IsOn)
+            if (QLCSVC_CVSToggleSwitch.IsOn)
             {
-                QLP_CVSMainControlsPanel.Visible = true;
+                QLCSVC_CVSMainControlsPanel.Visible = true;
 
                 // Áp dụng [AppearanceOddRow] (Mặc đinh)
-                QLP_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+                QLCSVC_View_GridView.OptionsView.EnableAppearanceOddRow = true;
             }
             else
             {
-                QLP_CVSMainControlsPanel.Visible = false;
+                QLCSVC_CVSMainControlsPanel.Visible = false;
 
                 // Hủy áp dụng [AppearanceOddRow]
-                if (QLP_View_GridView.OptionsView.EnableAppearanceOddRow)
-                    QLP_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                if (QLCSVC_View_GridView.OptionsView.EnableAppearanceOddRow)
+                    QLCSVC_View_GridView.OptionsView.EnableAppearanceOddRow = false;
                 // Hủy áp dụng [AppearanceEvenRow]
-                if (QLP_View_GridView.OptionsView.EnableAppearanceEvenRow)
-                    QLP_View_GridView.OptionsView.EnableAppearanceEvenRow = false; ;
+                if (QLCSVC_View_GridView.OptionsView.EnableAppearanceEvenRow)
+                    QLCSVC_View_GridView.OptionsView.EnableAppearanceEvenRow = false; ;
             }
         }
 
@@ -174,19 +170,19 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_CVSRowStyleBtn_ButtonClick(object sender, ButtonEventArgs e)
+        private void QLCSVC_CVSRowStyleBtn_ButtonClick(object sender, ButtonEventArgs e)
         {
-            if (e.Button == QLP_CVSRowStyleBtn.Buttons[0])
+            if (e.Button == QLCSVC_CVSRowStyleBtn.Buttons[0])
             {
                 // Áp dụng [OddRow]
-                QLP_View_GridView.OptionsView.EnableAppearanceEvenRow = false;
-                QLP_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+                QLCSVC_View_GridView.OptionsView.EnableAppearanceEvenRow = false;
+                QLCSVC_View_GridView.OptionsView.EnableAppearanceOddRow = true;
             }
             else
             {
                 // Áp dụng [EvenRow]
-                QLP_View_GridView.OptionsView.EnableAppearanceOddRow = false;
-                QLP_View_GridView.OptionsView.EnableAppearanceEvenRow = true;
+                QLCSVC_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                QLCSVC_View_GridView.OptionsView.EnableAppearanceEvenRow = true;
             }
         }
 
@@ -195,11 +191,42 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLP_CVSColorPickEdit_EditValueChanged(object sender, EventArgs e)
+        private void QLCSVC_CVSColorPickEdit_EditValueChanged(object sender, EventArgs e)
         {
             ColorPickEdit cVSColorPickEdit = sender as ColorPickEdit;
-            QLP_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
-            QLP_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
+            QLCSVC_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
+            QLCSVC_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
+        }
+
+        private void InitDetailEditFormComponent(Control control)
+        {
+            if (control.Tag.Equals("EditValue/GIATIEN"))
+            {
+                (control as TextEdit).Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                (control as TextEdit).Properties.Mask.EditMask = "n0";
+                (control as TextEdit).Properties.Mask.UseMaskAsDisplayFormat = true;
+            }
+        }
+
+        private void QLCSVC_View_GridView_EditFormPrepared(object sender, DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventArgs e)
+        {
+            foreach (Control control in e.BindableControls)
+            {
+                if (control is TextEdit)
+                {
+                    InitDetailEditFormComponent(control);
+                    (control as TextEdit).AutoSize = true;
+                    (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
+                    //var x = (control as TextEdit).Size;
+                    //var y = (control as TextEdit).CalcBestSize();
+                    (control as TextEdit).Size = new Size((control as TextEdit).Size.Width, 22);
+                }
+            }
+
+            EditFormContainer container = (e.Panel as EditFormContainer);
+            TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
+            layoutPane.AutoSize = true;
+            layoutPane.Size = new Size(container.Size.Width, 110);
         }
     }
 }

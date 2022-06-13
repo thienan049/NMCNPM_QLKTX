@@ -1,5 +1,5 @@
 ﻿
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLTK
 {
     partial class UC_QuanLyTaiKhoan
     {
@@ -50,7 +50,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colMAPQ = new DevExpress.XtraGrid.Columns.GridColumn();
             this.maPQCbBoxCol = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.phanQuyenBdS = new System.Windows.Forms.BindingSource(this.components);
             this.phanQuyenTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.PHANQUYENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_HeaderPanel)).BeginInit();
@@ -60,7 +59,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridCtl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maPQCbBoxCol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBdS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +69,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.qltk_HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.qltk_HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.qltk_HeaderPanel.Name = "qltk_HeaderPanel";
-            this.qltk_HeaderPanel.Size = new System.Drawing.Size(828, 100);
+            this.qltk_HeaderPanel.Size = new System.Drawing.Size(831, 100);
             this.qltk_HeaderPanel.TabIndex = 3;
             // 
             // qltk_ActionBtnPanel2
@@ -126,9 +124,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.tableAdapterManager.HOADONDIENTableAdapter = null;
             this.tableAdapterManager.HOPDONGTableAdapter = null;
             this.tableAdapterManager.LOAIPHONGTableAdapter = null;
+            this.tableAdapterManager.PERMISSIONTableAdapter = null;
+            this.tableAdapterManager.PHANCONGVIECTableAdapter = null;
             this.tableAdapterManager.PHANQUYENTableAdapter = null;
             this.tableAdapterManager.PHONGTableAdapter = null;
             this.tableAdapterManager.QUANLYTableAdapter = null;
+            this.tableAdapterManager.QUYENTAIKHOANTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.TAIKHOANTableAdapter = this.taiKhoanTableAdapter;
             this.tableAdapterManager.UpdateOrder = NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -138,7 +139,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // qltk_GridCtl
             // 
             this.qltk_GridCtl.DataSource = this.taiKhoanBdS;
-            this.qltk_GridCtl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.qltk_GridCtl.Location = new System.Drawing.Point(0, 100);
             this.qltk_GridCtl.MainView = this.qltk_GridVw;
             this.qltk_GridCtl.Name = "qltk_GridCtl";
@@ -208,14 +208,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 3;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 627);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(828, 120);
-            this.panelControl1.TabIndex = 5;
-            // 
             // phanQuyenBdS
             // 
             this.phanQuyenBdS.DataMember = "PHANQUYEN";
@@ -230,11 +222,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.qltk_GridCtl);
             this.Controls.Add(this.qltk_HeaderPanel);
             this.Name = "UC_QuanLyTaiKhoan";
-            this.Size = new System.Drawing.Size(828, 747);
+            this.Size = new System.Drawing.Size(831, 750);
             this.Load += new System.EventHandler(this.UC_QuanLyTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qltk_HeaderPanel)).EndInit();
             this.qltk_HeaderPanel.ResumeLayout(false);
@@ -243,7 +234,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridCtl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qltk_GridVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maPQCbBoxCol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBdS)).EndInit();
             this.ResumeLayout(false);
 
@@ -264,7 +254,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraGrid.Columns.GridColumn colMAPQ;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox maPQCbBoxCol;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.BindingSource phanQuyenBdS;
         private ql_KTXDataSetTableAdapters.PHANQUYENTableAdapter phanQuyenTableAdapter;
     }

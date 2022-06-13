@@ -1,6 +1,9 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using System;
 using System.Collections.Generic;
@@ -8,11 +11,22 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NMCNPM_QuanLyKTX.Common.Service
 {
     class CommonService
     {
+
+        /// <summary>
+        /// Kiểm tra chế độ sử dụng app là có/không Login
+        /// </summary>
+        /// <returns></returns>
+        public static bool CheckAccessMode()
+        {
+            return Program.AccessMode == CommonConstant.LoginMode.Login;
+        }
+
         /// <summary>
         /// Lưu lại trạng thái LookAndFeel mặc định vào Program.cs
         /// </summary>
@@ -28,6 +42,46 @@ namespace NMCNPM_QuanLyKTX.Common.Service
         public static void SetDefaultApplicationStyle()
         {            
             UserLookAndFeel.Default.SetSkinStyle(Program.DefaultSkin, Program.DefaultPalette);
+        }
+
+        /// <summary>
+        /// Gán mã quản lý của tài khoản hiện tại
+        /// </summary>
+        /// <param name="row"></param>
+        public static void ApplyCurrentMaQL(DataRowView row)
+        {
+            row["MAQL"] = Program.MaQL;
+        }
+
+        /// <summary>
+        /// Hiển thị màn hình ở chế độ readonly/ không login
+        /// </summary>
+        /// <param name="userCtl"></param>
+        /// <param name="isMainScreen"></param>
+        public static void InitAppNoLoginMode(GridView mainView, PanelControl actionBtnPanel)
+        {  
+            // Disable các buttons cần thiết
+            if(actionBtnPanel != null)
+            {
+                foreach (Control ctl in actionBtnPanel.Controls)
+                {
+                    if (ctl is SimpleButton)
+                    {
+                        if (!(ctl as SimpleButton).Name.Contains("Reload"))
+                            (ctl as SimpleButton).Enabled = false;
+                    }
+                }
+            }
+            
+            // Set readonly cho EditForm
+            if(mainView != null)
+            {
+                mainView.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.False;
+                foreach (GridColumn col in mainView.Columns)
+                {
+                    col.OptionsColumn.ReadOnly = true;
+                }
+            }           
         }
 
         /// <summary>
@@ -86,16 +140,16 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             if (isUnspecified)
             {
                 comboBox.Properties.Items.Add("--");
-                foreach (string gender in CommonConstant.GioiTinh)
+                foreach (string hk in CommonConstant.HocKy)
                 {
-                    comboBox.Properties.Items.Add(gender);
+                    comboBox.Properties.Items.Add(hk);
                 }
             }
             else
             {
-                foreach (string gender in CommonConstant.GioiTinh)
+                foreach (string hk in CommonConstant.HocKy)
                 {
-                    comboBox.Properties.Items.Add(gender);
+                    comboBox.Properties.Items.Add(hk);
                 }
             }
         }
@@ -136,24 +190,52 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             }
         }
 
-        /// <summary>
-        /// Tạo câu query phục vụ tìm kiếm trong DataTable
-        /// </summary>
-        /// <param name="paramsMap"></param>
-        /// <returns></returns>
-        public String MakeFilterCondition(Dictionary<String, object> paramsMap)
+        public static AutoCompleteStringCollection AutoCompleteDSPhongCollection(ql_KTXDataSet.PHONGDataTable phongDataTable)
         {
-            String filterCondition = "";
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
 
-            if(paramsMap != null && paramsMap.Count != 0)
+            foreach (DataRow row in phongDataTable.Rows)
             {
-                foreach (KeyValuePair<String, object> cond in paramsMap)
-                {
-                    filterCondition += cond.Key + "LIKE %" + cond.Value + "%"; 
-                }
+                collection.Add(row["MAPHONG"] as String);
             }
 
-            return filterCondition;
+            return collection;
+        }
+
+        public static AutoCompleteStringCollection AutoCompleteDSQuanLyCollection(ql_KTXDataSet.QUANLYDataTable quanLyTable)
+        {
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            foreach (DataRow row in quanLyTable.Rows)
+            {
+                collection.Add(row["MAQL"] as String);
+            }
+
+            return collection;
+        }
+
+        public static AutoCompleteStringCollection AutoCompleteDSMaHDCollection(ql_KTXDataSet.HOPDONGDataTable hopDongTable)
+        {
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            foreach (DataRow row in hopDongTable.Rows)
+            {
+                collection.Add(row["MAHD"] as String);
+            }
+
+            return collection;
+        }
+
+        public static AutoCompleteStringCollection AutoCompleteDSMaSVCollection(ql_KTXDataSet.SINHVIENDataTable sinhVienTable)
+        {
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            foreach (DataRow row in sinhVienTable.Rows)
+            {
+                collection.Add(row["MASV"] as String);
+            }
+
+            return collection;
         }
     }
 }

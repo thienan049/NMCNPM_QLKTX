@@ -1,5 +1,5 @@
 ﻿
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
 {
     partial class UC_QuanLySinhVien
     {
@@ -31,12 +31,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLySinhVien));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.QLSV_HeaderPanel = new DevExpress.XtraEditors.PanelControl();
             this.QLSV_HeaderNavigationTab = new DevExpress.XtraBars.Navigation.TabPane();
@@ -48,6 +48,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_Save_Btn = new DevExpress.XtraEditors.SimpleButton();
             this.QLSV_Add_Btn = new DevExpress.XtraEditors.SimpleButton();
             this.QLSV_HeaderNavFilterTab = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.QLSV_FilterClearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.QLSV_FilterSearchBtn = new DevExpress.XtraEditors.SimpleButton();
             this.QLSV_Filter_MaQLTxt = new DevExpress.XtraEditors.TextEdit();
             this.QLSV_Filter_MaQLLbl = new DevExpress.XtraEditors.LabelControl();
@@ -89,24 +90,26 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_CustomViewSettingBtn = new DevExpress.XtraEditors.PictureEdit();
             this.SinhVienTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SINHVIENTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
-            this.QLSV_GridControl = new DevExpress.XtraGrid.GridControl();
+            this.colVIPHAMNOIQUY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HopDongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.HOPDONGTableAdapter();
+            this.FK_HopDong_SinhVienBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.QLSV_GioiTinhCb_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.QLSV_NgaySinhDateEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.QLSV_SDTTextEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.QLSV_View_GridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colXETDIEUKIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.QLSV_NgaySinhDateEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colMAQL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.QLSV_SDTTextEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.QLSV_GioiTinhCb_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colVIPHAMNOIQUY1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colVIPHAMNOIQUY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HopDongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.HOPDONGTableAdapter();
-            this.FK_HopDong_SinhVienBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.QLSV_MainGridControl = new DevExpress.XtraGrid.GridControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_HeaderPanel)).BeginInit();
             this.QLSV_HeaderPanel.SuspendLayout();
@@ -143,13 +146,16 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_CustomViewSettingSidePane)).BeginInit();
             this.QLSV_CustomViewSettingSidePane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_CustomViewSettingBtn.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_View_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FK_HopDong_SinhVienBdS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GioiTinhCb_RepoItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_NgaySinhDateEd_RepoItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_SDTTextEd_RepoItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GioiTinhCb_RepoItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FK_HopDong_SinhVienBdS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_View_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_MainGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // repositoryItemMemoEdit1
@@ -188,7 +194,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_HeaderNavActionTab.Caption = "Action";
             this.QLSV_HeaderNavActionTab.Controls.Add(this.QLSV_ActionBtn_Panel);
             this.QLSV_HeaderNavActionTab.Name = "QLSV_HeaderNavActionTab";
-            this.QLSV_HeaderNavActionTab.Size = new System.Drawing.Size(840, 58);
+            this.QLSV_HeaderNavActionTab.Size = new System.Drawing.Size(956, 58);
             // 
             // QLSV_ActionBtn_Panel
             // 
@@ -282,6 +288,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // QLSV_HeaderNavFilterTab
             // 
             this.QLSV_HeaderNavFilterTab.Caption = "Filter";
+            this.QLSV_HeaderNavFilterTab.Controls.Add(this.QLSV_FilterClearBtn);
             this.QLSV_HeaderNavFilterTab.Controls.Add(this.QLSV_FilterSearchBtn);
             this.QLSV_HeaderNavFilterTab.Controls.Add(this.QLSV_Filter_MaQLTxt);
             this.QLSV_HeaderNavFilterTab.Controls.Add(this.QLSV_Filter_MaQLLbl);
@@ -310,13 +317,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_HeaderNavFilterTab.Name = "QLSV_HeaderNavFilterTab";
             this.QLSV_HeaderNavFilterTab.Size = new System.Drawing.Size(956, 58);
             // 
+            // QLSV_FilterClearBtn
+            // 
+            this.QLSV_FilterClearBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLSV_FilterClearBtn.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.QLSV_FilterClearBtn.Appearance.Options.UseFont = true;
+            this.QLSV_FilterClearBtn.Appearance.Options.UseForeColor = true;
+            this.QLSV_FilterClearBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.QLSV_FilterClearBtn.AppearanceHovered.Options.UseBackColor = true;
+            this.QLSV_FilterClearBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.QLSV_FilterClearBtn.Location = new System.Drawing.Point(837, 32);
+            this.QLSV_FilterClearBtn.Name = "QLSV_FilterClearBtn";
+            this.QLSV_FilterClearBtn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.QLSV_FilterClearBtn.Size = new System.Drawing.Size(22, 23);
+            this.QLSV_FilterClearBtn.StyleController = this.QLSV_BtnStyle_StyleCtl;
+            this.QLSV_FilterClearBtn.TabIndex = 30;
+            this.QLSV_FilterClearBtn.Text = "X";
+            this.QLSV_FilterClearBtn.ToolTip = "Clear filter";
+            this.QLSV_FilterClearBtn.Click += new System.EventHandler(this.QLSV_FilterClearBtn_Click);
+            // 
             // QLSV_FilterSearchBtn
             // 
             this.QLSV_FilterSearchBtn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(244)))), ((int)(((byte)(207)))));
             this.QLSV_FilterSearchBtn.AppearanceHovered.Options.UseBackColor = true;
             this.QLSV_FilterSearchBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.QLSV_FilterSearchBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("QLSV_FilterSearchBtn.ImageOptions.Image")));
-            this.QLSV_FilterSearchBtn.Location = new System.Drawing.Point(867, 20);
+            this.QLSV_FilterSearchBtn.Location = new System.Drawing.Point(873, 20);
             this.QLSV_FilterSearchBtn.Name = "QLSV_FilterSearchBtn";
             this.QLSV_FilterSearchBtn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.QLSV_FilterSearchBtn.Size = new System.Drawing.Size(75, 23);
@@ -327,7 +353,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             // QLSV_Filter_MaQLTxt
             // 
-            this.QLSV_Filter_MaQLTxt.Location = new System.Drawing.Point(674, 33);
+            this.QLSV_Filter_MaQLTxt.Location = new System.Drawing.Point(775, 33);
             this.QLSV_Filter_MaQLTxt.Name = "QLSV_Filter_MaQLTxt";
             this.QLSV_Filter_MaQLTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_MaQLTxt.Properties.Appearance.Options.UseFont = true;
@@ -338,7 +364,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_MaQLLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_MaQLLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_MaQLLbl.Location = new System.Drawing.Point(634, 36);
+            this.QLSV_Filter_MaQLLbl.Location = new System.Drawing.Point(735, 36);
             this.QLSV_Filter_MaQLLbl.Name = "QLSV_Filter_MaQLLbl";
             this.QLSV_Filter_MaQLLbl.Size = new System.Drawing.Size(37, 13);
             this.QLSV_Filter_MaQLLbl.TabIndex = 27;
@@ -350,7 +376,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_Filter_XetDKChk.Checked = true;
             this.QLSV_Filter_XetDKChk.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.QLSV_Filter_XetDKChk.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QLSV_Filter_XetDKChk.Location = new System.Drawing.Point(444, 10);
+            this.QLSV_Filter_XetDKChk.Location = new System.Drawing.Point(801, 10);
             this.QLSV_Filter_XetDKChk.Name = "QLSV_Filter_XetDKChk";
             this.QLSV_Filter_XetDKChk.Size = new System.Drawing.Size(15, 14);
             this.QLSV_Filter_XetDKChk.TabIndex = 26;
@@ -359,30 +385,30 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             // QLSV_Filter_GioiTinhCb
             // 
-            this.QLSV_Filter_GioiTinhCb.Location = new System.Drawing.Point(185, 33);
+            this.QLSV_Filter_GioiTinhCb.Location = new System.Drawing.Point(195, 33);
             this.QLSV_Filter_GioiTinhCb.Name = "QLSV_Filter_GioiTinhCb";
             this.QLSV_Filter_GioiTinhCb.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_GioiTinhCb.Properties.Appearance.Options.UseFont = true;
             this.QLSV_Filter_GioiTinhCb.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.QLSV_Filter_GioiTinhCb.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.QLSV_Filter_GioiTinhCb.Size = new System.Drawing.Size(61, 20);
+            this.QLSV_Filter_GioiTinhCb.Size = new System.Drawing.Size(65, 20);
             this.QLSV_Filter_GioiTinhCb.TabIndex = 23;
             // 
             // QLSV_Filter_DiaChiTxt
             // 
-            this.QLSV_Filter_DiaChiTxt.Location = new System.Drawing.Point(444, 33);
+            this.QLSV_Filter_DiaChiTxt.Location = new System.Drawing.Point(484, 33);
             this.QLSV_Filter_DiaChiTxt.Name = "QLSV_Filter_DiaChiTxt";
             this.QLSV_Filter_DiaChiTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_DiaChiTxt.Properties.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_DiaChiTxt.Size = new System.Drawing.Size(184, 20);
+            this.QLSV_Filter_DiaChiTxt.Size = new System.Drawing.Size(240, 20);
             this.QLSV_Filter_DiaChiTxt.TabIndex = 22;
             // 
             // QLSV_Filter_DiaChiLbl
             // 
             this.QLSV_Filter_DiaChiLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_DiaChiLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_DiaChiLbl.Location = new System.Drawing.Point(399, 36);
+            this.QLSV_Filter_DiaChiLbl.Location = new System.Drawing.Point(439, 36);
             this.QLSV_Filter_DiaChiLbl.Name = "QLSV_Filter_DiaChiLbl";
             this.QLSV_Filter_DiaChiLbl.Size = new System.Drawing.Size(41, 13);
             this.QLSV_Filter_DiaChiLbl.TabIndex = 21;
@@ -391,7 +417,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // QLSV_Filter_NamSinhDate
             // 
             this.QLSV_Filter_NamSinhDate.EditValue = null;
-            this.QLSV_Filter_NamSinhDate.Location = new System.Drawing.Point(674, 7);
+            this.QLSV_Filter_NamSinhDate.Location = new System.Drawing.Point(664, 6);
             this.QLSV_Filter_NamSinhDate.Name = "QLSV_Filter_NamSinhDate";
             this.QLSV_Filter_NamSinhDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_NamSinhDate.Properties.Appearance.Options.UseFont = true;
@@ -405,14 +431,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_Filter_NamSinhDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.QLSV_Filter_NamSinhDate.Properties.Mask.EditMask = "yyyy";
             this.QLSV_Filter_NamSinhDate.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.QLSV_Filter_NamSinhDate.Size = new System.Drawing.Size(58, 20);
+            this.QLSV_Filter_NamSinhDate.Size = new System.Drawing.Size(60, 20);
             this.QLSV_Filter_NamSinhDate.TabIndex = 20;
             // 
             // QLSV_Filter_NamSinhLbl
             // 
             this.QLSV_Filter_NamSinhLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_NamSinhLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_NamSinhLbl.Location = new System.Drawing.Point(643, 10);
+            this.QLSV_Filter_NamSinhLbl.Location = new System.Drawing.Point(633, 9);
             this.QLSV_Filter_NamSinhLbl.Name = "QLSV_Filter_NamSinhLbl";
             this.QLSV_Filter_NamSinhLbl.Size = new System.Drawing.Size(28, 13);
             this.QLSV_Filter_NamSinhLbl.TabIndex = 19;
@@ -421,7 +447,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // QLSV_Filter_ThangSinhDate
             // 
             this.QLSV_Filter_ThangSinhDate.EditValue = null;
-            this.QLSV_Filter_ThangSinhDate.Location = new System.Drawing.Point(592, 7);
+            this.QLSV_Filter_ThangSinhDate.Location = new System.Drawing.Point(578, 7);
             this.QLSV_Filter_ThangSinhDate.Name = "QLSV_Filter_ThangSinhDate";
             this.QLSV_Filter_ThangSinhDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_ThangSinhDate.Properties.Appearance.Options.UseFont = true;
@@ -442,7 +468,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_ThangSinhLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_ThangSinhLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_ThangSinhLbl.Location = new System.Drawing.Point(551, 10);
+            this.QLSV_Filter_ThangSinhLbl.Location = new System.Drawing.Point(537, 10);
             this.QLSV_Filter_ThangSinhLbl.Name = "QLSV_Filter_ThangSinhLbl";
             this.QLSV_Filter_ThangSinhLbl.Size = new System.Drawing.Size(38, 13);
             this.QLSV_Filter_ThangSinhLbl.TabIndex = 17;
@@ -451,7 +477,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // QLSV_Filter_NgaySinhDate
             // 
             this.QLSV_Filter_NgaySinhDate.EditValue = null;
-            this.QLSV_Filter_NgaySinhDate.Location = new System.Drawing.Point(498, 7);
+            this.QLSV_Filter_NgaySinhDate.Location = new System.Drawing.Point(484, 7);
             this.QLSV_Filter_NgaySinhDate.Name = "QLSV_Filter_NgaySinhDate";
             this.QLSV_Filter_NgaySinhDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_NgaySinhDate.Properties.Appearance.Options.UseFont = true;
@@ -470,18 +496,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             // QLSV_Filter_VPNQTxt
             // 
-            this.QLSV_Filter_VPNQTxt.Location = new System.Drawing.Point(292, 33);
+            this.QLSV_Filter_VPNQTxt.Location = new System.Drawing.Point(307, 33);
             this.QLSV_Filter_VPNQTxt.Name = "QLSV_Filter_VPNQTxt";
             this.QLSV_Filter_VPNQTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_VPNQTxt.Properties.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_VPNQTxt.Size = new System.Drawing.Size(100, 20);
+            this.QLSV_Filter_VPNQTxt.Size = new System.Drawing.Size(121, 20);
             this.QLSV_Filter_VPNQTxt.TabIndex = 15;
             // 
             // QLSV_Filter_VPNQLbl
             // 
             this.QLSV_Filter_VPNQLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_VPNQLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_VPNQLbl.Location = new System.Drawing.Point(255, 36);
+            this.QLSV_Filter_VPNQLbl.Location = new System.Drawing.Point(270, 36);
             this.QLSV_Filter_VPNQLbl.Name = "QLSV_Filter_VPNQLbl";
             this.QLSV_Filter_VPNQLbl.Size = new System.Drawing.Size(32, 13);
             this.QLSV_Filter_VPNQLbl.TabIndex = 14;
@@ -491,7 +517,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_XetDKLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_XetDKLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_XetDKLbl.Location = new System.Drawing.Point(399, 10);
+            this.QLSV_Filter_XetDKLbl.Location = new System.Drawing.Point(736, 10);
             this.QLSV_Filter_XetDKLbl.Name = "QLSV_Filter_XetDKLbl";
             this.QLSV_Filter_XetDKLbl.Size = new System.Drawing.Size(41, 13);
             this.QLSV_Filter_XetDKLbl.TabIndex = 12;
@@ -501,7 +527,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_GioiTinhLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_GioiTinhLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_GioiTinhLbl.Location = new System.Drawing.Point(132, 36);
+            this.QLSV_Filter_GioiTinhLbl.Location = new System.Drawing.Point(142, 36);
             this.QLSV_Filter_GioiTinhLbl.Name = "QLSV_Filter_GioiTinhLbl";
             this.QLSV_Filter_GioiTinhLbl.Size = new System.Drawing.Size(49, 13);
             this.QLSV_Filter_GioiTinhLbl.TabIndex = 10;
@@ -511,10 +537,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_SDTTxt.Location = new System.Drawing.Point(48, 33);
             this.QLSV_Filter_SDTTxt.Name = "QLSV_Filter_SDTTxt";
+            this.QLSV_Filter_SDTTxt.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.QLSV_Filter_SDTTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_SDTTxt.Properties.Appearance.Options.UseFont = true;
+            this.QLSV_Filter_SDTTxt.Properties.Mask.EditMask = "\\d*";
+            this.QLSV_Filter_SDTTxt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.QLSV_Filter_SDTTxt.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.QLSV_Filter_SDTTxt.Properties.MaxLength = 10;
-            this.QLSV_Filter_SDTTxt.Size = new System.Drawing.Size(77, 20);
+            this.QLSV_Filter_SDTTxt.Size = new System.Drawing.Size(85, 20);
             this.QLSV_Filter_SDTTxt.TabIndex = 9;
             // 
             // QLSV_Filter_SDTLbl
@@ -531,7 +561,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             this.QLSV_Filter_NgaySinhLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_NgaySinhLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_NgaySinhLbl.Location = new System.Drawing.Point(463, 10);
+            this.QLSV_Filter_NgaySinhLbl.Location = new System.Drawing.Point(449, 10);
             this.QLSV_Filter_NgaySinhLbl.Name = "QLSV_Filter_NgaySinhLbl";
             this.QLSV_Filter_NgaySinhLbl.Size = new System.Drawing.Size(31, 13);
             this.QLSV_Filter_NgaySinhLbl.TabIndex = 6;
@@ -539,18 +569,22 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             // QLSV_Filter_TenTxt
             // 
-            this.QLSV_Filter_TenTxt.Location = new System.Drawing.Point(292, 7);
+            this.QLSV_Filter_TenTxt.Location = new System.Drawing.Point(307, 7);
             this.QLSV_Filter_TenTxt.Name = "QLSV_Filter_TenTxt";
             this.QLSV_Filter_TenTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_TenTxt.Properties.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_TenTxt.Size = new System.Drawing.Size(100, 20);
+            this.QLSV_Filter_TenTxt.Properties.Mask.EditMask = "([aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉ" +
+    "ỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪử" +
+    "ỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ\']+\\s?)+";
+            this.QLSV_Filter_TenTxt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.QLSV_Filter_TenTxt.Size = new System.Drawing.Size(121, 20);
             this.QLSV_Filter_TenTxt.TabIndex = 5;
             // 
             // QLSV_Filter_TenLbl
             // 
             this.QLSV_Filter_TenLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_TenLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_TenLbl.Location = new System.Drawing.Point(264, 10);
+            this.QLSV_Filter_TenLbl.Location = new System.Drawing.Point(279, 10);
             this.QLSV_Filter_TenLbl.Name = "QLSV_Filter_TenLbl";
             this.QLSV_Filter_TenLbl.Size = new System.Drawing.Size(24, 13);
             this.QLSV_Filter_TenLbl.TabIndex = 4;
@@ -558,18 +592,22 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             // 
             // QLSV_Filter_HoTxt
             // 
-            this.QLSV_Filter_HoTxt.Location = new System.Drawing.Point(185, 7);
+            this.QLSV_Filter_HoTxt.Location = new System.Drawing.Point(195, 7);
             this.QLSV_Filter_HoTxt.Name = "QLSV_Filter_HoTxt";
             this.QLSV_Filter_HoTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_HoTxt.Properties.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_HoTxt.Size = new System.Drawing.Size(61, 20);
+            this.QLSV_Filter_HoTxt.Properties.Mask.EditMask = "([aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉ" +
+    "ỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪử" +
+    "ỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ\']+\\s?)+";
+            this.QLSV_Filter_HoTxt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.QLSV_Filter_HoTxt.Size = new System.Drawing.Size(65, 20);
             this.QLSV_Filter_HoTxt.TabIndex = 3;
             // 
             // QLSV_Filter_HoLbl
             // 
             this.QLSV_Filter_HoLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_HoLbl.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_HoLbl.Location = new System.Drawing.Point(162, 10);
+            this.QLSV_Filter_HoLbl.Location = new System.Drawing.Point(172, 10);
             this.QLSV_Filter_HoLbl.Name = "QLSV_Filter_HoLbl";
             this.QLSV_Filter_HoLbl.Size = new System.Drawing.Size(18, 13);
             this.QLSV_Filter_HoLbl.TabIndex = 2;
@@ -581,7 +619,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_Filter_MaSVTxt.Name = "QLSV_Filter_MaSVTxt";
             this.QLSV_Filter_MaSVTxt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_Filter_MaSVTxt.Properties.Appearance.Options.UseFont = true;
-            this.QLSV_Filter_MaSVTxt.Size = new System.Drawing.Size(77, 20);
+            this.QLSV_Filter_MaSVTxt.Size = new System.Drawing.Size(85, 20);
             this.QLSV_Filter_MaSVTxt.TabIndex = 1;
             // 
             // QLSV_Filter_MaSVLbl
@@ -599,28 +637,28 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_HeaderNavViewTab.Caption = "View";
             this.QLSV_HeaderNavViewTab.Controls.Add(this.QLSV_ChangeViewBtnPanel);
             this.QLSV_HeaderNavViewTab.Name = "QLSV_HeaderNavViewTab";
-            this.QLSV_HeaderNavViewTab.Size = new System.Drawing.Size(840, 58);
+            this.QLSV_HeaderNavViewTab.Size = new System.Drawing.Size(956, 58);
             // 
             // QLSV_ChangeViewBtnPanel
             // 
             this.QLSV_ChangeViewBtnPanel.AllowGlyphSkinning = false;
             this.QLSV_ChangeViewBtnPanel.BackColor = System.Drawing.Color.Transparent;
             this.QLSV_ChangeViewBtnPanel.ButtonInterval = 50;
-            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
-            windowsUIButtonImageOptions1.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
-            windowsUIButtonImageOptions2.SvgImageSize = new System.Drawing.Size(25, 25);
-            windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
-            windowsUIButtonImageOptions3.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
-            windowsUIButtonImageOptions4.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions7.SvgImage")));
+            windowsUIButtonImageOptions7.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions8.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions8.SvgImage")));
+            windowsUIButtonImageOptions8.SvgImageSize = new System.Drawing.Size(25, 25);
+            windowsUIButtonImageOptions9.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions9.SvgImage")));
+            windowsUIButtonImageOptions9.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions10.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions10.SvgImage")));
+            windowsUIButtonImageOptions10.SvgImageSize = new System.Drawing.Size(28, 25);
             this.QLSV_ChangeViewBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLSV_ChangeViewBtnPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.QLSV_ChangeViewBtnPanel.Location = new System.Drawing.Point(467, 0);
+            this.QLSV_ChangeViewBtnPanel.Location = new System.Drawing.Point(583, 0);
             this.QLSV_ChangeViewBtnPanel.Name = "QLSV_ChangeViewBtnPanel";
             this.QLSV_ChangeViewBtnPanel.Size = new System.Drawing.Size(373, 58);
             this.QLSV_ChangeViewBtnPanel.TabIndex = 4;
@@ -645,7 +683,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_CVSControlsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.QLSV_CVSControlsPanel.Location = new System.Drawing.Point(0, 30);
             this.QLSV_CVSControlsPanel.Name = "QLSV_CVSControlsPanel";
-            this.QLSV_CVSControlsPanel.Size = new System.Drawing.Size(30, 549);
+            this.QLSV_CVSControlsPanel.Size = new System.Drawing.Size(30, 514);
             this.QLSV_CVSControlsPanel.TabIndex = 0;
             this.QLSV_CVSControlsPanel.Visible = false;
             // 
@@ -710,13 +748,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_CVSRowStyleBtn.AllowGlyphSkinning = false;
             this.QLSV_CVSRowStyleBtn.AutoSizeInLayoutControl = false;
             this.QLSV_CVSRowStyleBtn.ButtonInterval = 15;
-            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
-            windowsUIButtonImageOptions5.SvgImageSize = new System.Drawing.Size(30, 30);
-            windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
-            windowsUIButtonImageOptions6.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions11.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions11.SvgImage")));
+            windowsUIButtonImageOptions11.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions12.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions12.SvgImage")));
+            windowsUIButtonImageOptions12.SvgImageSize = new System.Drawing.Size(30, 30);
             this.QLSV_CVSRowStyleBtn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLSV_CVSRowStyleBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.QLSV_CVSRowStyleBtn.Location = new System.Drawing.Point(0, 18);
             this.QLSV_CVSRowStyleBtn.Name = "QLSV_CVSRowStyleBtn";
@@ -752,9 +790,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_CustomViewSettingSidePane.Controls.Add(this.QLSV_CVSControlsPanel);
             this.QLSV_CustomViewSettingSidePane.Controls.Add(this.QLSV_CustomViewSettingBtn);
             this.QLSV_CustomViewSettingSidePane.Dock = System.Windows.Forms.DockStyle.Left;
-            this.QLSV_CustomViewSettingSidePane.Location = new System.Drawing.Point(0, 91);
+            this.QLSV_CustomViewSettingSidePane.Location = new System.Drawing.Point(2, 2);
             this.QLSV_CustomViewSettingSidePane.Name = "QLSV_CustomViewSettingSidePane";
-            this.QLSV_CustomViewSettingSidePane.Size = new System.Drawing.Size(30, 579);
+            this.QLSV_CustomViewSettingSidePane.Size = new System.Drawing.Size(30, 544);
             this.QLSV_CustomViewSettingSidePane.TabIndex = 3;
             // 
             // QLSV_CustomViewSettingBtn
@@ -797,22 +835,62 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.VT_PHONGTableAdapter = null;
             // 
-            // QLSV_GridControl
+            // colVIPHAMNOIQUY
             // 
-            this.QLSV_GridControl.DataSource = this.SinhVienBdS;
-            this.QLSV_GridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QLSV_GridControl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QLSV_GridControl.Location = new System.Drawing.Point(30, 91);
-            this.QLSV_GridControl.MainView = this.QLSV_View_GridView;
-            this.QLSV_GridControl.Name = "QLSV_GridControl";
-            this.QLSV_GridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.QLSV_GioiTinhCb_RepoItem,
-            this.QLSV_NgaySinhDateEd_RepoItem,
-            this.QLSV_SDTTextEd_RepoItem});
-            this.QLSV_GridControl.Size = new System.Drawing.Size(930, 579);
-            this.QLSV_GridControl.TabIndex = 4;
-            this.QLSV_GridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.QLSV_View_GridView});
+            this.colVIPHAMNOIQUY.Caption = "Vi phạm NQ";
+            this.colVIPHAMNOIQUY.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colVIPHAMNOIQUY.FieldName = "VIPHAMNOIQUY";
+            this.colVIPHAMNOIQUY.Name = "colVIPHAMNOIQUY";
+            this.colVIPHAMNOIQUY.OptionsEditForm.CaptionLocation = DevExpress.XtraGrid.EditForm.EditFormColumnCaptionLocation.Near;
+            this.colVIPHAMNOIQUY.OptionsEditForm.ColumnSpan = 3;
+            this.colVIPHAMNOIQUY.OptionsEditForm.RowSpan = 3;
+            this.colVIPHAMNOIQUY.OptionsEditForm.StartNewRow = true;
+            this.colVIPHAMNOIQUY.OptionsEditForm.UseEditorColRowSpan = false;
+            this.colVIPHAMNOIQUY.Visible = true;
+            this.colVIPHAMNOIQUY.VisibleIndex = 8;
+            // 
+            // HopDongTableAdapter
+            // 
+            this.HopDongTableAdapter.ClearBeforeFill = true;
+            // 
+            // FK_HopDong_SinhVienBdS
+            // 
+            this.FK_HopDong_SinhVienBdS.DataMember = "FK_HOPDONG_SINHVIEN";
+            this.FK_HopDong_SinhVienBdS.DataSource = this.SinhVienBdS;
+            // 
+            // QLSV_GioiTinhCb_RepoItem
+            // 
+            this.QLSV_GioiTinhCb_RepoItem.AutoHeight = false;
+            this.QLSV_GioiTinhCb_RepoItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.QLSV_GioiTinhCb_RepoItem.Name = "QLSV_GioiTinhCb_RepoItem";
+            this.QLSV_GioiTinhCb_RepoItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
+            // QLSV_NgaySinhDateEd_RepoItem
+            // 
+            this.QLSV_NgaySinhDateEd_RepoItem.AutoHeight = false;
+            this.QLSV_NgaySinhDateEd_RepoItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.Mask.EditMask = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.QLSV_NgaySinhDateEd_RepoItem.EditFormat.FormatString = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.QLSV_NgaySinhDateEd_RepoItem.Mask.EditMask = "dd/MM/yyyy";
+            this.QLSV_NgaySinhDateEd_RepoItem.Mask.UseMaskAsDisplayFormat = true;
+            this.QLSV_NgaySinhDateEd_RepoItem.MaxValue = new System.DateTime(2004, 12, 31, 0, 0, 0, 0);
+            this.QLSV_NgaySinhDateEd_RepoItem.MinValue = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            this.QLSV_NgaySinhDateEd_RepoItem.Name = "QLSV_NgaySinhDateEd_RepoItem";
+            // 
+            // QLSV_SDTTextEd_RepoItem
+            // 
+            this.QLSV_SDTTextEd_RepoItem.AutoHeight = false;
+            this.QLSV_SDTTextEd_RepoItem.MaxLength = 10;
+            this.QLSV_SDTTextEd_RepoItem.Name = "QLSV_SDTTextEd_RepoItem";
             // 
             // QLSV_View_GridView
             // 
@@ -830,6 +908,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.QLSV_View_GridView.Appearance.SelectedRow.Options.UseFont = true;
             this.QLSV_View_GridView.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QLSV_View_GridView.Appearance.ViewCaption.Options.UseFont = true;
+            this.QLSV_View_GridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.QLSV_View_GridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMASV,
             this.colXETDIEUKIEN,
@@ -841,13 +920,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colGIOITINH,
             this.colVIPHAMNOIQUY1,
             this.colDIACHI});
-            this.QLSV_View_GridView.GridControl = this.QLSV_GridControl;
+            this.QLSV_View_GridView.GridControl = this.QLSV_MainGridControl;
             this.QLSV_View_GridView.Name = "QLSV_View_GridView";
             this.QLSV_View_GridView.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
             this.QLSV_View_GridView.OptionsEditForm.EditFormColumnCount = 4;
             this.QLSV_View_GridView.OptionsSelection.EnableAppearanceHideSelection = false;
             this.QLSV_View_GridView.OptionsView.AllowGlyphSkinning = true;
             this.QLSV_View_GridView.OptionsView.ShowGroupPanel = false;
+            this.QLSV_View_GridView.OptionsView.ShowIndicator = false;
             this.QLSV_View_GridView.EditFormPrepared += new DevExpress.XtraGrid.Views.Grid.EditFormPreparedEventHandler(this.QLSV_View_GridView_EditFormPrepared);
             this.QLSV_View_GridView.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.QLSV_View_GridView_ValidatingEditor);
             this.QLSV_View_GridView.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.QLSV_View_GridView_InvalidValueException);
@@ -894,31 +974,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 3;
             // 
-            // QLSV_NgaySinhDateEd_RepoItem
-            // 
-            this.QLSV_NgaySinhDateEd_RepoItem.AutoHeight = false;
-            this.QLSV_NgaySinhDateEd_RepoItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties.Mask.EditMask = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.QLSV_NgaySinhDateEd_RepoItem.EditFormat.FormatString = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.QLSV_NgaySinhDateEd_RepoItem.Mask.EditMask = "dd/MM/yyyy";
-            this.QLSV_NgaySinhDateEd_RepoItem.Mask.UseMaskAsDisplayFormat = true;
-            this.QLSV_NgaySinhDateEd_RepoItem.MaxValue = new System.DateTime(2004, 12, 31, 0, 0, 0, 0);
-            this.QLSV_NgaySinhDateEd_RepoItem.MinValue = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
-            this.QLSV_NgaySinhDateEd_RepoItem.Name = "QLSV_NgaySinhDateEd_RepoItem";
-            // 
             // colMAQL
             // 
             this.colMAQL.Caption = "Mã QL";
             this.colMAQL.FieldName = "MAQL";
             this.colMAQL.Name = "colMAQL";
+            this.colMAQL.OptionsColumn.ReadOnly = true;
             this.colMAQL.Visible = true;
             this.colMAQL.VisibleIndex = 9;
             // 
@@ -931,12 +992,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 5;
             // 
-            // QLSV_SDTTextEd_RepoItem
-            // 
-            this.QLSV_SDTTextEd_RepoItem.AutoHeight = false;
-            this.QLSV_SDTTextEd_RepoItem.MaxLength = 10;
-            this.QLSV_SDTTextEd_RepoItem.Name = "QLSV_SDTTextEd_RepoItem";
-            // 
             // colGIOITINH
             // 
             this.colGIOITINH.Caption = "Giới tính";
@@ -945,14 +1000,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colGIOITINH.Name = "colGIOITINH";
             this.colGIOITINH.Visible = true;
             this.colGIOITINH.VisibleIndex = 6;
-            // 
-            // QLSV_GioiTinhCb_RepoItem
-            // 
-            this.QLSV_GioiTinhCb_RepoItem.AutoHeight = false;
-            this.QLSV_GioiTinhCb_RepoItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.QLSV_GioiTinhCb_RepoItem.Name = "QLSV_GioiTinhCb_RepoItem";
-            this.QLSV_GioiTinhCb_RepoItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // colVIPHAMNOIQUY1
             // 
@@ -974,35 +1021,47 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
             // 
-            // colVIPHAMNOIQUY
+            // QLSV_MainGridControl
             // 
-            this.colVIPHAMNOIQUY.Caption = "Vi phạm NQ";
-            this.colVIPHAMNOIQUY.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.colVIPHAMNOIQUY.FieldName = "VIPHAMNOIQUY";
-            this.colVIPHAMNOIQUY.Name = "colVIPHAMNOIQUY";
-            this.colVIPHAMNOIQUY.OptionsEditForm.CaptionLocation = DevExpress.XtraGrid.EditForm.EditFormColumnCaptionLocation.Near;
-            this.colVIPHAMNOIQUY.OptionsEditForm.ColumnSpan = 3;
-            this.colVIPHAMNOIQUY.OptionsEditForm.RowSpan = 3;
-            this.colVIPHAMNOIQUY.OptionsEditForm.StartNewRow = true;
-            this.colVIPHAMNOIQUY.OptionsEditForm.UseEditorColRowSpan = false;
-            this.colVIPHAMNOIQUY.Visible = true;
-            this.colVIPHAMNOIQUY.VisibleIndex = 8;
+            this.QLSV_MainGridControl.DataSource = this.SinhVienBdS;
+            this.QLSV_MainGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QLSV_MainGridControl.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLSV_MainGridControl.Location = new System.Drawing.Point(32, 2);
+            this.QLSV_MainGridControl.MainView = this.QLSV_View_GridView;
+            this.QLSV_MainGridControl.Name = "QLSV_MainGridControl";
+            this.QLSV_MainGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.QLSV_GioiTinhCb_RepoItem,
+            this.QLSV_NgaySinhDateEd_RepoItem,
+            this.QLSV_SDTTextEd_RepoItem});
+            this.QLSV_MainGridControl.Size = new System.Drawing.Size(926, 544);
+            this.QLSV_MainGridControl.TabIndex = 4;
+            this.QLSV_MainGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.QLSV_View_GridView});
             // 
-            // HopDongTableAdapter
+            // panelControl1
             // 
-            this.HopDongTableAdapter.ClearBeforeFill = true;
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 639);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(960, 31);
+            this.panelControl1.TabIndex = 5;
             // 
-            // FK_HopDong_SinhVienBdS
+            // panelControl2
             // 
-            this.FK_HopDong_SinhVienBdS.DataMember = "FK_HOPDONG_SINHVIEN";
-            this.FK_HopDong_SinhVienBdS.DataSource = this.SinhVienBdS;
+            this.panelControl2.Controls.Add(this.QLSV_MainGridControl);
+            this.panelControl2.Controls.Add(this.QLSV_CustomViewSettingSidePane);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 91);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(960, 548);
+            this.panelControl2.TabIndex = 6;
             // 
             // UC_QuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.QLSV_GridControl);
-            this.Controls.Add(this.QLSV_CustomViewSettingSidePane);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.QLSV_HeaderPanel);
             this.Name = "UC_QuanLySinhVien";
             this.Size = new System.Drawing.Size(960, 670);
@@ -1044,13 +1103,16 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_CustomViewSettingSidePane)).EndInit();
             this.QLSV_CustomViewSettingSidePane.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_CustomViewSettingBtn.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_View_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FK_HopDong_SinhVienBdS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GioiTinhCb_RepoItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_NgaySinhDateEd_RepoItem.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_NgaySinhDateEd_RepoItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLSV_SDTTextEd_RepoItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLSV_GioiTinhCb_RepoItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FK_HopDong_SinhVienBdS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_View_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLSV_MainGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1074,22 +1136,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private System.Windows.Forms.BindingSource SinhVienBdS;
         private ql_KTXDataSetTableAdapters.SINHVIENTableAdapter SinhVienTableAdapter;
         private ql_KTXDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl QLSV_GridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView QLSV_View_GridView;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox QLSV_GioiTinhCb_RepoItem;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit QLSV_NgaySinhDateEd_RepoItem;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit QLSV_SDTTextEd_RepoItem;
         private DevExpress.XtraGrid.Columns.GridColumn colVIPHAMNOIQUY;
-        private DevExpress.XtraGrid.Columns.GridColumn colMASV;
-        private DevExpress.XtraGrid.Columns.GridColumn colHO;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEN;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
-        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
-        private DevExpress.XtraGrid.Columns.GridColumn colXETDIEUKIEN;
-        private DevExpress.XtraGrid.Columns.GridColumn colVIPHAMNOIQUY1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAQL;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private ql_KTXDataSetTableAdapters.HOPDONGTableAdapter HopDongTableAdapter;
         private System.Windows.Forms.BindingSource FK_HopDong_SinhVienBdS;
@@ -1110,7 +1157,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_NgaySinhLbl;
         private DevExpress.XtraEditors.TextEdit QLSV_Filter_VPNQTxt;
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_VPNQLbl;
-        private DevExpress.XtraEditors.LabelControl QLSV_Filter_XetDKLbl;
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_GioiTinhLbl;
         private DevExpress.XtraEditors.TextEdit QLSV_Filter_SDTTxt;
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_SDTLbl;
@@ -1122,9 +1168,28 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         private DevExpress.XtraEditors.ComboBoxEdit QLSV_Filter_GioiTinhCb;
         private DevExpress.XtraEditors.TextEdit QLSV_Filter_DiaChiTxt;
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_DiaChiLbl;
-        private System.Windows.Forms.CheckBox QLSV_Filter_XetDKChk;
         private DevExpress.XtraEditors.TextEdit QLSV_Filter_MaQLTxt;
         private DevExpress.XtraEditors.LabelControl QLSV_Filter_MaQLLbl;
         private DevExpress.XtraEditors.SimpleButton QLSV_FilterSearchBtn;
+        private System.Windows.Forms.CheckBox QLSV_Filter_XetDKChk;
+        private DevExpress.XtraEditors.LabelControl QLSV_Filter_XetDKLbl;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox QLSV_GioiTinhCb_RepoItem;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit QLSV_NgaySinhDateEd_RepoItem;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit QLSV_SDTTextEd_RepoItem;
+        private DevExpress.XtraGrid.Views.Grid.GridView QLSV_View_GridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colMASV;
+        private DevExpress.XtraGrid.Columns.GridColumn colXETDIEUKIEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colHO;
+        private DevExpress.XtraGrid.Columns.GridColumn colTEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAQL;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colVIPHAMNOIQUY1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.GridControl QLSV_MainGridControl;
+        private DevExpress.XtraEditors.SimpleButton QLSV_FilterClearBtn;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

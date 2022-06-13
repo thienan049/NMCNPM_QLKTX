@@ -86,6 +86,18 @@
     <Compile Include="UI Control\Custom EditForm\UC_QLSV_EditForm.Designer.cs">
       <DependentUpon>UC_QLSV_EditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\QLCSVC\UC_QuanLyCSVC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLCSVC\UC_QuanLyCSVC.Designer.cs">
+      <DependentUpon>UC_QuanLyCSVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\QLD\UC_QuanLyDien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLD\UC_QuanLyDien.Designer.cs">
+      <DependentUpon>UC_QuanLyDien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +137,12 @@
     <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\UserInfo\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Control\UserInfo\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +162,12 @@
     <EmbeddedResource Include="UI Control\Custom EditForm\UC_QLSV_EditForm.resx">
       <DependentUpon>UC_QLSV_EditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLCSVC\UC_QuanLyCSVC.resx">
+      <DependentUpon>UC_QuanLyCSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLD\UC_QuanLyDien.resx">
+      <DependentUpon>UC_QuanLyDien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLSV\UC_QLSV_ThongKe.resx">
       <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLTK\UC_QuanLyTaiKhoan.resx">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\UserInfo\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

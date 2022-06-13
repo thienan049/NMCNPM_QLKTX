@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
 {
     partial class UC_QuanLySinhVien
     {

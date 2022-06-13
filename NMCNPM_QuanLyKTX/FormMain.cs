@@ -4,9 +4,12 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using NMCNPM_QuanLyKTX.Common.Service;
-using NMCNPM_QuanLyKTX.UI_Control;
+using NMCNPM_QuanLyKTX.UI_Control.QLCSVC;
+using NMCNPM_QuanLyKTX.UI_Control.QLD;
 using NMCNPM_QuanLyKTX.UI_Control.QLHD;
+using NMCNPM_QuanLyKTX.UI_Control.QLP;
 using NMCNPM_QuanLyKTX.UI_Control.QLSV;
+using NMCNPM_QuanLyKTX.UI_Control.QLTK;
 using NMCNPM_QuanLyKTX.UI_Control.Setting;
 using System;
 using System.Collections.Generic;
@@ -36,6 +39,12 @@ namespace NMCNPM_QuanLyKTX
         // QuanLyTaiKhoan user control
         UC_QuanLyTaiKhoan UC_QLTK = null;
 
+        // QuanLyTaiKhoan user control
+        UC_QuanLyCSVC UC_QLCSVC = null;
+
+        // QuanLyTaiKhoan user control
+        UC_QuanLyDien UC_QLD = null;
+
         // Khởi tạo form
         public FormMain()
         {
@@ -48,7 +57,10 @@ namespace NMCNPM_QuanLyKTX
         {
             // Lưu lại trạng thái tyle mặc định của chương trình
             CommonService.SaveDefaultApplicationStyle();
-            SendKeys.Send("{CAPSLOCK}");
+
+            // Hiển thị thông tin user
+            if(CommonService.CheckAccessMode())
+                InitUserInfo();
         }
 
         // Hiển thị QLSV user control
@@ -166,6 +178,76 @@ namespace NMCNPM_QuanLyKTX
             else
             {
                 this.UC_QLSV_TK.BringToFront();
+            }
+        }
+
+        /// <summary>
+        /// Lấy thông tin user và hiển thị
+        /// </summary>
+        private void InitUserInfo()
+        {
+            QL_KTXDataSet.EnforceConstraints = false;
+            // Lấy data user từ [SP_GETUSERINFO]
+            SP_GetUserInfoTableAdapter.Fill(QL_KTXDataSet.SP_GETUSERINFO, Program.Username);
+
+            if(QL_KTXDataSet.SP_GETUSERINFO.Rows.Count != 0)
+            {
+                DataRow row = QL_KTXDataSet.SP_GETUSERINFO.Rows[0];
+  
+                Program.HoUser = row["HO"] as String;
+                Program.TenUser = row["TEN"] as String;
+                Program.MaQL = row["MAQL"] as String;
+                Program.NgayNhanViec = row["NGAYNHANVIEC"].ToString();
+            }
+
+            HoTenUserLbl.Caption = Program.HoUser + " " + Program.TenUser;
+            MaQLUserLbl.Caption = "     " + Program.MaQL;
+        }
+
+        private void HoTenUserLbl_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new UI_Control.UserInfo.UserInfo().ShowDialog();
+        }
+
+        private void acCtlEle_ThongTinVatTu_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLCSVC == null)
+            {
+                this.UC_QLCSVC = new UC_QuanLyCSVC
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLCSVC);
+                this.UC_QLCSVC.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLCSVC.BringToFront();
+            }
+        }
+
+        private void acCtlEle_ThongTinDien_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLD == null)
+            {
+                this.UC_QLD = new UC_QuanLyDien
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLD);
+                this.UC_QLD.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLD.BringToFront();
             }
         }
     }

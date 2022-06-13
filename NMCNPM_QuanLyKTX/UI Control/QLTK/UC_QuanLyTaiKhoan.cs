@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLTK
 {
     public partial class UC_QuanLyTaiKhoan : DevExpress.XtraEditors.XtraUserControl
     {

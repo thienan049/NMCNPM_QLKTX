@@ -41,18 +41,37 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongTinVatTu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongTinDien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ProgramSetting = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.HoTenUserLbl = new DevExpress.XtraBars.BarHeaderItem();
+            this.MaQLUserLbl = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
+            this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.QL_KTXDataSet = new NMCNPM_QuanLyKTX.ql_KTXDataSet();
+            this.SP_GetUserInfoBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.SP_GetUserInfoTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERINFOTableAdapter();
+            this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QL_KTXDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_GetUserInfoBdS)).BeginInit();
             this.SuspendLayout();
             // 
             // contentContainer
@@ -170,16 +189,35 @@ namespace NMCNPM_QuanLyKTX
             // 
             // accordionControlElement1
             // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlEle_ThongTinVatTu});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Quản lý CSVC";
             // 
+            // acCtlEle_ThongTinVatTu
+            // 
+            this.acCtlEle_ThongTinVatTu.Name = "acCtlEle_ThongTinVatTu";
+            this.acCtlEle_ThongTinVatTu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinVatTu.Text = "Thông tin vật tư";
+            this.acCtlEle_ThongTinVatTu.Click += new System.EventHandler(this.acCtlEle_ThongTinVatTu_Click);
+            // 
             // accordionControlElement5
             // 
+            this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlEle_ThongTinDien});
+            this.accordionControlElement5.Expanded = true;
             this.accordionControlElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Text = "Quản lý điện";
+            // 
+            // acCtlEle_ThongTinDien
+            // 
+            this.acCtlEle_ThongTinDien.Name = "acCtlEle_ThongTinDien";
+            this.acCtlEle_ThongTinDien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinDien.Text = "Thông tin tiêu thụ điện";
+            this.acCtlEle_ThongTinDien.Click += new System.EventHandler(this.acCtlEle_ThongTinDien_Click);
             // 
             // accordionControlElement7
             // 
@@ -202,15 +240,26 @@ namespace NMCNPM_QuanLyKTX
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.Btn_ProgramSetting});
+            this.Btn_ProgramSetting,
+            this.barButtonItem2,
+            this.HoTenUserLbl,
+            this.MaQLUserLbl});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemHypertextLabel1,
+            this.repositoryItemPictureEdit1,
+            this.repositoryItemImageEdit1,
+            this.repositoryItemHypertextLabel2});
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(1200, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.Btn_ProgramSetting);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem2);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.HoTenUserLbl);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.MaQLUserLbl);
             // 
             // barButtonItem1
             // 
@@ -227,14 +276,64 @@ namespace NMCNPM_QuanLyKTX
             this.Btn_ProgramSetting.Name = "Btn_ProgramSetting";
             this.Btn_ProgramSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_ProgramSetting_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Enabled = false;
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // HoTenUserLbl
+            // 
+            this.HoTenUserLbl.Caption = "HoTenUserLbl";
+            this.HoTenUserLbl.Id = 7;
+            this.HoTenUserLbl.Name = "HoTenUserLbl";
+            this.HoTenUserLbl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HoTenUserLbl_ItemClick);
+            // 
+            // MaQLUserLbl
+            // 
+            this.MaQLUserLbl.Caption = "MaQLUserLbl";
+            this.MaQLUserLbl.Id = 8;
+            this.MaQLUserLbl.Name = "MaQLUserLbl";
+            // 
             // fluentFormDefaultManager1
             // 
             this.fluentFormDefaultManager1.DockingEnabled = false;
             this.fluentFormDefaultManager1.Form = this;
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
-            this.Btn_ProgramSetting});
-            this.fluentFormDefaultManager1.MaxItemId = 2;
+            this.Btn_ProgramSetting,
+            this.barButtonItem2,
+            this.HoTenUserLbl,
+            this.MaQLUserLbl});
+            this.fluentFormDefaultManager1.MaxItemId = 10;
+            this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemHypertextLabel1,
+            this.repositoryItemPictureEdit1,
+            this.repositoryItemImageEdit1,
+            this.repositoryItemHypertextLabel2});
+            // 
+            // repositoryItemHypertextLabel1
+            // 
+            this.repositoryItemHypertextLabel1.Name = "repositoryItemHypertextLabel1";
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.NullText = " ";
+            // 
+            // repositoryItemImageEdit1
+            // 
+            this.repositoryItemImageEdit1.AutoHeight = false;
+            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
+            this.repositoryItemImageEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // repositoryItemHypertextLabel2
+            // 
+            this.repositoryItemHypertextLabel2.Name = "repositoryItemHypertextLabel2";
             // 
             // accordionControlElement6
             // 
@@ -246,6 +345,39 @@ namespace NMCNPM_QuanLyKTX
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement8.Text = "Element8";
+            // 
+            // QL_KTXDataSet
+            // 
+            this.QL_KTXDataSet.DataSetName = "ql_KTXDataSet";
+            this.QL_KTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // SP_GetUserInfoBdS
+            // 
+            this.SP_GetUserInfoBdS.DataMember = "SP_GETUSERINFO";
+            this.SP_GetUserInfoBdS.DataSource = this.QL_KTXDataSet;
+            // 
+            // SP_GetUserInfoTableAdapter
+            // 
+            this.SP_GetUserInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.HOADONDIENTableAdapter = null;
+            this.tableAdapterManager.HOPDONGTableAdapter = null;
+            this.tableAdapterManager.LOAIPHONGTableAdapter = null;
+            this.tableAdapterManager.PERMISSIONTableAdapter = null;
+            this.tableAdapterManager.PHANCONGVIECTableAdapter = null;
+            this.tableAdapterManager.PHANQUYENTableAdapter = null;
+            this.tableAdapterManager.PHONGTableAdapter = null;
+            this.tableAdapterManager.QUANLYTableAdapter = null;
+            this.tableAdapterManager.QUYENTAIKHOANTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.TAIKHOANTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VATTUTableAdapter = null;
+            this.tableAdapterManager.VT_PHONGTableAdapter = null;
             // 
             // FormMain
             // 
@@ -268,6 +400,12 @@ namespace NMCNPM_QuanLyKTX
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QL_KTXDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_GetUserInfoBdS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,6 +430,19 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinHD;
         private DevExpress.XtraBars.BarButtonItem Btn_ProgramSetting;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel2;
+        private DevExpress.XtraBars.BarHeaderItem HoTenUserLbl;
+        private DevExpress.XtraBars.BarStaticItem MaQLUserLbl;
+        private System.Windows.Forms.BindingSource SP_GetUserInfoBdS;
+        private ql_KTXDataSet QL_KTXDataSet;
+        private ql_KTXDataSetTableAdapters.SP_GETUSERINFOTableAdapter SP_GetUserInfoTableAdapter;
+        private ql_KTXDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinVatTu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinDien;
     }
 }
 

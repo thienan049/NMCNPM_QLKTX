@@ -6,19 +6,12 @@ using DevExpress.XtraGrid.EditForm.Helpers.Controls;
 using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using NMCNPM_QuanLyKTX.Common.Service;
-using NMCNPM_QuanLyKTX.UI_Control.Custom_EditForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NMCNPM_QuanLyKTX.UI_Control
+namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
 {
     public partial class UC_QuanLySinhVien : XtraUserControl
     {
@@ -51,6 +44,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             // QLSV_View_GridView.OptionsEditForm.CustomEditFormLayout = qlsvEditForm;
             // QLSV_View_GridView.OptionsEditForm.ActionOnModifiedRowChange = EditFormModifiedAction.Default;
+
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if(!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLSV_View_GridView, QLSV_ActionBtn_Panel);
         }
 
         /// <summary>
@@ -58,12 +55,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void QLSV_ChangeViewBtnPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QLSV_ChangeViewBtnPanel_ButtonClick(object sender, ButtonEventArgs e)
         {
             // Change view to GridView
             if (e.Button == QLSV_ChangeViewBtnPanel.Buttons[0])
             {
-                this.QLSV_GridControl.MainView = this.QLSV_View_GridView;
+                this.QLSV_MainGridControl.MainView = this.QLSV_View_GridView;
             }
             // Change view to CardView
             else if (e.Button == QLSV_ChangeViewBtnPanel.Buttons[1])
@@ -92,13 +89,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control
 
             // Lấy data từ CSDL về DataTable [QL_KTXDataSet.SINHVIEN]
             SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
+            // Lấy data từ CSDL về DataTable [QL_KTXDataSet.HOPDONG]
             HopDongTableAdapter.Fill(QL_KTXDataSet.HOPDONG);
         }
 
         public bool HasChanges()
         {
             bool Result = false;
-            //QL_KTXDataSet.SINHVIEN.ge
+            //QL_KTXDataSet.SINHVIEN.g
             DataTable x = ((ql_KTXDataSet)SinhVienBdS.DataSource).SINHVIEN.GetChanges(DataRowState.Modified | DataRowState.Added);
             DataRow[] y = ((ql_KTXDataSet)SinhVienBdS.DataSource).SINHVIEN.Select(null, null, DataViewRowState.ModifiedCurrent);
             Result = (((ql_KTXDataSet)SinhVienBdS.DataSource).SINHVIEN).GetChanges(DataRowState.Modified) != null;
@@ -201,14 +199,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             QLSV_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
 
+        /// <summary>
+        /// Custom lại EditForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QLSV_View_GridView_EditFormPrepared(object sender, EditFormPreparedEventArgs e)
         {
-            TextEdit sampleControl = (TextEdit)e.BindableControls["MASV"];
-
             foreach (Control control in e.BindableControls)
             {
                 if (control is TextEdit)
                 {
+                    //InitDetailEditFormComponent(control);
                     (control as TextEdit).AutoSize = true;
                     (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
                     //var x = (control as TextEdit).Size;
@@ -230,9 +232,22 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// <param name="e"></param>
         private void QLSV_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Add
-            // Thêm dòng dữ liệu trống mới
-            SinhVienBdS.AddNew();
+            try
+            {
+                // Click btn [Add]
+                // Thêm dòng dữ liệu trống mới
+                DataRowView newRow = (DataRowView)SinhVienBdS.AddNew();
+                QL_KTXDataSet.SINHVIEN.Rows.InsertAt(newRow.Row, 0);
+                SinhVienBdS.Position = 0;
+
+                CommonService.ApplyCurrentMaQL(newRow);
+                QLSV_View_GridView.ShowEditForm();
+            }
+            catch(Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi");
+            }
+                   
         }
 
         /// <summary>
@@ -242,27 +257,34 @@ namespace NMCNPM_QuanLyKTX.UI_Control
         /// <param name="e"></param>
         private void QLSV_Save_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Save (Update)
-            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-            this.Validate();
+            DialogResult confirm = XtraMessageBox.Show("Lưu dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes){
+                // Click btn Save (Update)
+                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+                this.Validate();
 
-            SinhVienBdS.EndEdit();
-            //tblSinhVienDataView.RowStateFilter = DataViewRowState.OriginalRows;
-            // Update dữ liệu vào CSDL
-            this.SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-            try
-            {
-                /*if (HasChanges())
+                SinhVienBdS.EndEdit();
+                //tblSinhVienDataView.RowStateFilter = DataViewRowState.OriginalRows;
+                // Update dữ liệu vào CSDL
+                this.SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
                 {
-                    XtraMessageBox.Show("u have hanges");
-                }*/
-                //tblSinhVienDataView.Table
+                    /*if (HasChanges())
+                    {
+                        XtraMessageBox.Show("u have hanges");
+                    }*/
+                    //tblSinhVienDataView.Table
 
-                SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+                    SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message, "Lỗi");
+                }
             }
-            catch (System.Exception ex)
+            else if(confirm == DialogResult.No)
             {
-                MessageBox.Show(ex.Message);
+                SinhVienBdS.CancelEdit();
             }
         }
 
@@ -404,7 +426,41 @@ namespace NMCNPM_QuanLyKTX.UI_Control
             {
                 filterExpression += "AND MAQL LIKE '%" + QLSV_Filter_MaQLTxt.Text.Trim() + "%' ";
             }
-            return (filterExpression != null && filterExpression.StartsWith("AND ")) ? filterExpression.TrimStart("AND ".ToCharArray()) : filterExpression;
+            return (filterExpression != null && filterExpression.StartsWith("AND ")) ? filterExpression.Remove(0, 4) : filterExpression;
+        }
+
+        /// <summary>
+        /// Clear các điều kiện search filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_FilterClearBtn_Click(object sender, EventArgs e)
+        {
+            QLSV_Filter_MaSVTxt.Text = String.Empty;
+            QLSV_Filter_HoTxt.Text = String.Empty;
+            QLSV_Filter_TenTxt.Text = String.Empty;
+            QLSV_Filter_NgaySinhDate.Text = String.Empty;
+            QLSV_Filter_NgaySinhDate.EditValue = null;
+            QLSV_Filter_ThangSinhDate.Text = String.Empty;
+            QLSV_Filter_ThangSinhDate.EditValue = null;
+            QLSV_Filter_NamSinhDate.Text = String.Empty;
+            QLSV_Filter_NamSinhDate.EditValue = null;
+            QLSV_Filter_XetDKChk.CheckState = CheckState.Indeterminate;
+            QLSV_Filter_SDTTxt.Text = String.Empty;
+            QLSV_Filter_GioiTinhCb.SelectedItem = "--";
+            QLSV_Filter_VPNQTxt.Text = String.Empty;
+            QLSV_Filter_DiaChiTxt.Text = String.Empty;
+            QLSV_Filter_MaQLTxt.Text = String.Empty;
+        }
+
+        private void InitDetailEditFormComponent(Control control)
+        {
+            if (control.Tag.Equals("EditValue/MASV"))
+            {
+                (control as TextEdit).MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                (control as TextEdit).MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaSVCollection(QL_KTXDataSet.SINHVIEN);
+            }
         }
     }
     

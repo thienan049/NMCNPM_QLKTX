@@ -45,9 +45,14 @@ namespace NMCNPM_QuanLyKTX
                 {
                     ShowMessageBox(MessageBoxIcon.Information, "Login message", "Đăng nhập thành công");
                     Program.Username = usernameTxtEd.Text.Trim();
+                    Program.AccessMode = Common.Const.CommonConstant.LoginMode.Login;
                     this.DialogResult = DialogResult.OK;
-                    
+
                     this.Close();
+                }
+                else if (result == 2)
+                {
+                    ShowMessageBox(MessageBoxIcon.Information, "Login message", "Đăng nhập thất bại\nTài khoản không còn khả dụng!");
                 }
                 else // == 0
                 {
@@ -112,6 +117,12 @@ namespace NMCNPM_QuanLyKTX
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void SkipLoginBtn_Click(object sender, EventArgs e)
+        {
+            Program.AccessMode = Common.Const.CommonConstant.LoginMode.NoLogin;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

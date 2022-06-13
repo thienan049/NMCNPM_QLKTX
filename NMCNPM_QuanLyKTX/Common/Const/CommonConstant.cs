@@ -11,6 +11,12 @@ namespace NMCNPM_QuanLyKTX.Common.Const
     /// </summary>
     public class CommonConstant
     {
+        public enum LoginMode
+        {
+            Login,
+            NoLogin
+        }
+
         public static string[] GioiTinh = { "Nam", "Nữ" };
 
         public static string[] HocKy = { "1", "2", "3" };
@@ -33,7 +39,7 @@ namespace NMCNPM_QuanLyKTX.Common.Const
             public const string PhoneNumberPattern = "^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$";
 
             // RegEx cho input số
-            public const string NumeicInputPattern = "^\\d$";
+            public const string NumeicInputPattern = "^\\d*$";
 
             // RegEx cho năm học
             public const string NamHocPattern = "^(\\d){4}-(\\d){4}$";

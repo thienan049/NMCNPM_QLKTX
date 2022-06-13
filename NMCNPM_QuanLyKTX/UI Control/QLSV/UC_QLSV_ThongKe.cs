@@ -16,6 +16,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
     {
         DataView thongKeDataView = null;
 
+        // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
+        private bool isSidePaneCollapsed = true;
+
         public UC_QLSV_ThongKe()
         {
             InitializeComponent();
@@ -31,6 +34,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
             QLSV_TKSV_GridControl.Dock = DockStyle.Fill;
             QLSV_TKSV_GridControl.BringToFront();
             CommonService.InitLoaiTKBox(QLSV_LoaiThongKeCb);
+
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if (!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLSV_TKSV_SVTP_View_GridView, null);
         }
 
         /// <summary>
@@ -104,6 +111,100 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                 CommonService.InitDSPhongBox(QLSV_TenPhongCb, QL_KTXDataSet.PHONG);
                 QLSV_TenPhongCb.Enabled = true;
             }
+        }
+
+        /// <summary>
+        /// Toggle open/close custom DetailViewSetting side panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_TKSV_CustomViewSettingBtn_Click(object sender, EventArgs e)
+        {
+            // Nếu SidePanel là đóng, mở ra và hiển thị các lựa chọn
+            if (isSidePaneCollapsed)
+            {
+                QLSV_TKSV_CustomViewSettingSidePane.Width = 75;
+                QLSV_CVSControlsPanel.Visible = true;
+                isSidePaneCollapsed = false;
+            }
+            // Nếu SidePanel là mở, đóng lại và ẩn các lựa chọn
+            else
+            {
+                QLSV_TKSV_CustomViewSettingSidePane.Width = 30;
+                QLSV_CVSControlsPanel.Visible = false;
+                // Chỉ ẩn các lựa chọn custom khi ToggleSwitch là [Off]
+                if (!QLSV_CVSToggleSwitch.IsOn)
+                    QLSV_CVSMainControlsPanel.Visible = false;
+                isSidePaneCollapsed = true;
+            }
+        }
+
+        /// <summary>
+        /// Toggle áp dụng/không áp dụng tính năng phân chia [EvenRow/OddRow]
+        /// Nếu có áp dụng, cung cấp thêm các lựa chọn cho việc custom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_TKSV_CVSToggleSwitch_Toggled(object sender, EventArgs e)
+        {
+            /*
+             * Nếu ToggleSwitch là [On] -> có áp dụng [EvenRow/OddRow]
+             * Hiển thị các lựa chọn custom
+             * Nếu ToggleSwitch là [Off] -> không áp dụng [EvenRow/OddRow]
+             * Không hiển thị các lựa chọn custom
+             */
+            if (QLSV_CVSToggleSwitch.IsOn)
+            {
+                QLSV_CVSMainControlsPanel.Visible = true;
+
+                // Áp dụng [AppearanceOddRow] (Mặc đinh)
+                QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+            }
+            else
+            {
+                QLSV_CVSMainControlsPanel.Visible = false;
+
+                // Hủy áp dụng [AppearanceOddRow]
+                if (QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceOddRow)
+                    QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                // Hủy áp dụng [AppearanceEvenRow]
+                if (QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceEvenRow)
+                    QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceEvenRow = false; ;
+            }
+        }
+
+        /// <summary>
+        /// Nếu có áp dụng [EvenRow/OddRow]
+        /// Cho phép lựa chọn [EvenRow] hoặc [OddRow]
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_TKSV_CVSRowStyleBtn_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button == QLSV_CVSRowStyleBtn.Buttons[0])
+            {
+                // Áp dụng [OddRow]
+                QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceEvenRow = false;
+                QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceOddRow = true;
+            }
+            else
+            {
+                // Áp dụng [EvenRow]
+                QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceOddRow = false;
+                QLSV_TKSV_View_GridView.OptionsView.EnableAppearanceEvenRow = true;
+            }
+        }
+
+        /// <summary>
+        /// Set màu được chọn cho [OddRow/EvenRow] nếu đang được áp dụng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLSV_TKSV_CVSColorPickEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            ColorPickEdit cVSColorPickEdit = sender as ColorPickEdit;
+            QLSV_TKSV_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
+            QLSV_TKSV_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
     }
 }
