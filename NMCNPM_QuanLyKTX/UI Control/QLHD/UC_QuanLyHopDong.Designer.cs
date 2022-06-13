@@ -31,12 +31,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyHopDong));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.QLHD_FilterSearchBtn = new DevExpress.XtraEditors.SimpleButton();
             this.BtnNoBorder_StyleCtl = new DevExpress.XtraEditors.StyleController(this.components);
             this.QLHD_Filter_MaQLTxt = new DevExpress.XtraEditors.TextEdit();
@@ -114,11 +114,25 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.colMAPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QLHD_MaPhongPopupEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.QLHD_MaSVPopupEd_RepoItem = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
+            this.QLHD_MaSVPopupCtl_RepoItem = new DevExpress.XtraEditors.PopupContainerControl();
+            this.QLHD_SubSV_GridControl = new DevExpress.XtraGrid.GridControl();
+            this.Sub_SinhVienBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.QLHD_SubSV_GridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMASV1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXETDIEUKIEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVIPHAMNOIQUY1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAQL2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAQL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.PHONGTableAdapter();
             this.QuanLyBdS = new System.Windows.Forms.BindingSource(this.components);
             this.QuanLyTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.QUANLYTableAdapter();
-            this.SinhVienBdS = new System.Windows.Forms.BindingSource(this.components);
             this.SinhVienTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SINHVIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -171,8 +185,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_NamHocTxt_RepoItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_HocKyCb_RepoItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaPhongPopupEd_RepoItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaSVPopupEd_RepoItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaSVPopupCtl_RepoItem)).BeginInit();
+            this.QLHD_MaSVPopupCtl_RepoItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub_SinhVienBdS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SinhVienBdS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -405,13 +424,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.QLHD_CVSRowStyleBtn.AllowGlyphSkinning = false;
             this.QLHD_CVSRowStyleBtn.AutoSizeInLayoutControl = false;
             this.QLHD_CVSRowStyleBtn.ButtonInterval = 15;
-            windowsUIButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions7.SvgImage")));
-            windowsUIButtonImageOptions7.SvgImageSize = new System.Drawing.Size(30, 30);
-            windowsUIButtonImageOptions8.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions8.SvgImage")));
-            windowsUIButtonImageOptions8.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
+            windowsUIButtonImageOptions1.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
+            windowsUIButtonImageOptions2.SvgImageSize = new System.Drawing.Size(30, 30);
             this.QLHD_CVSRowStyleBtn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLHD_CVSRowStyleBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.QLHD_CVSRowStyleBtn.Location = new System.Drawing.Point(0, 18);
             this.QLHD_CVSRowStyleBtn.Name = "QLHD_CVSRowStyleBtn";
@@ -900,19 +919,19 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.QLHD_ChangeViewBtnPanel.AllowGlyphSkinning = false;
             this.QLHD_ChangeViewBtnPanel.BackColor = System.Drawing.Color.Transparent;
             this.QLHD_ChangeViewBtnPanel.ButtonInterval = 50;
-            windowsUIButtonImageOptions9.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions9.SvgImage")));
-            windowsUIButtonImageOptions9.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions10.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions10.SvgImage")));
-            windowsUIButtonImageOptions10.SvgImageSize = new System.Drawing.Size(25, 25);
-            windowsUIButtonImageOptions11.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions11.SvgImage")));
-            windowsUIButtonImageOptions11.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions12.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions12.SvgImage")));
-            windowsUIButtonImageOptions12.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
+            windowsUIButtonImageOptions3.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
+            windowsUIButtonImageOptions4.SvgImageSize = new System.Drawing.Size(25, 25);
+            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
+            windowsUIButtonImageOptions5.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
+            windowsUIButtonImageOptions6.SvgImageSize = new System.Drawing.Size(28, 25);
             this.QLHD_ChangeViewBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLHD_ChangeViewBtnPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.QLHD_ChangeViewBtnPanel.Location = new System.Drawing.Point(583, 0);
             this.QLHD_ChangeViewBtnPanel.Name = "QLHD_ChangeViewBtnPanel";
@@ -959,7 +978,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.QLHD_NgayTaoDate_RepoItem,
             this.QLHD_HocKyCb_RepoItem,
             this.QLHD_NamHocTxt_RepoItem,
-            this.QLHD_MaPhongPopupEd_RepoItem});
+            this.QLHD_MaPhongPopupEd_RepoItem,
+            this.QLHD_MaSVPopupEd_RepoItem});
             this.QLHD_GridControl.Size = new System.Drawing.Size(926, 544);
             this.QLHD_GridControl.TabIndex = 7;
             this.QLHD_GridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1112,17 +1132,158 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             // colMASV
             // 
             this.colMASV.Caption = "Mã SV";
+            this.colMASV.ColumnEdit = this.QLHD_MaSVPopupEd_RepoItem;
             this.colMASV.FieldName = "MASV";
             this.colMASV.Name = "colMASV";
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 7;
             this.colMASV.Width = 129;
             // 
+            // QLHD_MaSVPopupEd_RepoItem
+            // 
+            this.QLHD_MaSVPopupEd_RepoItem.AutoHeight = false;
+            this.QLHD_MaSVPopupEd_RepoItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.QLHD_MaSVPopupEd_RepoItem.Name = "QLHD_MaSVPopupEd_RepoItem";
+            this.QLHD_MaSVPopupEd_RepoItem.PopupControl = this.QLHD_MaSVPopupCtl_RepoItem;
+            this.QLHD_MaSVPopupEd_RepoItem.QueryResultValue += new DevExpress.XtraEditors.Controls.QueryResultValueEventHandler(this.QLHD_MaSVPopupEd_RepoItem_QueryResultValue);
+            this.QLHD_MaSVPopupEd_RepoItem.BeforePopup += new System.EventHandler(this.QLHD_MaSVPopupEd_RepoItem_BeforePopup);
+            // 
+            // QLHD_MaSVPopupCtl_RepoItem
+            // 
+            this.QLHD_MaSVPopupCtl_RepoItem.Controls.Add(this.QLHD_SubSV_GridControl);
+            this.QLHD_MaSVPopupCtl_RepoItem.Location = new System.Drawing.Point(81, 163);
+            this.QLHD_MaSVPopupCtl_RepoItem.Name = "QLHD_MaSVPopupCtl_RepoItem";
+            this.QLHD_MaSVPopupCtl_RepoItem.Size = new System.Drawing.Size(557, 75);
+            this.QLHD_MaSVPopupCtl_RepoItem.TabIndex = 8;
+            // 
+            // QLHD_SubSV_GridControl
+            // 
+            this.QLHD_SubSV_GridControl.DataSource = this.Sub_SinhVienBdS;
+            this.QLHD_SubSV_GridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QLHD_SubSV_GridControl.Location = new System.Drawing.Point(0, 0);
+            this.QLHD_SubSV_GridControl.MainView = this.QLHD_SubSV_GridView;
+            this.QLHD_SubSV_GridControl.Name = "QLHD_SubSV_GridControl";
+            this.QLHD_SubSV_GridControl.Size = new System.Drawing.Size(557, 75);
+            this.QLHD_SubSV_GridControl.TabIndex = 0;
+            this.QLHD_SubSV_GridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.QLHD_SubSV_GridView});
+            // 
+            // Sub_SinhVienBdS
+            // 
+            this.Sub_SinhVienBdS.DataMember = "SINHVIEN";
+            this.Sub_SinhVienBdS.DataSource = this.QL_KTXDataSet;
+            // 
+            // QLHD_SubSV_GridView
+            // 
+            this.QLHD_SubSV_GridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLHD_SubSV_GridView.Appearance.HeaderPanel.Options.UseFont = true;
+            this.QLHD_SubSV_GridView.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLHD_SubSV_GridView.Appearance.Row.Options.UseFont = true;
+            this.QLHD_SubSV_GridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMASV1,
+            this.colHO,
+            this.colTEN,
+            this.colNGAYSINH,
+            this.colDIACHI,
+            this.colSDT,
+            this.colGIOITINH,
+            this.colXETDIEUKIEN,
+            this.colVIPHAMNOIQUY1,
+            this.colMAQL2});
+            this.QLHD_SubSV_GridView.GridControl = this.QLHD_SubSV_GridControl;
+            this.QLHD_SubSV_GridView.Name = "QLHD_SubSV_GridView";
+            this.QLHD_SubSV_GridView.OptionsBehavior.Editable = false;
+            this.QLHD_SubSV_GridView.OptionsView.ShowGroupPanel = false;
+            // 
+            // colMASV1
+            // 
+            this.colMASV1.Caption = "Mã SV";
+            this.colMASV1.FieldName = "MASV";
+            this.colMASV1.Name = "colMASV1";
+            this.colMASV1.Visible = true;
+            this.colMASV1.VisibleIndex = 0;
+            // 
+            // colHO
+            // 
+            this.colHO.Caption = "Họ";
+            this.colHO.FieldName = "HO";
+            this.colHO.Name = "colHO";
+            this.colHO.Visible = true;
+            this.colHO.VisibleIndex = 1;
+            // 
+            // colTEN
+            // 
+            this.colTEN.Caption = "Tên";
+            this.colTEN.FieldName = "TEN";
+            this.colTEN.Name = "colTEN";
+            this.colTEN.Visible = true;
+            this.colTEN.VisibleIndex = 2;
+            // 
+            // colNGAYSINH
+            // 
+            this.colNGAYSINH.Caption = "Ngày sinh";
+            this.colNGAYSINH.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAYSINH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colNGAYSINH.FieldName = "NGAYSINH";
+            this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.Visible = true;
+            this.colNGAYSINH.VisibleIndex = 3;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.Caption = "Địa chỉ";
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 4;
+            // 
+            // colSDT
+            // 
+            this.colSDT.Caption = "SĐT";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 5;
+            // 
+            // colGIOITINH
+            // 
+            this.colGIOITINH.Caption = "GT";
+            this.colGIOITINH.FieldName = "GIOITINH";
+            this.colGIOITINH.Name = "colGIOITINH";
+            this.colGIOITINH.Visible = true;
+            this.colGIOITINH.VisibleIndex = 6;
+            // 
+            // colXETDIEUKIEN
+            // 
+            this.colXETDIEUKIEN.Caption = "Xét ĐK";
+            this.colXETDIEUKIEN.FieldName = "XETDIEUKIEN";
+            this.colXETDIEUKIEN.Name = "colXETDIEUKIEN";
+            this.colXETDIEUKIEN.Visible = true;
+            this.colXETDIEUKIEN.VisibleIndex = 7;
+            // 
+            // colVIPHAMNOIQUY1
+            // 
+            this.colVIPHAMNOIQUY1.Caption = "VPNQ";
+            this.colVIPHAMNOIQUY1.FieldName = "VIPHAMNOIQUY";
+            this.colVIPHAMNOIQUY1.Name = "colVIPHAMNOIQUY1";
+            this.colVIPHAMNOIQUY1.Visible = true;
+            this.colVIPHAMNOIQUY1.VisibleIndex = 8;
+            // 
+            // colMAQL2
+            // 
+            this.colMAQL2.Caption = "Mã QL";
+            this.colMAQL2.FieldName = "MAQL";
+            this.colMAQL2.Name = "colMAQL2";
+            this.colMAQL2.Visible = true;
+            this.colMAQL2.VisibleIndex = 9;
+            // 
             // colMAQL
             // 
             this.colMAQL.Caption = "Mã QL";
             this.colMAQL.FieldName = "MAQL";
             this.colMAQL.Name = "colMAQL";
+            this.colMAQL.OptionsColumn.ReadOnly = true;
             this.colMAQL.Visible = true;
             this.colMAQL.VisibleIndex = 8;
             this.colMAQL.Width = 117;
@@ -1140,11 +1301,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             // 
             this.QuanLyTableAdapter.ClearBeforeFill = true;
             // 
-            // SinhVienBdS
-            // 
-            this.SinhVienBdS.DataMember = "SINHVIEN";
-            this.SinhVienBdS.DataSource = this.QL_KTXDataSet;
-            // 
             // SinhVienTableAdapter
             // 
             this.SinhVienTableAdapter.ClearBeforeFill = true;
@@ -1159,8 +1315,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.QLHD_GridControl);
+            this.panelControl2.Controls.Add(this.QLHD_MaSVPopupCtl_RepoItem);
             this.panelControl2.Controls.Add(this.QLHD_MaPhongPopupCtl_RepoItem);
+            this.panelControl2.Controls.Add(this.QLHD_GridControl);
             this.panelControl2.Controls.Add(this.QLHD_CustomViewSettingSidePane);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 91);
@@ -1228,8 +1385,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_NamHocTxt_RepoItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_HocKyCb_RepoItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaPhongPopupEd_RepoItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaSVPopupEd_RepoItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_MaSVPopupCtl_RepoItem)).EndInit();
+            this.QLHD_MaSVPopupCtl_RepoItem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sub_SinhVienBdS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SinhVienBdS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -1320,9 +1482,23 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         private DevExpress.XtraEditors.SimpleButton QLHD_FilterClearBtn;
         private System.Windows.Forms.BindingSource QuanLyBdS;
         private ql_KTXDataSetTableAdapters.QUANLYTableAdapter QuanLyTableAdapter;
-        private System.Windows.Forms.BindingSource SinhVienBdS;
+        private System.Windows.Forms.BindingSource Sub_SinhVienBdS;
         private ql_KTXDataSetTableAdapters.SINHVIENTableAdapter SinhVienTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit QLHD_MaSVPopupEd_RepoItem;
+        private DevExpress.XtraEditors.PopupContainerControl QLHD_MaSVPopupCtl_RepoItem;
+        private DevExpress.XtraGrid.GridControl QLHD_SubSV_GridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView QLHD_SubSV_GridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colMASV1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHO;
+        private DevExpress.XtraGrid.Columns.GridColumn colTEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colXETDIEUKIEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colVIPHAMNOIQUY1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAQL2;
     }
 }

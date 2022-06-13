@@ -64,10 +64,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Add
-            // Thêm dòng dữ liệu trống mới
-            HopDongBdS.AddNew();
+            try
+            {
+                // Click btn [Add]
+                // Thêm dòng dữ liệu trống mới
+                DataRowView newRow = (DataRowView)HopDongBdS.AddNew();
+                QL_KTXDataSet.HOPDONG.Rows.InsertAt(newRow.Row, 0);
+                HopDongBdS.Position = 0;
 
+                CommonService.ApplyCurrentMaQL(newRow);
+                QLHD_View_GridView.ShowEditForm();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         /// <summary>
@@ -77,19 +88,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_Save_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Save (Update)
-            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-            this.Validate();
-            HopDongBdS.EndEdit();
+            DialogResult confirm = XtraMessageBox.Show("Lưu dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                // Click btn Save (Update)
+                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+                this.Validate();
+                HopDongBdS.EndEdit();
 
-            // Update dữ liệu vào CSDL
-            try
-            {
-                HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
+                // Update dữ liệu vào CSDL
+                this.HopDongTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
+
+                    XtraMessageBox.Show("Lưu dữ liệu thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("Violation of PRIMARY KEY constraint 'PK_HOPDONG'"))
+                        XtraMessageBox.Show("Lỗi: Không thể trùng lặp mã hợp đồng!", "Thông báo");
+                    HopDongBdS.CancelEdit();
+                }
             }
-            catch (System.Exception ex)
+            else if (confirm == DialogResult.No)
             {
-                MessageBox.Show(ex.Message);
+                HopDongBdS.CancelEdit();
             }
         }
 
@@ -100,18 +124,33 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_Delete_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Delete
-            // Xóa dòng dữ liệu hiện tại
-            HopDongBdS.RemoveCurrent();
+            DialogResult confirm = XtraMessageBox.Show("Xóa dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                // Click btn Delete
+                // Xóa dòng dữ liệu hiện tại
+                HopDongBdS.RemoveCurrent();
+                HopDongBdS.EndEdit();
+                //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
+                // Update dữ liệu vào CSDL
+                //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
 
-            // Update dữ liệu vào CSDL
-            try
-            {
-                HopDongTableAdapter.Update(QL_KTXDataSet.HOPDONG);
+                    XtraMessageBox.Show("Xóa dữ liệu thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {                   
+                    XtraMessageBox.Show(ex.Message, "Thông báo");
+                    HopDongBdS.CancelEdit();
+                    QL_KTXDataSet.HOPDONG.RejectChanges();
+                    HopDongBdS.MovePrevious();
+                }
             }
-            catch (System.Exception ex)
+            else if (confirm == DialogResult.No)
             {
-                MessageBox.Show(ex.Message);
+                HopDongBdS.CancelEdit();
             }
         }
 
@@ -298,6 +337,34 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         }
 
         /// <summary>
+        /// Lấy data cho sub-gridcontrol [QLHD_SubSV_GridControl] ở detail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_MaSVPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
+        {
+            QL_KTXDataSet.EnforceConstraints = false;
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
+            SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
+
+            String condition = "XETDIEUKIEN = 'true'";
+            DataView svDuDKDataView = new DataView(QL_KTXDataSet.SINHVIEN);
+            svDuDKDataView.RowFilter = condition;
+            Sub_SinhVienBdS.DataSource = svDuDKDataView;
+            QLHD_MaSVPopupCtl_RepoItem.Size = new Size(749, 223);
+        }
+
+        /// <summary>
+        /// Trả về mã phòng khi chọn phòng ở detail sub-gridcontrol [QLHD_SubSV_GridControl]
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void QLHD_MaSVPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
+        {
+            e.Value = ((DataRowView)Sub_SinhVienBdS[Sub_SinhVienBdS.Position])["MASV"].ToString();
+        }
+
+        /// <summary>
         /// Clear các điều kiện search filter
         /// </summary>
         /// <param name="sender"></param>
@@ -361,12 +428,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 (control as TextEdit).Properties.Mask.EditMask = "n0";
                 (control as TextEdit).Properties.Mask.UseMaskAsDisplayFormat = true;
             }
-            else if (control.Tag.Equals("EditValue/MASV"))
+            /*else if (control.Tag.Equals("EditValue/MASV"))
             {
                 (control as TextEdit).MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 (control as TextEdit).MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaSVCollection(QL_KTXDataSet.SINHVIEN);
-            }
+            }*/
         }
 
         /// <summary>
@@ -436,5 +503,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             QLHD_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
             QLHD_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
+
+        
     }
 }

@@ -247,8 +247,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
             catch(Exception ex)
             {
                 XtraMessageBox.Show(ex.Message, "Lỗi");
-            }
-                   
+            }                 
         }
 
         /// <summary>
