@@ -258,7 +258,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
         private void QLSV_Save_Btn_Click(object sender, EventArgs e)
         {
             DialogResult confirm = XtraMessageBox.Show("Lưu dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm == DialogResult.Yes){
+            if (confirm == DialogResult.Yes)
+            {
                 // Click btn Save (Update)
                 // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
                 this.Validate();
@@ -276,10 +277,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                     //tblSinhVienDataView.Table
 
                     SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+
+                    XtraMessageBox.Show("Lưu dữ liệu thành công!", "Thông báo");
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show(ex.Message, "Lỗi");
+                    if(ex.Message.Contains("Violation of PRIMARY KEY constraint 'PK_SINHVIEN'"))
+                        XtraMessageBox.Show("Lỗi: Không thể trùng lặp mã sinh viên!", "Thông báo");
+                    SinhVienBdS.CancelEdit();
                 }
             }
             else if(confirm == DialogResult.No)
@@ -295,21 +300,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
         /// <param name="e"></param>
         private void QLSV_Delete_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn Delete
+            DialogResult confirm = XtraMessageBox.Show("Xóa dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                // Click btn Delete
+                // Xóa dòng dữ liệu hiện tại
+                SinhVienBdS.RemoveCurrent();
+                //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
+                // Update dữ liệu vào CSDL
+                //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
 
-            // Xóa dòng dữ liệu hiện tại
-            SinhVienBdS.RemoveCurrent();
-            //tblSinhVienDataView.RowStateFilter = DataViewRowState.Deleted;
-            // Update dữ liệu vào CSDL
-            //SinhVienTableAdapter.Connection.ConnectionString = Program.ConnStr;
-            try
-            {
-                SinhVienTableAdapter.Update(QL_KTXDataSet.SINHVIEN);
+                    XtraMessageBox.Show("Xóa dữ liệu thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint \"FK_HOPDONG_SINHVIEN\""))
+                        XtraMessageBox.Show("Lỗi: Không thể xóa vì còn tồn tại\nhợp đồng của sinh viên này!", "Thông báo");
+                    SinhVienBdS.CancelEdit();
+                }
             }
-            catch (System.Exception ex)
+            else if (confirm == DialogResult.No)
             {
-                MessageBox.Show(ex.Message);
-            }         
+                SinhVienBdS.CancelEdit();
+            }
         }
 
         /// <summary>
