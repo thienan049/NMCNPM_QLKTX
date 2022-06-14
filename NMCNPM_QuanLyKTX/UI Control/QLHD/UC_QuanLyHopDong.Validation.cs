@@ -13,7 +13,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 {
     public partial class UC_QuanLyHopDong
     {
-
         /// <summary>
         /// Validate input trong EditForm
         /// Sử dụng RegEx
@@ -32,7 +31,38 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 {
                     e.Valid = false;
                     e.ErrorText = "Số tiền không hợp lệ!";
+                    return;
                 }
+
+                GridColumn soTienCol = QLHD_View_GridView.Columns["SOTIEN"];
+                GridColumn tienNoCol = QLHD_View_GridView.Columns["TIENNO"];               
+
+                if (fieldName.Equals("SOTIEN"))
+                {
+                    Double.TryParse(e.Value.ToString(), out double soTien);
+                    Double.TryParse(QLHD_View_GridView.GetFocusedRowCellValue(tienNoCol).ToString(), out double tienNo);
+                    
+                    if (soTien < tienNo)
+                    {
+                        e.Valid = false;
+                        e.ErrorText = "Số tiền không hợp lệ!\nSOTIEN >= TIENNO";
+                        return;
+                    }
+                }
+                else if (fieldName.Equals("TIENNO"))
+                {
+                    Double.TryParse(QLHD_View_GridView.GetFocusedRowCellValue(soTienCol).ToString(), out double soTien);
+                    Double.TryParse(e.Value.ToString(), out double tienNo);
+
+                    if (soTien < tienNo)
+                    {
+                        e.Valid = false;
+                        e.ErrorText = "Số tiền không hợp lệ!\nSOTIEN >= TIENNO";
+                        return;
+                    }
+                }
+
+
             }
             else if (fieldName.Equals("NAMHOC"))
             {              

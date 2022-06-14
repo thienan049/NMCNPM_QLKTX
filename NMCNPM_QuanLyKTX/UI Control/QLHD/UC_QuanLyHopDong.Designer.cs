@@ -1022,6 +1022,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.colMAHD.Caption = "Mã HĐ";
             this.colMAHD.FieldName = "MAHD";
             this.colMAHD.Name = "colMAHD";
+            this.colMAHD.OptionsColumn.ReadOnly = true;
             this.colMAHD.Visible = true;
             this.colMAHD.VisibleIndex = 0;
             this.colMAHD.Width = 102;

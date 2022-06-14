@@ -63,6 +63,7 @@ namespace NMCNPM_QuanLyKTX
             this.SP_GetUserInfoBdS = new System.Windows.Forms.BindingSource(this.components);
             this.SP_GetUserInfoTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERINFOTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
+            this.acCtlEle_ThongTinVatTu_Phong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -190,7 +191,8 @@ namespace NMCNPM_QuanLyKTX
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.acCtlEle_ThongTinVatTu});
+            this.acCtlEle_ThongTinVatTu,
+            this.acCtlEle_ThongTinVatTu_Phong});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
             this.accordionControlElement1.Name = "accordionControlElement1";
@@ -379,6 +381,13 @@ namespace NMCNPM_QuanLyKTX
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.VT_PHONGTableAdapter = null;
             // 
+            // acCtlEle_ThongTinVatTu_Phong
+            // 
+            this.acCtlEle_ThongTinVatTu_Phong.Name = "acCtlEle_ThongTinVatTu_Phong";
+            this.acCtlEle_ThongTinVatTu_Phong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinVatTu_Phong.Text = "Thông tin vật tư - phòng";
+            this.acCtlEle_ThongTinVatTu_Phong.Click += new System.EventHandler(this.acCtlEle_ThongTinVatTu_Phong_Click);
+            // 
             // FormMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -443,6 +452,7 @@ namespace NMCNPM_QuanLyKTX
         private ql_KTXDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinVatTu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinDien;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinVatTu_Phong;
     }
 }
 

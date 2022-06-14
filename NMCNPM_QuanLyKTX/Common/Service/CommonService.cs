@@ -237,5 +237,18 @@ namespace NMCNPM_QuanLyKTX.Common.Service
 
             return collection;
         }
+
+        public static AutoCompleteStringCollection AutoCompleteNamHocCollection()
+        {
+            int namHoc = 2010;
+
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            while(namHoc <= 2025)
+            {
+                collection.Add(namHoc.ToString() + "-" + (++namHoc).ToString());
+            }
+            return collection;
+        }       
     }
 }

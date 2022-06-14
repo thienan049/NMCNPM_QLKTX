@@ -66,12 +66,15 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             try
             {
+                String maHDNew = Calculating_MaHD();
+
                 // Click btn [Add]
                 // Thêm dòng dữ liệu trống mới
                 DataRowView newRow = (DataRowView)HopDongBdS.AddNew();
                 QL_KTXDataSet.HOPDONG.Rows.InsertAt(newRow.Row, 0);
                 HopDongBdS.Position = 0;
 
+                newRow["MAHD"] = maHDNew;
                 CommonService.ApplyCurrentMaQL(newRow);
                 QLHD_View_GridView.ShowEditForm();
             }
@@ -428,12 +431,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 (control as TextEdit).Properties.Mask.EditMask = "n0";
                 (control as TextEdit).Properties.Mask.UseMaskAsDisplayFormat = true;
             }
-            /*else if (control.Tag.Equals("EditValue/MASV"))
+            else if (control.Tag.Equals("EditValue/NAMHOC"))
             {
                 (control as TextEdit).MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 (control as TextEdit).MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaSVCollection(QL_KTXDataSet.SINHVIEN);
-            }*/
+                (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteNamHocCollection();
+            }
         }
 
         /// <summary>
@@ -504,6 +507,37 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             QLHD_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
         }
 
-        
+        /// <summary>
+        /// Tính toán mã HD khi tạo mới
+        /// </summary>
+        /// <returns></returns>
+        private String Calculating_MaHD()
+        {
+            DataView dw = new DataView(QL_KTXDataSet.HOPDONG);
+            String condition = "MAHD ASC";
+            dw.Sort = condition;
+            DataTable dt = dw.ToTable();
+            String maHDLast = (dt.Rows[dt.Rows.Count - 1]["MAHD"]).ToString();
+
+            String newMaHD = "HD";
+            
+            try
+            {
+                int newID = Int32.Parse(maHDLast.Substring(2, 8)) + 1;
+                int zeroChars = 8 - newID.ToString().Length;
+
+                for (int i = 0; i < zeroChars; i++)
+                {
+                    newMaHD += "0";
+                }
+                newMaHD += newID;
+            }
+            catch(Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }
+
+            return newMaHD;
+        }
     }
 }

@@ -92,6 +92,12 @@
     <Compile Include="UI Control\QLCSVC\UC_QuanLyCSVC.Designer.cs">
       <DependentUpon>UC_QuanLyCSVC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\QLCSVC\UC_QuanLyVT_Phong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLCSVC\UC_QuanLyVT_Phong.Designer.cs">
+      <DependentUpon>UC_QuanLyVT_Phong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\QLD\UC_QuanLyDien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLCSVC\UC_QuanLyCSVC.resx">
       <DependentUpon>UC_QuanLyCSVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLCSVC\UC_QuanLyVT_Phong.resx">
+      <DependentUpon>UC_QuanLyVT_Phong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLD\UC_QuanLyDien.resx">
       <DependentUpon>UC_QuanLyDien.cs</DependentUpon>
