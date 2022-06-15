@@ -30,13 +30,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyCSVC));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.QLCSVC_ActionBtn_Panel = new DevExpress.XtraEditors.PanelControl();
             this.QLCSVC_Reload_Btn = new DevExpress.XtraEditors.SimpleButton();
             this.BtnNoBorder_StyleCtl = new DevExpress.XtraEditors.StyleController(this.components);
@@ -102,6 +102,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.VatTuTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.VATTUTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
+            this.QLCSVC_CancelEdit_Btn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.QLCSVC_ActionBtn_Panel)).BeginInit();
             this.QLCSVC_ActionBtn_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnNoBorder_StyleCtl)).BeginInit();
@@ -150,13 +151,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             // QLCSVC_ActionBtn_Panel
             // 
             this.QLCSVC_ActionBtn_Panel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.QLCSVC_ActionBtn_Panel.Controls.Add(this.QLCSVC_CancelEdit_Btn);
             this.QLCSVC_ActionBtn_Panel.Controls.Add(this.QLCSVC_Reload_Btn);
             this.QLCSVC_ActionBtn_Panel.Controls.Add(this.QLCSVC_Delete_Btn);
             this.QLCSVC_ActionBtn_Panel.Controls.Add(this.QLCSVC_Save_Btn);
             this.QLCSVC_ActionBtn_Panel.Controls.Add(this.QLCSVC_Add_Btn);
             this.QLCSVC_ActionBtn_Panel.Location = new System.Drawing.Point(3, 7);
             this.QLCSVC_ActionBtn_Panel.Name = "QLCSVC_ActionBtn_Panel";
-            this.QLCSVC_ActionBtn_Panel.Size = new System.Drawing.Size(344, 47);
+            this.QLCSVC_ActionBtn_Panel.Size = new System.Drawing.Size(409, 47);
             this.QLCSVC_ActionBtn_Panel.TabIndex = 3;
             // 
             // QLCSVC_Reload_Btn
@@ -347,13 +349,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             this.QLCSVC_CVSRowStyleBtn.AllowGlyphSkinning = false;
             this.QLCSVC_CVSRowStyleBtn.AutoSizeInLayoutControl = false;
             this.QLCSVC_CVSRowStyleBtn.ButtonInterval = 15;
-            windowsUIButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions7.SvgImage")));
-            windowsUIButtonImageOptions7.SvgImageSize = new System.Drawing.Size(30, 30);
-            windowsUIButtonImageOptions8.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions8.SvgImage")));
-            windowsUIButtonImageOptions8.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
+            windowsUIButtonImageOptions1.SvgImageSize = new System.Drawing.Size(30, 30);
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
+            windowsUIButtonImageOptions2.SvgImageSize = new System.Drawing.Size(30, 30);
             this.QLCSVC_CVSRowStyleBtn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("OddRow", false, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("EvenRow", false, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLCSVC_CVSRowStyleBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.QLCSVC_CVSRowStyleBtn.Location = new System.Drawing.Point(0, 18);
             this.QLCSVC_CVSRowStyleBtn.Name = "QLCSVC_CVSRowStyleBtn";
@@ -657,6 +659,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             this.colMAQL.Caption = "Mã QL";
             this.colMAQL.FieldName = "MAQL";
             this.colMAQL.Name = "colMAQL";
+            this.colMAQL.OptionsColumn.ReadOnly = true;
             this.colMAQL.Visible = true;
             this.colMAQL.VisibleIndex = 3;
             // 
@@ -896,19 +899,19 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             this.QLCSVC_ChangeViewBtnPanel.AllowGlyphSkinning = false;
             this.QLCSVC_ChangeViewBtnPanel.BackColor = System.Drawing.Color.Transparent;
             this.QLCSVC_ChangeViewBtnPanel.ButtonInterval = 50;
-            windowsUIButtonImageOptions9.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions9.SvgImage")));
-            windowsUIButtonImageOptions9.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions10.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions10.SvgImage")));
-            windowsUIButtonImageOptions10.SvgImageSize = new System.Drawing.Size(25, 25);
-            windowsUIButtonImageOptions11.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions11.SvgImage")));
-            windowsUIButtonImageOptions11.SvgImageSize = new System.Drawing.Size(28, 25);
-            windowsUIButtonImageOptions12.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions12.SvgImage")));
-            windowsUIButtonImageOptions12.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
+            windowsUIButtonImageOptions3.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
+            windowsUIButtonImageOptions4.SvgImageSize = new System.Drawing.Size(25, 25);
+            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
+            windowsUIButtonImageOptions5.SvgImageSize = new System.Drawing.Size(28, 25);
+            windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
+            windowsUIButtonImageOptions6.SvgImageSize = new System.Drawing.Size(28, 25);
             this.QLCSVC_ChangeViewBtnPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("GridView", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("CardView", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("LayoutView", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("TileView", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.QLCSVC_ChangeViewBtnPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.QLCSVC_ChangeViewBtnPanel.Location = new System.Drawing.Point(583, 0);
             this.QLCSVC_ChangeViewBtnPanel.Name = "QLCSVC_ChangeViewBtnPanel";
@@ -946,6 +949,22 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             this.tableAdapterManager.UpdateOrder = NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VATTUTableAdapter = this.VatTuTableAdapter;
             this.tableAdapterManager.VT_PHONGTableAdapter = null;
+            // 
+            // QLCSVC_CancelEdit_Btn
+            // 
+            this.QLCSVC_CancelEdit_Btn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.QLCSVC_CancelEdit_Btn.AppearanceHovered.Options.UseBackColor = true;
+            this.QLCSVC_CancelEdit_Btn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.QLCSVC_CancelEdit_Btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.QLCSVC_CancelEdit_Btn.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.QLCSVC_CancelEdit_Btn.Location = new System.Drawing.Point(329, 6);
+            this.QLCSVC_CancelEdit_Btn.Name = "QLCSVC_CancelEdit_Btn";
+            this.QLCSVC_CancelEdit_Btn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.QLCSVC_CancelEdit_Btn.Size = new System.Drawing.Size(47, 37);
+            this.QLCSVC_CancelEdit_Btn.StyleController = this.BtnNoBorder_StyleCtl;
+            this.QLCSVC_CancelEdit_Btn.TabIndex = 4;
+            this.QLCSVC_CancelEdit_Btn.ToolTip = "Reload";
+            this.QLCSVC_CancelEdit_Btn.Click += new System.EventHandler(this.QLCSVC_CancelEdit_Btn_Click);
             // 
             // UC_QuanLyCSVC
             // 
@@ -1071,5 +1090,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
         private DevExpress.XtraGrid.Columns.GridColumn colGIATIEN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAQL;
+        private DevExpress.XtraEditors.SimpleButton QLCSVC_CancelEdit_Btn;
     }
 }

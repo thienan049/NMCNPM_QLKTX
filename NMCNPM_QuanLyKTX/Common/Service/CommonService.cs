@@ -1,16 +1,11 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NMCNPM_QuanLyKTX.Common.Service
@@ -51,6 +46,49 @@ namespace NMCNPM_QuanLyKTX.Common.Service
         public static void ApplyCurrentMaQL(DataRowView row)
         {
             row["MAQL"] = Program.MaQL;
+        }
+
+        /// <summary>
+        /// Tính toán thời điểm [Năm học] và [Học kỳ] hiện tại
+        /// </summary>
+        /// <returns></returns>
+        public static String[] CalculateNamHocHocKy()
+        {
+            String[] result = new String[3];
+
+            DateTime now = DateTime.Now;
+            int month = now.Month;
+            int year = now.Year;
+
+            if (month >= 8 && month <= 12)
+            {
+                // [0] = NamHocTu
+                result[0] = year.ToString();
+                // [1] = NamHocDen
+                result[1] = (year + 1).ToString();
+                // [2] = HocKy
+                result[2] = "1";
+            }
+            else if (month >= 1 && month <= 5)
+            {
+                // [0] = NamHoc
+                result[0] = (year - 1).ToString();
+                // [1] = NamHocDen
+                result[1] = year.ToString();
+                // [2] = HocKy
+                result[1] = "2";
+            }
+            else
+            {
+                // [0] = NamHoc
+                result[0] = (year - 1).ToString();
+                // [1] = NamHocDen
+                result[1] = year.ToString();
+                // [1] = HocKy
+                result[2] = "3";
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             }
         }
 
+        /// <summary>
+        /// Trả về danh sách [MAPHONG] cho Autocomplete
+        /// </summary>
+        /// <param name="phongDataTable"></param>
+        /// <returns></returns>
         public static AutoCompleteStringCollection AutoCompleteDSPhongCollection(ql_KTXDataSet.PHONGDataTable phongDataTable)
         {
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -202,6 +245,11 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             return collection;
         }
 
+        /// <summary>
+        /// Trả về danh sách [MAQL] cho Autocomplete
+        /// </summary>
+        /// <param name="quanLyTable"></param>
+        /// <returns></returns>
         public static AutoCompleteStringCollection AutoCompleteDSQuanLyCollection(ql_KTXDataSet.QUANLYDataTable quanLyTable)
         {
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -214,6 +262,11 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             return collection;
         }
 
+        /// <summary>
+        /// Trả về danh sách [MAHD] cho Autocomplete
+        /// </summary>
+        /// <param name="hopDongTable"></param>
+        /// <returns></returns>
         public static AutoCompleteStringCollection AutoCompleteDSMaHDCollection(ql_KTXDataSet.HOPDONGDataTable hopDongTable)
         {
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -226,6 +279,11 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             return collection;
         }
 
+        /// <summary>
+        /// Trả về danh sách [MASV] cho Autocomplete
+        /// </summary>
+        /// <param name="sinhVienTable"></param>
+        /// <returns></returns>
         public static AutoCompleteStringCollection AutoCompleteDSMaSVCollection(ql_KTXDataSet.SINHVIENDataTable sinhVienTable)
         {
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
@@ -238,6 +296,10 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             return collection;
         }
 
+        /// <summary>
+        /// Trả về danh sách [NAMHOC] cho Autocomplete
+        /// </summary>
+        /// <returns></returns>
         public static AutoCompleteStringCollection AutoCompleteNamHocCollection()
         {
             int namHoc = 2010;
@@ -248,6 +310,7 @@ namespace NMCNPM_QuanLyKTX.Common.Service
             {
                 collection.Add(namHoc.ToString() + "-" + (++namHoc).ToString());
             }
+
             return collection;
         }       
     }

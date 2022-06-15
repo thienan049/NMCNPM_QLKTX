@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.EditForm.Helpers.Controls;
+using NMCNPM_QuanLyKTX.Common.Const;
 using NMCNPM_QuanLyKTX.Common.Service;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
     public partial class UC_QuanLyHopDong : XtraUserControl
     {
         DataView tblHopDongDataView = null;
+
+        // LoaiPhong
+
 
         // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
         private bool isSidePaneCollapsed = true;
@@ -66,7 +70,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             try
             {
-                String maHDNew = Calculating_MaHD();
+                String maHDNew = CalMaHD();
 
                 // Click btn [Add]
                 // Thêm dòng dữ liệu trống mới
@@ -511,7 +515,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// Tính toán mã HD khi tạo mới
         /// </summary>
         /// <returns></returns>
-        private String Calculating_MaHD()
+        private String CalMaHD()
         {
             DataView dw = new DataView(QL_KTXDataSet.HOPDONG);
             String condition = "MAHD ASC";
@@ -538,6 +542,44 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             }
 
             return newMaHD;
+        }
+
+        private decimal CalSoTienHopDong(String maPhong, String hocKy)
+        {
+            QL_KTXDataSet.EnforceConstraints = false;
+            LoaiPhongTableAdapter.Fill(QL_KTXDataSet.LOAIPHONG);
+            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
+
+            DataRow[] rowsPhong = QL_KTXDataSet.PHONG.Select("MAPHONG = '" + maPhong + "'");
+            DataRow[] rowsLoaiPhong = QL_KTXDataSet.LOAIPHONG.Select("MALOAIPHONG = '" + rowsPhong[0]["MALOAIPHONG"] + "'");
+
+            Decimal.TryParse(rowsLoaiPhong[0]["GIALOAIPHONG"].ToString(), out decimal soTienLoaiPhong);
+
+            switch (hocKy)
+            {
+                case "1":
+                    return soTienLoaiPhong * CommonConstant.HK1;
+                case "2":
+                    return soTienLoaiPhong * CommonConstant.HK2;
+                case "3":
+                    return soTienLoaiPhong * CommonConstant.HK3;
+                default:
+                    return 0;            }
+                
+        }
+
+        private void QLHD_CancelEdit_Btn_Click(object sender, EventArgs e)
+        {
+            HopDongBdS.CancelEdit();
+            try
+            {
+                if (QL_KTXDataSet.HOPDONG.Rows[0].RowState == DataRowState.Added)
+                    HopDongBdS.RemoveAt(0);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }
         }
     }
 }

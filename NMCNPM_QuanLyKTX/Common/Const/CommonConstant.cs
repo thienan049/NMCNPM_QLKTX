@@ -27,6 +27,22 @@ namespace NMCNPM_QuanLyKTX.Common.Const
             "Sinh viên theo phòng" 
         };
 
+        public static class MaPMS
+        {
+            public static string VTP = "VTP";
+            public static string P = "P";
+            public static string HDD = "HDD";
+            public static string HD = "HD";
+            public static string SV = "SV";
+            public static string VT = "VT";
+            public static string A = "A";
+            public static string X = "X";
+        }
+
+        public static int HK1 = 5;
+        public static int HK2 = 5;
+        public static int HK3 = 2;
+
         /// <summary>
         /// Chứa các RegEx Patterns được sử dụng 
         /// </summary>

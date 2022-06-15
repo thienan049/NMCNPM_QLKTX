@@ -38,7 +38,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.UserInfo
 
         private List<String> GetUserPermissionList()
         {
-
             List<String> Permissions = new List<string>();
 
             QL_KTXDataSet.EnforceConstraints = false;

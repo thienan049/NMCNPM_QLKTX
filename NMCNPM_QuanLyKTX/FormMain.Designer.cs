@@ -36,15 +36,16 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLySinhVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongKeSV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlQuanLyHopDong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinHD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlQuanLyCSVC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinVatTu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongTinVatTu_Phong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlQuanLyDien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinDien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlQuanLyTaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -52,6 +53,10 @@ namespace NMCNPM_QuanLyKTX
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.HoTenUserLbl = new DevExpress.XtraBars.BarHeaderItem();
             this.MaQLUserLbl = new DevExpress.XtraBars.BarStaticItem();
+            this.NamHocLbl = new DevExpress.XtraBars.BarStaticItem();
+            this.NamHocVal = new DevExpress.XtraBars.BarStaticItem();
+            this.HocKyLbl = new DevExpress.XtraBars.BarStaticItem();
+            this.HocKyVal = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -63,7 +68,7 @@ namespace NMCNPM_QuanLyKTX
             this.SP_GetUserInfoBdS = new System.Windows.Forms.BindingSource(this.components);
             this.SP_GetUserInfoTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERINFOTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
-            this.acCtlEle_ThongTinVatTu_Phong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.SP_GetUserPermissionTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERPERMISSIONTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -104,11 +109,11 @@ namespace NMCNPM_QuanLyKTX
             this.accCtlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.accCtlSidebar.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlQuanLySinhVien,
-            this.accordionControlElement4,
+            this.acCtlQuanLyHopDong,
             this.acCtlQuanLyPhong,
-            this.accordionControlElement1,
-            this.accordionControlElement5,
-            this.accordionControlElement7});
+            this.acCtlQuanLyCSVC,
+            this.acCtlQuanLyDien,
+            this.acCtlQuanLyTaiKhoan});
             this.accCtlSidebar.Location = new System.Drawing.Point(0, 30);
             this.accCtlSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accCtlSidebar.Name = "accCtlSidebar";
@@ -119,6 +124,8 @@ namespace NMCNPM_QuanLyKTX
             // 
             // acCtlQuanLySinhVien
             // 
+            this.acCtlQuanLySinhVien.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLySinhVien.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLySinhVien.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acCtlQuanLySinhVien.Appearance.Hovered.Options.UseFont = true;
             this.acCtlQuanLySinhVien.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,7 +135,6 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLySinhVien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinSV,
             this.acCtlEle_ThongKeSV});
-            this.acCtlQuanLySinhVien.Expanded = true;
             this.acCtlQuanLySinhVien.Hint = "Quản lý sinh viên";
             this.acCtlQuanLySinhVien.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.acCtlQuanLySinhVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLySinhVien.ImageOptions.SvgImage")));
@@ -149,14 +155,15 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongKeSV.Text = "Thống kê";
             this.acCtlEle_ThongKeSV.Click += new System.EventHandler(this.acCtlEle_ThongKeSV_Click);
             // 
-            // accordionControlElement4
+            // acCtlQuanLyHopDong
             // 
-            this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlQuanLyHopDong.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLyHopDong.Appearance.Disabled.Options.UseFont = true;
+            this.acCtlQuanLyHopDong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinHD});
-            this.accordionControlElement4.Expanded = true;
-            this.accordionControlElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Text = "Quản lý hợp đồng";
+            this.acCtlQuanLyHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
+            this.acCtlQuanLyHopDong.Name = "acCtlQuanLyHopDong";
+            this.acCtlQuanLyHopDong.Text = "Quản lý hợp đồng";
             // 
             // acCtlEle_ThongTinHD
             // 
@@ -167,6 +174,8 @@ namespace NMCNPM_QuanLyKTX
             // 
             // acCtlQuanLyPhong
             // 
+            this.acCtlQuanLyPhong.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLyPhong.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLyPhong.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acCtlQuanLyPhong.Appearance.Hovered.Options.UseFont = true;
             this.acCtlQuanLyPhong.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,7 +184,6 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyPhong.Appearance.Pressed.Options.UseFont = true;
             this.acCtlQuanLyPhong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinPhong});
-            this.acCtlQuanLyPhong.Expanded = true;
             this.acCtlQuanLyPhong.Hint = "Quản lý phòng";
             this.acCtlQuanLyPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyPhong.ImageOptions.SvgImage")));
             this.acCtlQuanLyPhong.Name = "acCtlQuanLyPhong";
@@ -188,15 +196,16 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinPhong.Text = "Thông tin phòng";
             this.acCtlEle_ThongTinPhong.Click += new System.EventHandler(this.acCtlEle_ThongTinPhong_Click);
             // 
-            // accordionControlElement1
+            // acCtlQuanLyCSVC
             // 
-            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlQuanLyCSVC.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLyCSVC.Appearance.Disabled.Options.UseFont = true;
+            this.acCtlQuanLyCSVC.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinVatTu,
             this.acCtlEle_ThongTinVatTu_Phong});
-            this.accordionControlElement1.Expanded = true;
-            this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
-            this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Quản lý CSVC";
+            this.acCtlQuanLyCSVC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
+            this.acCtlQuanLyCSVC.Name = "acCtlQuanLyCSVC";
+            this.acCtlQuanLyCSVC.Text = "Quản lý CSVC";
             // 
             // acCtlEle_ThongTinVatTu
             // 
@@ -205,14 +214,22 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinVatTu.Text = "Thông tin vật tư";
             this.acCtlEle_ThongTinVatTu.Click += new System.EventHandler(this.acCtlEle_ThongTinVatTu_Click);
             // 
-            // accordionControlElement5
+            // acCtlEle_ThongTinVatTu_Phong
             // 
-            this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlEle_ThongTinVatTu_Phong.Name = "acCtlEle_ThongTinVatTu_Phong";
+            this.acCtlEle_ThongTinVatTu_Phong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinVatTu_Phong.Text = "Thông tin vật tư - phòng";
+            this.acCtlEle_ThongTinVatTu_Phong.Click += new System.EventHandler(this.acCtlEle_ThongTinVatTu_Phong_Click);
+            // 
+            // acCtlQuanLyDien
+            // 
+            this.acCtlQuanLyDien.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLyDien.Appearance.Disabled.Options.UseFont = true;
+            this.acCtlQuanLyDien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinDien});
-            this.accordionControlElement5.Expanded = true;
-            this.accordionControlElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Text = "Quản lý điện";
+            this.acCtlQuanLyDien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
+            this.acCtlQuanLyDien.Name = "acCtlQuanLyDien";
+            this.acCtlQuanLyDien.Text = "Quản lý điện";
             // 
             // acCtlEle_ThongTinDien
             // 
@@ -221,14 +238,15 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinDien.Text = "Thông tin tiêu thụ điện";
             this.acCtlEle_ThongTinDien.Click += new System.EventHandler(this.acCtlEle_ThongTinDien_Click);
             // 
-            // accordionControlElement7
+            // acCtlQuanLyTaiKhoan
             // 
-            this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.acCtlQuanLyTaiKhoan.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acCtlQuanLyTaiKhoan.Appearance.Disabled.Options.UseFont = true;
+            this.acCtlQuanLyTaiKhoan.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_TaiKhoan});
-            this.accordionControlElement7.Expanded = true;
-            this.accordionControlElement7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement7.ImageOptions.SvgImage")));
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Text = "ADMIN";
+            this.acCtlQuanLyTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement7.ImageOptions.SvgImage")));
+            this.acCtlQuanLyTaiKhoan.Name = "acCtlQuanLyTaiKhoan";
+            this.acCtlQuanLyTaiKhoan.Text = "ADMIN";
             // 
             // acCtlEle_TaiKhoan
             // 
@@ -245,7 +263,11 @@ namespace NMCNPM_QuanLyKTX
             this.Btn_ProgramSetting,
             this.barButtonItem2,
             this.HoTenUserLbl,
-            this.MaQLUserLbl});
+            this.MaQLUserLbl,
+            this.NamHocLbl,
+            this.NamHocVal,
+            this.HocKyLbl,
+            this.HocKyVal});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -262,6 +284,10 @@ namespace NMCNPM_QuanLyKTX
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem2);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.HoTenUserLbl);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.MaQLUserLbl);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.NamHocLbl);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.NamHocVal);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.HocKyLbl);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.HocKyVal);
             // 
             // barButtonItem1
             // 
@@ -298,6 +324,34 @@ namespace NMCNPM_QuanLyKTX
             this.MaQLUserLbl.Id = 8;
             this.MaQLUserLbl.Name = "MaQLUserLbl";
             // 
+            // NamHocLbl
+            // 
+            this.NamHocLbl.Caption = "  |      Năm học:";
+            this.NamHocLbl.Id = 10;
+            this.NamHocLbl.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NamHocLbl.ItemAppearance.Normal.Options.UseFont = true;
+            this.NamHocLbl.Name = "NamHocLbl";
+            // 
+            // NamHocVal
+            // 
+            this.NamHocVal.Caption = "namHocText";
+            this.NamHocVal.Id = 11;
+            this.NamHocVal.Name = "NamHocVal";
+            // 
+            // HocKyLbl
+            // 
+            this.HocKyLbl.Caption = "Học kỳ:";
+            this.HocKyLbl.Id = 12;
+            this.HocKyLbl.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HocKyLbl.ItemAppearance.Normal.Options.UseFont = true;
+            this.HocKyLbl.Name = "HocKyLbl";
+            // 
+            // HocKyVal
+            // 
+            this.HocKyVal.Caption = "hocKyText";
+            this.HocKyVal.Id = 13;
+            this.HocKyVal.Name = "HocKyVal";
+            // 
             // fluentFormDefaultManager1
             // 
             this.fluentFormDefaultManager1.DockingEnabled = false;
@@ -307,8 +361,12 @@ namespace NMCNPM_QuanLyKTX
             this.Btn_ProgramSetting,
             this.barButtonItem2,
             this.HoTenUserLbl,
-            this.MaQLUserLbl});
-            this.fluentFormDefaultManager1.MaxItemId = 10;
+            this.MaQLUserLbl,
+            this.NamHocLbl,
+            this.NamHocVal,
+            this.HocKyLbl,
+            this.HocKyVal});
+            this.fluentFormDefaultManager1.MaxItemId = 14;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1,
             this.repositoryItemPictureEdit1,
@@ -381,12 +439,9 @@ namespace NMCNPM_QuanLyKTX
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.VT_PHONGTableAdapter = null;
             // 
-            // acCtlEle_ThongTinVatTu_Phong
+            // SP_GetUserPermissionTableAdapter
             // 
-            this.acCtlEle_ThongTinVatTu_Phong.Name = "acCtlEle_ThongTinVatTu_Phong";
-            this.acCtlEle_ThongTinVatTu_Phong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.acCtlEle_ThongTinVatTu_Phong.Text = "Thông tin vật tư - phòng";
-            this.acCtlEle_ThongTinVatTu_Phong.Click += new System.EventHandler(this.acCtlEle_ThongTinVatTu_Phong_Click);
+            this.SP_GetUserPermissionTableAdapter.ClearBeforeFill = true;
             // 
             // FormMain
             // 
@@ -428,13 +483,13 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlQuanLyPhong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinSV;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlQuanLyCSVC;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongKeSV;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinPhong;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlQuanLyHopDong;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlQuanLyDien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlQuanLyTaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_TaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinHD;
@@ -453,6 +508,11 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinVatTu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinDien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinVatTu_Phong;
+        private DevExpress.XtraBars.BarStaticItem NamHocLbl;
+        private DevExpress.XtraBars.BarStaticItem NamHocVal;
+        private DevExpress.XtraBars.BarStaticItem HocKyLbl;
+        private DevExpress.XtraBars.BarStaticItem HocKyVal;
+        private ql_KTXDataSetTableAdapters.SP_GETUSERPERMISSIONTableAdapter SP_GetUserPermissionTableAdapter;
     }
 }
 

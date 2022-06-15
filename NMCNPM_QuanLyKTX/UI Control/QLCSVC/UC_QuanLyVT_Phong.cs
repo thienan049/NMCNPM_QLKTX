@@ -29,8 +29,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             // Lấy data từ CSDL
             FillDataFromDatabase();
 
-            // Set data cho ComboBox column [LOAIPHONG] để sử dụng
-            //CommonService.InitDSLoaiPhongBox(QLVT_P_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if (!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLVT_P_View_GridView, QLVT_P_ActionBtn_Panel);
         }
 
         /// <summary>
@@ -54,9 +55,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         /// <param name="e"></param>
         private void QLVT_P_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn [Add]
-            // Thêm dòng dữ liệu trống mới
-            VatTu_PhongBdS.AddNew();
+            try
+            {
+                // Click btn [Add]
+                // Thêm dòng dữ liệu trống mới
+                DataRowView newRow = (DataRowView)VatTu_PhongBdS.AddNew();
+                QL_KTXDataSet.VT_PHONG.Rows.InsertAt(newRow.Row, 0);
+                VatTu_PhongBdS.Position = 0;
+
+                newRow["TIENNO"] = false;
+                QLVT_P_View_GridView.ShowEditForm();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         /// <summary>
@@ -245,6 +258,20 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         private void QLVT_P_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
         {
             e.Value = ((DataRowView)PhongBdS[PhongBdS.Position])["MAPHONG"].ToString();
+        }
+
+        private void QLVT_P_CancelEdit_Btn_Click(object sender, EventArgs e)
+        {
+            VatTu_PhongBdS.CancelEdit();
+            try
+            {
+                if (QL_KTXDataSet.VT_PHONG.Rows[0].RowState == DataRowState.Added)
+                    VatTu_PhongBdS.RemoveAt(0);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }
         }
     }
 }

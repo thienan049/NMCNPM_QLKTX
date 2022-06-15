@@ -29,6 +29,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         {
             // Lấy data từ CSDL
             FillDataFromDatabase();
+
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if (!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLCSVC_View_GridView, QLCSVC_ActionBtn_Panel);
         }
 
         /// <summary>
@@ -49,9 +53,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
         /// <param name="e"></param>
         private void QLCSVC_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn [Add]
-            // Thêm dòng dữ liệu trống mới
-            VatTuBdS.AddNew();
+            try
+            {
+                // Click btn [Add]
+                // Thêm dòng dữ liệu trống mới
+                DataRowView newRow = (DataRowView)VatTuBdS.AddNew();
+                QL_KTXDataSet.VATTU.Rows.InsertAt(newRow.Row, 0);
+                VatTuBdS.Position = 0;
+
+                CommonService.ApplyCurrentMaQL(newRow);
+                QLCSVC_View_GridView.ShowEditForm();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         /// <summary>
@@ -227,6 +243,20 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLCSVC
             TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
             layoutPane.AutoSize = true;
             layoutPane.Size = new Size(container.Size.Width, 110);
+        }
+
+        private void QLCSVC_CancelEdit_Btn_Click(object sender, EventArgs e)
+        {
+            VatTuBdS.CancelEdit();
+            try
+            {
+                if (QL_KTXDataSet.VATTU.Rows[0].RowState == DataRowState.Added)
+                    VatTuBdS.RemoveAt(0);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }
         }
     }
 }

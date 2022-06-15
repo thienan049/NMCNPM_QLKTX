@@ -61,8 +61,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                         return;
                     }
                 }
-
-
             }
             else if (fieldName.Equals("NAMHOC"))
             {              
@@ -73,14 +71,33 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                     return;
                 }
 
-                int namTuInt, namDenInt;
-                Int32.TryParse((e.Value as string).Split("-".ToCharArray())[0], out namTuInt);
-                Int32.TryParse((e.Value as string).Split("-".ToCharArray())[1], out namDenInt);
+                Int32.TryParse((e.Value as string).Split("-".ToCharArray())[0], out int namTuInt);
+                Int32.TryParse((e.Value as string).Split("-".ToCharArray())[1], out int namDenInt);
 
                 if (namTuInt > namDenInt)
                 {
                     e.Valid = false;
                     e.ErrorText = "Năm học không hợp lệ!\nNhập xxxx <= yyyy!";
+                }
+            }
+            else if (fieldName.Equals("HOCKY"))
+            {
+                // Lấy giá trị [MAPHONG] để lấy số tiền tương ứng rồi tính tổng tiền cho vào số tiền [SOTIEN]
+                String maPhong = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["MAPHONG"]).ToString();
+                if (!maPhong.Equals("") && maPhong != null)
+                {
+                    QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["SOTIEN"], CalSoTienHopDong(maPhong, e.Value.ToString()));
+                    QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["TIENNO"], 0);
+                }               
+            }
+            else if (fieldName.Equals("MAPHONG"))
+            {
+                // Lấy giá trị [HOCKY] rồi tính tổng tiền cho vào số tiền [SOTIEN]
+                String hk = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["HOCKY"]).ToString();
+                if (!hk.Equals("") && hk != null)
+                {
+                    QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["SOTIEN"], CalSoTienHopDong(e.Value.ToString(), hk));
+                    QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["TIENNO"], 0);
                 }
             }
         }

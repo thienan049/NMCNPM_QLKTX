@@ -31,6 +31,10 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
 
             // Set data cho ComboBox column [LOAIPHONG] để sử dụng
             CommonService.InitDSLoaiPhongBox(QLP_LoaiPhongCb_RepoItem, QL_KTXDataSet.LOAIPHONG);
+
+            // Kiểm tra chế độ sử dụng app là có/không Login
+            if (!CommonService.CheckAccessMode())
+                CommonService.InitAppNoLoginMode(QLP_View_GridView, QLP_ActionBtn_Panel);
         }
 
         /// <summary>
@@ -54,9 +58,21 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// <param name="e"></param>
         private void QLP_Add_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn [Add]
-            // Thêm dòng dữ liệu trống mới
-            PhongBdS.AddNew();
+            try
+            {
+                // Click btn [Add]
+                // Thêm dòng dữ liệu trống mới
+                DataRowView newRow = (DataRowView)PhongBdS.AddNew();
+                QL_KTXDataSet.PHONG.Rows.InsertAt(newRow.Row, 0);
+                PhongBdS.Position = 0;
+
+                CommonService.ApplyCurrentMaQL(newRow);
+                QLP_View_GridView.ShowEditForm();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi");
+            }
         }
 
         /// <summary>
@@ -200,6 +216,20 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
             ColorPickEdit cVSColorPickEdit = sender as ColorPickEdit;
             QLP_View_GridView.Appearance.OddRow.BackColor = cVSColorPickEdit.Color;
             QLP_View_GridView.Appearance.EvenRow.BackColor = cVSColorPickEdit.Color;
+        }
+
+        private void QLP_CancelEdit_Btn_Click(object sender, EventArgs e)
+        {
+            PhongBdS.CancelEdit();
+            try
+            {
+                if (QL_KTXDataSet.PHONG.Rows[0].RowState == DataRowState.Added)
+                    PhongBdS.RemoveAt(0);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }
         }
     }
 }

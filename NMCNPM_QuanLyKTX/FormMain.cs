@@ -3,6 +3,7 @@ using DevExpress.Skins;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using NMCNPM_QuanLyKTX.Common.Const;
 using NMCNPM_QuanLyKTX.Common.Service;
 using NMCNPM_QuanLyKTX.UI_Control.QLCSVC;
 using NMCNPM_QuanLyKTX.UI_Control.QLD;
@@ -23,6 +24,8 @@ namespace NMCNPM_QuanLyKTX
 {
     public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+
+        bool controlElementDisabled = false;
 
         // QuanLySinhVien user control
         UC_QuanLySinhVien UC_QLSV = null;
@@ -61,9 +64,18 @@ namespace NMCNPM_QuanLyKTX
             // Lưu lại trạng thái tyle mặc định của chương trình
             CommonService.SaveDefaultApplicationStyle();
 
-            // Hiển thị thông tin user
-            if(CommonService.CheckAccessMode())
-                InitUserInfo();
+            if (CommonService.CheckAccessMode())
+            {
+                InitUserInfo(false);
+                InitUserPrivilege(false);
+            }
+            else
+            {
+                InitUserPrivilege(true);
+                InitUserInfo(true);
+            }
+            
+            InitCurrentWorkingTime();          
         }
 
         // Hiển thị QLSV user control
@@ -184,34 +196,6 @@ namespace NMCNPM_QuanLyKTX
             }
         }
 
-        /// <summary>
-        /// Lấy thông tin user và hiển thị
-        /// </summary>
-        private void InitUserInfo()
-        {
-            QL_KTXDataSet.EnforceConstraints = false;
-            // Lấy data user từ [SP_GETUSERINFO]
-            SP_GetUserInfoTableAdapter.Fill(QL_KTXDataSet.SP_GETUSERINFO, Program.Username);
-
-            if(QL_KTXDataSet.SP_GETUSERINFO.Rows.Count != 0)
-            {
-                DataRow row = QL_KTXDataSet.SP_GETUSERINFO.Rows[0];
-  
-                Program.HoUser = row["HO"] as String;
-                Program.TenUser = row["TEN"] as String;
-                Program.MaQL = row["MAQL"] as String;
-                Program.NgayNhanViec = row["NGAYNHANVIEC"].ToString();
-            }
-
-            HoTenUserLbl.Caption = Program.HoUser + " " + Program.TenUser;
-            MaQLUserLbl.Caption = "     " + Program.MaQL;
-        }
-
-        private void HoTenUserLbl_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            new UI_Control.UserInfo.UserInfo().ShowDialog();
-        }
-
         private void acCtlEle_ThongTinVatTu_Click(object sender, EventArgs e)
         {
             // Nếu chưa tồn tại, tạo đối tượng mới
@@ -273,6 +257,147 @@ namespace NMCNPM_QuanLyKTX
             {
                 this.UC_QLVT_P.BringToFront();
             }
+        }
+
+        private List<String> GetUserPermissionList()
+        {
+
+            List<String> Permissions = new List<string>();
+
+            QL_KTXDataSet.EnforceConstraints = false;
+
+            SP_GetUserPermissionTableAdapter.Fill(QL_KTXDataSet.SP_GETUSERPERMISSION, Program.Username);
+
+            if (QL_KTXDataSet.SP_GETUSERPERMISSION.Rows.Count != 0)
+            {
+                foreach (DataRow row in QL_KTXDataSet.SP_GETUSERPERMISSION.Rows)
+                {
+                    Permissions.Add(row["MAPMS"].ToString().Trim());
+                }
+            }
+
+            return Permissions;
+        }
+
+        /// <summary>
+        /// Lấy thông tin user và hiển thị
+        /// </summary>
+        private void InitUserInfo(bool noLogin)
+        {
+            if (!noLogin)
+            {
+                QL_KTXDataSet.EnforceConstraints = false;
+                // Lấy data user từ [SP_GETUSERINFO]
+                SP_GetUserInfoTableAdapter.Fill(QL_KTXDataSet.SP_GETUSERINFO, Program.Username);
+
+                if (QL_KTXDataSet.SP_GETUSERINFO.Rows.Count != 0)
+                {
+                    DataRow row = QL_KTXDataSet.SP_GETUSERINFO.Rows[0];
+
+                    Program.HoUser = row["HO"] as String;
+                    Program.TenUser = row["TEN"] as String;
+                    Program.MaQL = row["MAQL"] as String;
+                    Program.NgayNhanViec = row["NGAYNHANVIEC"].ToString();
+                }
+
+                HoTenUserLbl.Caption = Program.HoUser + " " + Program.TenUser;
+                MaQLUserLbl.Caption = "     " + Program.MaQL;
+            }
+            else
+            {
+                HoTenUserLbl.Caption = "No user";
+                MaQLUserLbl.Caption = String.Empty;
+            }
+
+        }
+
+        /// <summary>
+        /// Hiển thị thông tin năm học - học kỳ
+        /// </summary>
+        private void InitCurrentWorkingTime()
+        {
+            // Lấy thông tin năm học và học kỳ
+            String[] namHocHK = CommonService.CalculateNamHocHocKy();
+
+            if (namHocHK.Length != 0)
+            {
+                NamHocVal.Caption = namHocHK[0] + " - " + namHocHK[1];
+                HocKyVal.Caption = namHocHK[2];
+            }
+        }
+
+        /// <summary>
+        /// Hiển thị theo phân quyền
+        /// </summary>
+        private void InitUserPrivilege(bool noLogin)
+        {
+            if (!noLogin)
+            {
+                List<String> pms = GetUserPermissionList();
+                foreach (String detailPMS in pms)
+                {
+                    if (!detailPMS.Equals(CommonConstant.MaPMS.A))
+                    {
+                        if (!controlElementDisabled)
+                            DisableAllOptions();
+                        if (detailPMS.Equals(CommonConstant.MaPMS.VTP))
+                        {
+                            acCtlQuanLyCSVC.Enabled = true;
+                            acCtlEle_ThongTinVatTu_Phong.Enabled = true;
+                        }
+                        else if (detailPMS.Equals(CommonConstant.MaPMS.P))
+                        {
+                            acCtlQuanLyPhong.Enabled = true;
+                            acCtlEle_ThongTinPhong.Enabled = true;
+                        }
+                        else if (detailPMS.Equals(CommonConstant.MaPMS.HDD))
+                        {
+                            acCtlQuanLyDien.Enabled = true;
+                            acCtlEle_ThongTinDien.Enabled = true;
+                        }
+                        else if (detailPMS.Equals(CommonConstant.MaPMS.HD))
+                        {
+                            acCtlQuanLyHopDong.Enabled = true;
+                            acCtlEle_ThongTinHD.Enabled = true;
+                        }
+                        else if (detailPMS.Equals(CommonConstant.MaPMS.SV))
+                        {
+                            acCtlQuanLySinhVien.Enabled = true;
+                            acCtlEle_ThongTinSV.Enabled = true;
+                            acCtlEle_ThongKeSV.Enabled = true;
+                        }
+                        else if (detailPMS.Equals(CommonConstant.MaPMS.VT))
+                        {
+                            acCtlQuanLyCSVC.Enabled = true;
+                            acCtlEle_ThongTinVatTu.Enabled = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                acCtlQuanLyTaiKhoan.Enabled = false;
+            }                                 
+        }
+
+        /// <summary>
+        /// Hiển thị chi tiết thông tin user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HoTenUserLbl_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (CommonService.CheckAccessMode())
+                new UI_Control.UserInfo.UserInfo().ShowDialog();
+        }
+
+        private void DisableAllOptions()
+        {
+            foreach(AccordionControlElement ctl in accCtlSidebar.GetElements())
+            {
+                ctl.Enabled = false;
+            }
+            controlElementDisabled = true;
         }
     }
 }

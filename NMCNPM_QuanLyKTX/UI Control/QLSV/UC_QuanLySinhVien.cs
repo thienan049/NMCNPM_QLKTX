@@ -481,6 +481,20 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLSV
                 (control as TextEdit).MaskBox.AutoCompleteCustomSource = CommonService.AutoCompleteDSMaSVCollection(QL_KTXDataSet.SINHVIEN);
             }
         }
+
+        private void QLSV_CancleEdit_Btn_Click(object sender, EventArgs e)
+        {
+            SinhVienBdS.CancelEdit();
+            try
+            {
+                if (QL_KTXDataSet.SINHVIEN.Rows[0].RowState == DataRowState.Added)
+                    SinhVienBdS.RemoveAt(0);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Thông báo");
+            }           
+        }
     }
     
 }
