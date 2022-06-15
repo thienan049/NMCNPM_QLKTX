@@ -65,6 +65,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLD
                 QL_KTXDataSet.HOADONDIEN.Rows.InsertAt(newRow.Row, 0);
                 HoaDonDienBdS.Position = 0;
 
+                newRow["TIENNO"] = false;
                 CommonService.ApplyCurrentMaQL(newRow);
                 QLD_View_GridView.ShowEditForm();
             }

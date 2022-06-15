@@ -317,7 +317,7 @@ namespace NMCNPM_QuanLyKTX
         private void InitCurrentWorkingTime()
         {
             // Lấy thông tin năm học và học kỳ
-            String[] namHocHK = CommonService.CalculateNamHocHocKy();
+            String[] namHocHK = CommonService.CalNamHocHocKy();
 
             if (namHocHK.Length != 0)
             {

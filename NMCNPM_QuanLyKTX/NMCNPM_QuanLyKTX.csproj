@@ -110,6 +110,15 @@
     <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.Designer.cs">
       <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Validation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\Setting\SettingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +145,6 @@
     </Compile>
     <Compile Include="UI Control\QLSV\UC_QuanLySinhVien.Validation.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Designer.cs">
-      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Control\UserInfo\UserInfo.cs">
       <SubType>Form</SubType>
@@ -180,6 +183,9 @@
     <EmbeddedResource Include="UI Control\QLSV\UC_QLSV_ThongKe.resx">
       <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLTK\UC_QuanLyTaiKhoan.resx">
+      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\Setting\SettingDialog.resx">
       <DependentUpon>SettingDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLSV\UC_QuanLySinhVien.resx">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Control\QLTK\UC_QuanLyTaiKhoan.resx">
-      <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\UserInfo\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>

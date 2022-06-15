@@ -52,7 +52,7 @@ namespace NMCNPM_QuanLyKTX.Common.Service
         /// Tính toán thời điểm [Năm học] và [Học kỳ] hiện tại
         /// </summary>
         /// <returns></returns>
-        public static String[] CalculateNamHocHocKy()
+        public static String[] CalNamHocHocKy()
         {
             String[] result = new String[3];
 

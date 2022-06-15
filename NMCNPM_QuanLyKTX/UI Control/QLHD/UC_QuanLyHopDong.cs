@@ -20,9 +20,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
     {
         DataView tblHopDongDataView = null;
 
-        // LoaiPhong
-
-
         // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
         private bool isSidePaneCollapsed = true;
 
@@ -35,6 +32,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             // Lấy data từ CSDL
             FillDataFromDatabase();
+
+            // Lấy danh sách phòng còn chỗ trống
+            PreparePhongConTrongDataView();
 
             // Set data cho ComboBox column [HOCKY] để sử dụng
             CommonService.InitHocKyBoxRepoItem(QLHD_HocKyCb_RepoItem);
@@ -78,7 +78,11 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 QL_KTXDataSet.HOPDONG.Rows.InsertAt(newRow.Row, 0);
                 HopDongBdS.Position = 0;
 
+                String[] namHocHK = CommonService.CalNamHocHocKy();
+
                 newRow["MAHD"] = maHDNew;
+                newRow["NAMHOC"] = namHocHK[0] + "-" + namHocHK[1];
+                newRow["HOCKY"] = namHocHK[2];
                 CommonService.ApplyCurrentMaQL(newRow);
                 QLHD_View_GridView.ShowEditForm();
             }
@@ -326,10 +330,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
         {
-            QL_KTXDataSet.EnforceConstraints = false;
-            // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
-            PhongTableAdapter.Fill(QL_KTXDataSet.PHONG);
-
             QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(549, 223);
         }
 
@@ -581,5 +581,31 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 XtraMessageBox.Show(ex.Message, "Thông báo");
             }
         }
+
+        /// <summary>
+        /// Lấy số lượng hợp đồng hiện có của phòng tại thời điểm NH-HK hiện tại
+        /// </summary>
+        /// <returns></returns>
+        private int GeSoLuongHopDongCuaPhong()
+        {
+            FillDataFromDatabase();
+
+            string[] namHocHK = CommonService.CalNamHocHocKy();
+
+            DataRow[] rowsHopDong = QL_KTXDataSet.HOPDONG.Select(
+                                  "NAMHOC = '" + namHocHK[0] + "-" + namHocHK[1] + "'" + "AND HOCKY = '" + namHocHK[2] + "'");
+
+            return rowsHopDong.Length;
+        }
+
+        /// <summary>
+        /// Chuẩn bị DataView chứa các phòng còn chỗ trống để hiển thị
+        /// </summary>
+        private void PreparePhongConTrongDataView()
+        {
+            DataView phongConChoTrongView = new DataView(QL_KTXDataSet.PHONG);
+            phongConChoTrongView.RowFilter = "SUCCHUA > " + 11;
+            Sub_PhongBdS.DataSource = phongConChoTrongView;
+        }        
     }
 }
