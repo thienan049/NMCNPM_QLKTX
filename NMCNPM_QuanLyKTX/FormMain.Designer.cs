@@ -161,7 +161,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyHopDong.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLyHopDong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinHD});
-            this.acCtlQuanLyHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
+            this.acCtlQuanLyHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyHopDong.ImageOptions.SvgImage")));
             this.acCtlQuanLyHopDong.Name = "acCtlQuanLyHopDong";
             this.acCtlQuanLyHopDong.Text = "Quản lý hợp đồng";
             // 
@@ -203,7 +203,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyCSVC.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinVatTu,
             this.acCtlEle_ThongTinVatTu_Phong});
-            this.acCtlQuanLyCSVC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
+            this.acCtlQuanLyCSVC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyCSVC.ImageOptions.SvgImage")));
             this.acCtlQuanLyCSVC.Name = "acCtlQuanLyCSVC";
             this.acCtlQuanLyCSVC.Text = "Quản lý CSVC";
             // 
@@ -227,7 +227,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyDien.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLyDien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_ThongTinDien});
-            this.acCtlQuanLyDien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
+            this.acCtlQuanLyDien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyDien.ImageOptions.SvgImage")));
             this.acCtlQuanLyDien.Name = "acCtlQuanLyDien";
             this.acCtlQuanLyDien.Text = "Quản lý điện";
             // 
@@ -244,7 +244,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyTaiKhoan.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLyTaiKhoan.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acCtlEle_TaiKhoan});
-            this.acCtlQuanLyTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement7.ImageOptions.SvgImage")));
+            this.acCtlQuanLyTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyTaiKhoan.ImageOptions.SvgImage")));
             this.acCtlQuanLyTaiKhoan.Name = "acCtlQuanLyTaiKhoan";
             this.acCtlQuanLyTaiKhoan.Text = "ADMIN";
             // 

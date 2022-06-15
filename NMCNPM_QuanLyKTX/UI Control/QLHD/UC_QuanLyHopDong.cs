@@ -20,6 +20,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
     {
         DataView tblHopDongDataView = null;
 
+        String[] namHocHK = CommonService.CalNamHocHocKy();
+
         // Kiểm tra trạng thái đóng mở của CustomViewSetting SidePanel
         private bool isSidePaneCollapsed = true;
 
@@ -32,9 +34,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         {
             // Lấy data từ CSDL
             FillDataFromDatabase();
-
-            // Lấy danh sách phòng còn chỗ trống
-            PreparePhongConTrongDataView();
 
             // Set data cho ComboBox column [HOCKY] để sử dụng
             CommonService.InitHocKyBoxRepoItem(QLHD_HocKyCb_RepoItem);
@@ -59,6 +58,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
 
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.SINHVIEN]
             SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
+
+            SP_GetTTPhongConChoTrongTableAdapter.Fill(
+                QL_KTXDataSet.SP_GETTHONGTINPHONGCONCHOTRONG, namHocHK[0] + "-" + namHocHK[1], namHocHK[2]);
         }
 
         /// <summary>
@@ -78,9 +80,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 QL_KTXDataSet.HOPDONG.Rows.InsertAt(newRow.Row, 0);
                 HopDongBdS.Position = 0;
 
-                String[] namHocHK = CommonService.CalNamHocHocKy();
-
                 newRow["MAHD"] = maHDNew;
+                newRow["NGAYTAO"] = DateTime.Now;
                 newRow["NAMHOC"] = namHocHK[0] + "-" + namHocHK[1];
                 newRow["HOCKY"] = namHocHK[2];
                 CommonService.ApplyCurrentMaQL(newRow);
@@ -191,8 +192,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                     InitDetailEditFormComponent(control);
                     (control as TextEdit).AutoSize = true;
                     (control as TextEdit).Font = new Font((control as TextEdit).Font.FontFamily, 10);
-                    //var x = (control as TextEdit).Size;
-                    //var y = (control as TextEdit).CalcBestSize();
                     (control as TextEdit).Size = new Size((control as TextEdit).Size.Width, 22);
                 }
             }
@@ -330,7 +329,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
         {
-            QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(549, 223);
+            //FillDataFromDatabase();
+            QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(749, 223);
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
         {
-            e.Value = ((DataRowView)Sub_PhongBdS[Sub_PhongBdS.Position])["MAPHONG"].ToString();
+            e.Value = ((DataRowView)SP_GetTTPhongConChoTrongBdS[SP_GetTTPhongConChoTrongBdS.Position])["MAPHONG"].ToString();
         }
 
         /// <summary>
@@ -581,31 +581,5 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 XtraMessageBox.Show(ex.Message, "Thông báo");
             }
         }
-
-        /// <summary>
-        /// Lấy số lượng hợp đồng hiện có của phòng tại thời điểm NH-HK hiện tại
-        /// </summary>
-        /// <returns></returns>
-        private int GeSoLuongHopDongCuaPhong()
-        {
-            FillDataFromDatabase();
-
-            string[] namHocHK = CommonService.CalNamHocHocKy();
-
-            DataRow[] rowsHopDong = QL_KTXDataSet.HOPDONG.Select(
-                                  "NAMHOC = '" + namHocHK[0] + "-" + namHocHK[1] + "'" + "AND HOCKY = '" + namHocHK[2] + "'");
-
-            return rowsHopDong.Length;
-        }
-
-        /// <summary>
-        /// Chuẩn bị DataView chứa các phòng còn chỗ trống để hiển thị
-        /// </summary>
-        private void PreparePhongConTrongDataView()
-        {
-            DataView phongConChoTrongView = new DataView(QL_KTXDataSet.PHONG);
-            phongConChoTrongView.RowFilter = "SUCCHUA > " + 11;
-            Sub_PhongBdS.DataSource = phongConChoTrongView;
-        }        
     }
 }
