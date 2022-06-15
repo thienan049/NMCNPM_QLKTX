@@ -100,6 +100,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                     QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["TIENNO"], 0);
                 }
             }
+            else if (fieldName.Equals("MASV"))
+            {
+                String maPhong = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["MAPHONG"]).ToString();
+                String namHoc = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["NAMHOC"]).ToString();
+                String hk = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["HOCKY"]).ToString();
+
+                if(SinhVienContractExist(maPhong, namHoc, hk, e.Value.ToString()))
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Sinh viên này đã có 1 hợp đồng!";
+                }
+            }
         }
 
         private void QLHD_View_GridView_InvalidValueException(object sender, InvalidValueExceptionEventArgs e)

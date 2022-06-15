@@ -581,5 +581,16 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                 XtraMessageBox.Show(ex.Message, "Thông báo");
             }
         }
+
+        private bool SinhVienContractExist(String maPhong, String namHoc, String hocKy, String maSV)
+        {
+            //FillDataFromDatabase();
+
+            DataRow[] listContract = QL_KTXDataSet.HOPDONG.Select(
+                    "MAPHONG = '" + maPhong + "' AND NAMHOC = '" + namHoc + "' AND HOCKY = '" + hocKy + "' AND MASV = '" + maSV + "'");
+            if(listContract.Length != 0)
+                return true;
+            return false;
+        }
     }
 }
