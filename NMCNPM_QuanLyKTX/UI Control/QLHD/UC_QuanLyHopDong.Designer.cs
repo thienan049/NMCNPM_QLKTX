@@ -135,8 +135,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.colVIPHAMNOIQUY1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAQL2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAQL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.QuanLyBdS = new System.Windows.Forms.BindingSource(this.components);
-            this.QuanLyTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.QUANLYTableAdapter();
             this.SinhVienTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SINHVIENTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.QLHD_MainContentPanel = new DevExpress.XtraEditors.PanelControl();
@@ -145,7 +143,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.LoaiPhongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.LOAIPHONGTableAdapter();
             this.SP_GetTTPhongConChoTrongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETTHONGTINPHONGCONCHOTRONGTableAdapter();
             this.PhongTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.PHONGTableAdapter();
-            this.Sub_PhongBdS = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.QUANLYTableAdapter();
+            this.QuanLyBdS = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BtnNoBorder_StyleCtl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_Filter_MaQLTxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_Filter_HocKyCb.Properties)).BeginInit();
@@ -205,14 +204,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sub_SinhVienBdS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_MainContentPanel)).BeginInit();
             this.QLHD_MainContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoaiPhongBdS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sub_PhongBdS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).BeginInit();
             this.SuspendLayout();
             // 
             // QLHD_FilterSearchBtn
@@ -1200,6 +1198,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.QLHD_MaPhongPopupEd_RepoItem.Name = "QLHD_MaPhongPopupEd_RepoItem";
             this.QLHD_MaPhongPopupEd_RepoItem.PopupControl = this.QLHD_MaPhongPopupCtl_RepoItem;
             this.QLHD_MaPhongPopupEd_RepoItem.QueryResultValue += new DevExpress.XtraEditors.Controls.QueryResultValueEventHandler(this.QLHD_MaPhongPopupEd_RepoItem_QueryResultValue);
+            this.QLHD_MaPhongPopupEd_RepoItem.Popup += new System.EventHandler(this.QLHD_MaPhongPopupEd_RepoItem_Popup);
             this.QLHD_MaPhongPopupEd_RepoItem.BeforePopup += new System.EventHandler(this.QLHD_MaPhongPopupEd_RepoItem_BeforePopup);
             // 
             // colMASV
@@ -1372,15 +1371,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             this.colMAQL.VisibleIndex = 8;
             this.colMAQL.Width = 117;
             // 
-            // QuanLyBdS
-            // 
-            this.QuanLyBdS.DataMember = "QUANLY";
-            this.QuanLyBdS.DataSource = this.QL_KTXDataSet;
-            // 
-            // QuanLyTableAdapter
-            // 
-            this.QuanLyTableAdapter.ClearBeforeFill = true;
-            // 
             // SinhVienTableAdapter
             // 
             this.SinhVienTableAdapter.ClearBeforeFill = true;
@@ -1439,10 +1429,14 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             // 
             this.PhongTableAdapter.ClearBeforeFill = true;
             // 
-            // Sub_PhongBdS
+            // QuanLyTableAdapter
             // 
-            this.Sub_PhongBdS.DataMember = "PHONG";
-            this.Sub_PhongBdS.DataSource = this.QL_KTXDataSet;
+            this.QuanLyTableAdapter.ClearBeforeFill = true;
+            // 
+            // QuanLyBdS
+            // 
+            this.QuanLyBdS.DataMember = "QUANLY";
+            this.QuanLyBdS.DataSource = this.QL_KTXDataSet;
             // 
             // UC_QuanLyHopDong
             // 
@@ -1514,14 +1508,13 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sub_SinhVienBdS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_SubSV_GridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLHD_MainContentPanel)).EndInit();
             this.QLHD_MainContentPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoaiPhongBdS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sub_PhongBdS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyBdS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1597,8 +1590,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit QLHD_MaPhongPopupEd_RepoItem;
         private DevExpress.XtraEditors.PopupContainerControl QLHD_MaPhongPopupCtl_RepoItem;
         private DevExpress.XtraEditors.SimpleButton QLHD_FilterClearBtn;
-        private System.Windows.Forms.BindingSource QuanLyBdS;
-        private ql_KTXDataSetTableAdapters.QUANLYTableAdapter QuanLyTableAdapter;
         private System.Windows.Forms.BindingSource Sub_SinhVienBdS;
         private ql_KTXDataSetTableAdapters.SINHVIENTableAdapter SinhVienTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -1621,7 +1612,6 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         private DevExpress.XtraGrid.Columns.GridColumn colDICHVU;
         private DevExpress.XtraGrid.Columns.GridColumn colMAQL1;
         private ql_KTXDataSetTableAdapters.PHONGTableAdapter PhongTableAdapter;
-        private System.Windows.Forms.BindingSource Sub_PhongBdS;
         private DevExpress.XtraEditors.PopupContainerControl QLHD_MaSVPopupCtl_RepoItem;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraGrid.GridControl QLHD_SubSV_GridControl;
@@ -1636,5 +1626,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         private DevExpress.XtraGrid.Columns.GridColumn colVIPHAMNOIQUY1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAQL2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
+        private ql_KTXDataSetTableAdapters.QUANLYTableAdapter QuanLyTableAdapter;
+        private System.Windows.Forms.BindingSource QuanLyBdS;
     }
 }

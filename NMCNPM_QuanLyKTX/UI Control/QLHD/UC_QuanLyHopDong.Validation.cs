@@ -4,6 +4,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -92,6 +93,12 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             }
             else if (fieldName.Equals("MAPHONG"))
             {
+                if (((DataRowView)SP_GetTTPhongConChoTrongBdS.Current)["CONTRONG"].Equals(0) && !e.Value.Equals(maPhongHetCho))
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Phòng này đã hết chỗ trống!";
+                }
+
                 // Lấy giá trị [HOCKY] rồi tính tổng tiền cho vào số tiền [SOTIEN]
                 String hk = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["HOCKY"]).ToString();
                 if (!hk.Equals("") && hk != null)
@@ -99,6 +106,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
                     QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["SOTIEN"], CalSoTienHopDong(e.Value.ToString(), hk));
                     QLHD_View_GridView.SetFocusedRowCellValue(QLHD_View_GridView.Columns["TIENNO"], 0);
                 }
+
+                // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
+                SP_GetTTPhongConChoTrongTableAdapter.Fill(QL_KTXDataSet.SP_GETTHONGTINPHONGCONCHOTRONG, namHocHK[0] + "-" + namHocHK[1], namHocHK[2]);
             }
             else if (fieldName.Equals("MASV"))
             {

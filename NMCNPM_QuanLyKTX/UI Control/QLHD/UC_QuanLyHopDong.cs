@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.EditForm.Helpers.Controls;
+using DevExpress.XtraGrid.Views.Grid;
 using NMCNPM_QuanLyKTX.Common.Const;
 using NMCNPM_QuanLyKTX.Common.Service;
 using System;
@@ -19,6 +20,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
     public partial class UC_QuanLyHopDong : XtraUserControl
     {
         DataView tblHopDongDataView = null;
+
+        String maPhongHetCho = "";
 
         String[] namHocHK = CommonService.CalNamHocHocKy();
 
@@ -127,6 +130,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             {
                 HopDongBdS.CancelEdit();
             }
+
+            // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
+            SP_GetTTPhongConChoTrongTableAdapter.Fill(QL_KTXDataSet.SP_GETTHONGTINPHONGCONCHOTRONG, namHocHK[0] + "-" + namHocHK[1], namHocHK[2]);
         }
 
         /// <summary>
@@ -200,6 +206,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             TableLayoutPanel layoutPane = (container.Controls[0].Controls[0] as TableLayoutPanel);
             layoutPane.AutoSize = true;
             layoutPane.Size = new Size(container.Size.Width, 110);
+
+            maPhongHetCho = "";
         }
 
         /// <summary>
@@ -328,8 +336,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
-        {
-            //FillDataFromDatabase();
+        {          
             QLHD_MaPhongPopupCtl_RepoItem.Size = new Size(749, 223);
         }
 
@@ -341,6 +348,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         private void QLHD_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
         {
             e.Value = ((DataRowView)SP_GetTTPhongConChoTrongBdS[SP_GetTTPhongConChoTrongBdS.Position])["MAPHONG"].ToString();
+            QL_KTXDataSet.EnforceConstraints = false;
+
+            
         }
 
         /// <summary>
@@ -350,9 +360,9 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_MaSVPopupEd_RepoItem_BeforePopup(object sender, EventArgs e)
         {
-            QL_KTXDataSet.EnforceConstraints = false;
+            //QL_KTXDataSet.EnforceConstraints = false;
             // Lấy data từ CSDL về DataTable [ql_KTX_DS.HOPDONG]
-            SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
+            //SinhVienTableAdapter.Fill(QL_KTXDataSet.SINHVIEN);
 
             String condition = "XETDIEUKIEN = 'true'";
             DataView svDuDKDataView = new DataView(QL_KTXDataSet.SINHVIEN);
@@ -591,6 +601,18 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
             if(listContract.Length != 0)
                 return true;
             return false;
+        }
+
+        private void QLHD_MaPhongPopupEd_RepoItem_Popup(object sender, EventArgs e)
+        {
+            String maPhong = QLHD_View_GridView.GetFocusedRowCellValue(QLHD_View_GridView.Columns["MAPHONG"]).ToString();
+            
+            SP_GetTTPhongConChoTrongBdS.Position = SP_GetTTPhongConChoTrongBdS.Find("MAPHONG", maPhong);
+           
+            if (((DataRowView)SP_GetTTPhongConChoTrongBdS.Current)["CONTRONG"].Equals(0))
+            {
+                maPhongHetCho = maPhong;
+            }
         }
     }
 }
