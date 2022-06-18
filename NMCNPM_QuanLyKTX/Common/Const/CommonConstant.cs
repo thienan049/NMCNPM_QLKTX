@@ -39,6 +39,12 @@ namespace NMCNPM_QuanLyKTX.Common.Const
             public static string X = "X";
         }
 
+        public static class TableName
+        {
+            public static string QTK = "QUYENTAIKHOAN";
+            public static string PCV = "PHANCONGVIEC";
+        }
+
         public static int HK1 = 5;
         public static int HK2 = 5;
         public static int HK3 = 2;

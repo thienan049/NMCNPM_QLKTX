@@ -40,7 +40,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLTK
 
             // Set column [PASSWORD] trong gridView thành dạng password display (*)          
             EnablePasswordDisplay(QLTK_View_GridView.Columns["PASSWORD"]);
-            DisableEditing();
+            //DisableEditing();
         }
 
         /// <summary>
@@ -255,8 +255,8 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLTK
                 }
                 catch (Exception ex)
                 {                  
-                    if (ex.Message.Contains("Violation of PRIMARY KEY constraint 'PK_SINHVIEN'"))
-                        XtraMessageBox.Show("Lỗi: Không thể trùng lặp mã sinh viên!", "Thông báo");
+                    if (ex.Message.Contains("Violation of PRIMARY KEY constraint"))
+                        XtraMessageBox.Show("Lỗi: Không thể trùng lặp mã!", "Thông báo");
                     if (ex.Message.Contains("Cannot insert the value NULL into column"))
                         XtraMessageBox.Show("Lỗi: Vui lòng nhập đầy đủ thông tin!", "Thông báo");
                     TaiKhoanBdS.CancelEdit();
@@ -490,7 +490,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLTK
         private void EnablePasswordDisplay(GridColumn column)
         {
             QLTK_PasswordTxtEd_RepoItem.UseSystemPasswordChar = true;
-            QLTK_View_GridView.OptionsBehavior.Editable = false;
+            QLTK_View_GridView.OptionsBehavior.Editable = true;
         }
 
         /// <summary>

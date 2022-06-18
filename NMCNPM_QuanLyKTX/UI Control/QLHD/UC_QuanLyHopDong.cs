@@ -347,10 +347,7 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLHD
         /// <param name="e"></param>
         private void QLHD_MaPhongPopupEd_RepoItem_QueryResultValue(object sender, QueryResultValueEventArgs e)
         {
-            e.Value = ((DataRowView)SP_GetTTPhongConChoTrongBdS[SP_GetTTPhongConChoTrongBdS.Position])["MAPHONG"].ToString();
-            QL_KTXDataSet.EnforceConstraints = false;
-
-            
+            e.Value = ((DataRowView)SP_GetTTPhongConChoTrongBdS[SP_GetTTPhongConChoTrongBdS.Position])["MAPHONG"].ToString(); 
         }
 
         /// <summary>

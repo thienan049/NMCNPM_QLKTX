@@ -40,6 +40,7 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinHD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_ThongTinLoaiPhong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyCSVC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinVatTu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_ThongTinVatTu_Phong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -47,6 +48,8 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinDien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlQuanLyTaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acCtlEle_TaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_CapQuyenTaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.acCtlEle_MaQuanly = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_ProgramSetting = new DevExpress.XtraBars.BarButtonItem();
@@ -183,7 +186,8 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyPhong.Appearance.Pressed.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acCtlQuanLyPhong.Appearance.Pressed.Options.UseFont = true;
             this.acCtlQuanLyPhong.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.acCtlEle_ThongTinPhong});
+            this.acCtlEle_ThongTinPhong,
+            this.acCtlEle_ThongTinLoaiPhong});
             this.acCtlQuanLyPhong.Hint = "Quản lý phòng";
             this.acCtlQuanLyPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyPhong.ImageOptions.SvgImage")));
             this.acCtlQuanLyPhong.Name = "acCtlQuanLyPhong";
@@ -195,6 +199,13 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_ThongTinPhong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acCtlEle_ThongTinPhong.Text = "Thông tin phòng";
             this.acCtlEle_ThongTinPhong.Click += new System.EventHandler(this.acCtlEle_ThongTinPhong_Click);
+            // 
+            // acCtlEle_ThongTinLoaiPhong
+            // 
+            this.acCtlEle_ThongTinLoaiPhong.Name = "acCtlEle_ThongTinLoaiPhong";
+            this.acCtlEle_ThongTinLoaiPhong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_ThongTinLoaiPhong.Text = "Quản lý loại phòng";
+            this.acCtlEle_ThongTinLoaiPhong.Click += new System.EventHandler(this.acCtlEle_ThongTinLoaiPhong_Click);
             // 
             // acCtlQuanLyCSVC
             // 
@@ -243,7 +254,9 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlQuanLyTaiKhoan.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acCtlQuanLyTaiKhoan.Appearance.Disabled.Options.UseFont = true;
             this.acCtlQuanLyTaiKhoan.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.acCtlEle_TaiKhoan});
+            this.acCtlEle_TaiKhoan,
+            this.acCtlEle_CapQuyenTaiKhoan,
+            this.acCtlEle_MaQuanly});
             this.acCtlQuanLyTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("acCtlQuanLyTaiKhoan.ImageOptions.SvgImage")));
             this.acCtlQuanLyTaiKhoan.Name = "acCtlQuanLyTaiKhoan";
             this.acCtlQuanLyTaiKhoan.Text = "ADMIN";
@@ -254,6 +267,20 @@ namespace NMCNPM_QuanLyKTX
             this.acCtlEle_TaiKhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acCtlEle_TaiKhoan.Text = "Thông tin tài khoản";
             this.acCtlEle_TaiKhoan.Click += new System.EventHandler(this.acCtlEle_TaiKhoan_Click);
+            // 
+            // acCtlEle_CapQuyenTaiKhoan
+            // 
+            this.acCtlEle_CapQuyenTaiKhoan.Name = "acCtlEle_CapQuyenTaiKhoan";
+            this.acCtlEle_CapQuyenTaiKhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_CapQuyenTaiKhoan.Text = "Cấp quyền";
+            this.acCtlEle_CapQuyenTaiKhoan.Click += new System.EventHandler(this.acCtlEle_CapQuyenTaiKhoan_Click);
+            // 
+            // acCtlEle_MaQuanly
+            // 
+            this.acCtlEle_MaQuanly.Name = "acCtlEle_MaQuanly";
+            this.acCtlEle_MaQuanly.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.acCtlEle_MaQuanly.Text = "Mã quản lý";
+            this.acCtlEle_MaQuanly.Click += new System.EventHandler(this.acCtlEle_MaQuanly_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -513,6 +540,9 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.BarStaticItem HocKyLbl;
         private DevExpress.XtraBars.BarStaticItem HocKyVal;
         private ql_KTXDataSetTableAdapters.SP_GETUSERPERMISSIONTableAdapter SP_GetUserPermissionTableAdapter;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_CapQuyenTaiKhoan;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_MaQuanly;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinLoaiPhong;
     }
 }
 

@@ -104,11 +104,23 @@
     <Compile Include="UI Control\QLD\UC_QuanLyDien.Designer.cs">
       <DependentUpon>UC_QuanLyDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Control\QLP\UC_QuanLyLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLP\UC_QuanLyLoaiPhong.Designer.cs">
+      <DependentUpon>UC_QuanLyLoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI Control\QLSV\UC_QLSV_ThongKe.Designer.cs">
       <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Control\QLTK\UC_CapQuyenTaiKhoan .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\QLTK\UC_CapQuyenTaiKhoan .Designer.cs">
+      <DependentUpon>UC_CapQuyenTaiKhoan .cs</DependentUpon>
     </Compile>
     <Compile Include="UI Control\QLTK\UC_QuanLyTaiKhoan.Validation.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +158,12 @@
     <Compile Include="UI Control\QLSV\UC_QuanLySinhVien.Validation.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI Control\UserInfo\UC_QuanLyMaQL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Control\UserInfo\UC_QuanLyMaQL.Designer.cs">
+      <DependentUpon>UC_QuanLyMaQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Control\UserInfo\UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,8 +198,14 @@
     <EmbeddedResource Include="UI Control\QLD\UC_QuanLyDien.resx">
       <DependentUpon>UC_QuanLyDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLP\UC_QuanLyLoaiPhong.resx">
+      <DependentUpon>UC_QuanLyLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLSV\UC_QLSV_ThongKe.resx">
       <DependentUpon>UC_QLSV_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\QLTK\UC_CapQuyenTaiKhoan .resx">
+      <DependentUpon>UC_CapQuyenTaiKhoan .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLTK\UC_QuanLyTaiKhoan.resx">
       <DependentUpon>UC_QuanLyTaiKhoan.cs</DependentUpon>
@@ -197,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\QLSV\UC_QuanLySinhVien.resx">
       <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Control\UserInfo\UC_QuanLyMaQL.resx">
+      <DependentUpon>UC_QuanLyMaQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Control\UserInfo\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>

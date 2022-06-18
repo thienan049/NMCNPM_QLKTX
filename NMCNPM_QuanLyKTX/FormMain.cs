@@ -12,6 +12,7 @@ using NMCNPM_QuanLyKTX.UI_Control.QLP;
 using NMCNPM_QuanLyKTX.UI_Control.QLSV;
 using NMCNPM_QuanLyKTX.UI_Control.QLTK;
 using NMCNPM_QuanLyKTX.UI_Control.Setting;
+using NMCNPM_QuanLyKTX.UI_Control.UserInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,8 +40,14 @@ namespace NMCNPM_QuanLyKTX
         // QuanLyPhong user control
         UC_QuanLyPhong UC_QLP = null;
 
+        // QuanLyLoaiPhong user control
+        UC_QuanLyLoaiPhong UC_QLLP = null;
+
         // QuanLyTaiKhoan user control
         UC_QuanLyTaiKhoan UC_QLTK = null;
+
+        // QuanLyTaiKhoan user control
+        UC_CapQuyenTaiKhoan UC_CQTK = null;
 
         // QuanLyCSVC user control
         UC_QuanLyCSVC UC_QLCSVC = null;
@@ -50,6 +57,9 @@ namespace NMCNPM_QuanLyKTX
 
         // QuanLyDien user control
         UC_QuanLyDien UC_QLD = null;
+
+        // QuanLyMaQL user control
+        UC_QuanLyMaQL UC_QLMQL = null;
 
         // Khởi tạo form
         public FormMain()
@@ -372,6 +382,10 @@ namespace NMCNPM_QuanLyKTX
                             acCtlEle_ThongTinVatTu.Enabled = true;
                         }
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
             else
@@ -398,6 +412,69 @@ namespace NMCNPM_QuanLyKTX
                 ctl.Enabled = false;
             }
             controlElementDisabled = true;
+        }
+
+        private void acCtlEle_CapQuyenTaiKhoan_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_CQTK == null)
+            {
+                this.UC_CQTK = new UC_CapQuyenTaiKhoan
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_CQTK);
+                this.UC_CQTK.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_CQTK.BringToFront();
+            }
+        }
+
+        private void acCtlEle_ThongTinLoaiPhong_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLLP == null)
+            {
+                this.UC_QLLP = new UC_QuanLyLoaiPhong
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLLP);
+                this.UC_QLLP.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLLP.BringToFront();
+            }
+        }
+
+        private void acCtlEle_MaQuanly_Click(object sender, EventArgs e)
+        {
+            // Nếu chưa tồn tại, tạo đối tượng mới
+            if (this.UC_QLMQL == null)
+            {
+                this.UC_QLMQL = new UC_QuanLyMaQL
+                {
+                    Dock = DockStyle.Fill
+                };
+
+                // Thêm đối tượng vừa tạo vào khu vực content container
+                this.contentContainer.Controls.Add(this.UC_QLMQL);
+                this.UC_QLMQL.BringToFront();
+            }
+            // Nếu đã tồn tại, đưa lên front để hiển thị
+            else
+            {
+                this.UC_QLMQL.BringToFront();
+            }
         }
     }
 }

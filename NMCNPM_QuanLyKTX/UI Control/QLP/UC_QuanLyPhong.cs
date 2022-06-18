@@ -82,19 +82,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// <param name="e"></param>
         private void QLP_Save_Btn_Click(object sender, EventArgs e)
         {
-            // Click btn [Save] (Update)
-            // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
-            this.Validate();
-            PhongBdS.EndEdit();
+            DialogResult confirm = XtraMessageBox.Show("Lưu dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                // Click btn Save (Update)
+                // Apply data đã chỉnh sửa trên giao diện vào DataSet/DataTable
+                this.Validate();
 
-            // Update dữ liệu vào CSDL
-            try
-            {
-                PhongTableAdapter.Update(QL_KTXDataSet.PHONG);
+                PhongBdS.EndEdit();
+                // Update dữ liệu vào CSDL
+                this.PhongTableAdapter.Connection.ConnectionString = Program.ConnStr;
+                try
+                {
+                    PhongTableAdapter.Update(QL_KTXDataSet.PHONG);
+
+                    XtraMessageBox.Show("Lưu dữ liệu thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("Violation of PRIMARY KEY constraint"))
+                        XtraMessageBox.Show("Lỗi: Không thể trùng lặp mã!", "Thông báo");
+                    PhongBdS.CancelEdit();
+                }
             }
-            catch (Exception ex)
+            else if (confirm == DialogResult.No)
             {
-                XtraMessageBox.Show(ex.Message);
+                PhongBdS.CancelEdit();
             }
         }
 
@@ -105,8 +118,32 @@ namespace NMCNPM_QuanLyKTX.UI_Control.QLP
         /// <param name="e"></param>
         private void QLP_Delete_Btn_Click(object sender, EventArgs e)
         {
-            // Xóa dòng dữ liệu hiện tại
-            PhongBdS.RemoveCurrent();
+            DialogResult confirm = XtraMessageBox.Show("Xóa dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                // Click btn Delete
+                // Xóa dòng dữ liệu hiện tại
+                PhongBdS.RemoveCurrent();
+                PhongBdS.EndEdit();
+                try
+                {
+                    PhongTableAdapter.Update(QL_KTXDataSet.PHONG);
+
+                    XtraMessageBox.Show("Xóa dữ liệu thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+                        XtraMessageBox.Show("Lỗi: Không thể xóa vì phòng còn được sử dụng!", "Thông báo");
+                    PhongBdS.CancelEdit();
+                    QL_KTXDataSet.PHONG.RejectChanges();
+                    PhongBdS.MovePrevious();
+                }
+            }
+            else if (confirm == DialogResult.No)
+            {
+                PhongBdS.CancelEdit();
+            }
         }
 
         /// <summary>

@@ -60,37 +60,41 @@ namespace NMCNPM_QuanLyKTX {
         
         private SP_GETTHONGTINPHONGCONCHOTRONGDataTable tableSP_GETTHONGTINPHONGCONCHOTRONG;
         
-        private global::System.Data.DataRelation relationFK_HOADONDIEN_QUANLY;
+        private SP_GETUSERPHANQUYENDataTable tableSP_GETUSERPHANQUYEN;
+        
+        private SP_GETPHANQUYENPERMISSIONDataTable tableSP_GETPHANQUYENPERMISSION;
         
         private global::System.Data.DataRelation relationFK_HOADONDIEN_PHONG;
         
-        private global::System.Data.DataRelation relationFK_HOPDONG_QUANLY;
-        
-        private global::System.Data.DataRelation relationFK_HOPDONG_PHONG;
+        private global::System.Data.DataRelation relationFK_HOADONDIEN_QUANLY;
         
         private global::System.Data.DataRelation relationFK_HOPDONG_SINHVIEN;
         
-        private global::System.Data.DataRelation relationFK_PHANCONGVIEC_PHANQUYEN;
+        private global::System.Data.DataRelation relationFK_HOPDONG_PHONG;
+        
+        private global::System.Data.DataRelation relationFK_HOPDONG_QUANLY;
         
         private global::System.Data.DataRelation relationFK_PHANCONGVIEC_PERMISSION;
         
-        private global::System.Data.DataRelation relationFK_PHONG_QUANLY;
+        private global::System.Data.DataRelation relationFK_PHANCONGVIEC_PHANQUYEN;
         
         private global::System.Data.DataRelation relationFK_PHONG_LOAIPHONG;
         
+        private global::System.Data.DataRelation relationFK_PHONG_QUANLY;
+        
         private global::System.Data.DataRelation relationFK_QUANLY_TAIKHOAN1;
         
-        private global::System.Data.DataRelation relationFK_QUYENTAIKHOAN_TAIKHOAN;
-        
         private global::System.Data.DataRelation relationFK_QUYENTAIKHOAN_PHANQUYEN;
+        
+        private global::System.Data.DataRelation relationFK_QUYENTAIKHOAN_TAIKHOAN;
         
         private global::System.Data.DataRelation relationFK_SINHVIEN_QUANLY;
         
         private global::System.Data.DataRelation relationFK_VATTU_QUANLY;
         
-        private global::System.Data.DataRelation relationFK_VT_PHONG_PHONG;
-        
         private global::System.Data.DataRelation relationFK_VT_PHONG_VATTU;
+        
+        private global::System.Data.DataRelation relationFK_VT_PHONG_PHONG;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -173,6 +177,12 @@ namespace NMCNPM_QuanLyKTX {
                 }
                 if ((ds.Tables["SP_GETTHONGTINPHONGCONCHOTRONG"] != null)) {
                     base.Tables.Add(new SP_GETTHONGTINPHONGCONCHOTRONGDataTable(ds.Tables["SP_GETTHONGTINPHONGCONCHOTRONG"]));
+                }
+                if ((ds.Tables["SP_GETUSERPHANQUYEN"] != null)) {
+                    base.Tables.Add(new SP_GETUSERPHANQUYENDataTable(ds.Tables["SP_GETUSERPHANQUYEN"]));
+                }
+                if ((ds.Tables["SP_GETPHANQUYENPERMISSION"] != null)) {
+                    base.Tables.Add(new SP_GETPHANQUYENPERMISSIONDataTable(ds.Tables["SP_GETPHANQUYENPERMISSION"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -374,6 +384,26 @@ namespace NMCNPM_QuanLyKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_GETUSERPHANQUYENDataTable SP_GETUSERPHANQUYEN {
+            get {
+                return this.tableSP_GETUSERPHANQUYEN;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_GETPHANQUYENPERMISSIONDataTable SP_GETPHANQUYENPERMISSION {
+            get {
+                return this.tableSP_GETPHANQUYENPERMISSION;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -492,6 +522,12 @@ namespace NMCNPM_QuanLyKTX {
                 }
                 if ((ds.Tables["SP_GETTHONGTINPHONGCONCHOTRONG"] != null)) {
                     base.Tables.Add(new SP_GETTHONGTINPHONGCONCHOTRONGDataTable(ds.Tables["SP_GETTHONGTINPHONGCONCHOTRONG"]));
+                }
+                if ((ds.Tables["SP_GETUSERPHANQUYEN"] != null)) {
+                    base.Tables.Add(new SP_GETUSERPHANQUYENDataTable(ds.Tables["SP_GETUSERPHANQUYEN"]));
+                }
+                if ((ds.Tables["SP_GETPHANQUYENPERMISSION"] != null)) {
+                    base.Tables.Add(new SP_GETPHANQUYENPERMISSIONDataTable(ds.Tables["SP_GETPHANQUYENPERMISSION"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -634,22 +670,34 @@ namespace NMCNPM_QuanLyKTX {
                     this.tableSP_GETTHONGTINPHONGCONCHOTRONG.InitVars();
                 }
             }
-            this.relationFK_HOADONDIEN_QUANLY = this.Relations["FK_HOADONDIEN_QUANLY"];
+            this.tableSP_GETUSERPHANQUYEN = ((SP_GETUSERPHANQUYENDataTable)(base.Tables["SP_GETUSERPHANQUYEN"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_GETUSERPHANQUYEN != null)) {
+                    this.tableSP_GETUSERPHANQUYEN.InitVars();
+                }
+            }
+            this.tableSP_GETPHANQUYENPERMISSION = ((SP_GETPHANQUYENPERMISSIONDataTable)(base.Tables["SP_GETPHANQUYENPERMISSION"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_GETPHANQUYENPERMISSION != null)) {
+                    this.tableSP_GETPHANQUYENPERMISSION.InitVars();
+                }
+            }
             this.relationFK_HOADONDIEN_PHONG = this.Relations["FK_HOADONDIEN_PHONG"];
-            this.relationFK_HOPDONG_QUANLY = this.Relations["FK_HOPDONG_QUANLY"];
-            this.relationFK_HOPDONG_PHONG = this.Relations["FK_HOPDONG_PHONG"];
+            this.relationFK_HOADONDIEN_QUANLY = this.Relations["FK_HOADONDIEN_QUANLY"];
             this.relationFK_HOPDONG_SINHVIEN = this.Relations["FK_HOPDONG_SINHVIEN"];
-            this.relationFK_PHANCONGVIEC_PHANQUYEN = this.Relations["FK_PHANCONGVIEC_PHANQUYEN"];
+            this.relationFK_HOPDONG_PHONG = this.Relations["FK_HOPDONG_PHONG"];
+            this.relationFK_HOPDONG_QUANLY = this.Relations["FK_HOPDONG_QUANLY"];
             this.relationFK_PHANCONGVIEC_PERMISSION = this.Relations["FK_PHANCONGVIEC_PERMISSION"];
-            this.relationFK_PHONG_QUANLY = this.Relations["FK_PHONG_QUANLY"];
+            this.relationFK_PHANCONGVIEC_PHANQUYEN = this.Relations["FK_PHANCONGVIEC_PHANQUYEN"];
             this.relationFK_PHONG_LOAIPHONG = this.Relations["FK_PHONG_LOAIPHONG"];
+            this.relationFK_PHONG_QUANLY = this.Relations["FK_PHONG_QUANLY"];
             this.relationFK_QUANLY_TAIKHOAN1 = this.Relations["FK_QUANLY_TAIKHOAN1"];
-            this.relationFK_QUYENTAIKHOAN_TAIKHOAN = this.Relations["FK_QUYENTAIKHOAN_TAIKHOAN"];
             this.relationFK_QUYENTAIKHOAN_PHANQUYEN = this.Relations["FK_QUYENTAIKHOAN_PHANQUYEN"];
+            this.relationFK_QUYENTAIKHOAN_TAIKHOAN = this.Relations["FK_QUYENTAIKHOAN_TAIKHOAN"];
             this.relationFK_SINHVIEN_QUANLY = this.Relations["FK_SINHVIEN_QUANLY"];
             this.relationFK_VATTU_QUANLY = this.Relations["FK_VATTU_QUANLY"];
-            this.relationFK_VT_PHONG_PHONG = this.Relations["FK_VT_PHONG_PHONG"];
             this.relationFK_VT_PHONG_VATTU = this.Relations["FK_VT_PHONG_VATTU"];
+            this.relationFK_VT_PHONG_PHONG = this.Relations["FK_VT_PHONG_PHONG"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -696,14 +744,11 @@ namespace NMCNPM_QuanLyKTX {
             base.Tables.Add(this.tableSP_GETUSERPERMISSION);
             this.tableSP_GETTHONGTINPHONGCONCHOTRONG = new SP_GETTHONGTINPHONGCONCHOTRONGDataTable();
             base.Tables.Add(this.tableSP_GETTHONGTINPHONGCONCHOTRONG);
+            this.tableSP_GETUSERPHANQUYEN = new SP_GETUSERPHANQUYENDataTable();
+            base.Tables.Add(this.tableSP_GETUSERPHANQUYEN);
+            this.tableSP_GETPHANQUYENPERMISSION = new SP_GETPHANQUYENPERMISSIONDataTable();
+            base.Tables.Add(this.tableSP_GETPHANQUYENPERMISSION);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOADONDIEN_QUANLY", new global::System.Data.DataColumn[] {
-                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADONDIEN.MAQLColumn});
-            this.tableHOADONDIEN.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_HOADONDIEN_PHONG", new global::System.Data.DataColumn[] {
                         this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOADONDIEN.MAPHONGColumn});
@@ -711,9 +756,16 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_QUANLY", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOADONDIEN_QUANLY", new global::System.Data.DataColumn[] {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOPDONG.MAQLColumn});
+                        this.tableHOADONDIEN.MAQLColumn});
+            this.tableHOADONDIEN.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
+                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MASVColumn});
             this.tableHOPDONG.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -725,17 +777,10 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
-                        this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOPDONG.MASVColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HOPDONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MAQLColumn});
             this.tableHOPDONG.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGVIEC_PHANQUYEN", new global::System.Data.DataColumn[] {
-                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGVIEC.MAPQColumn});
-            this.tablePHANCONGVIEC.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -746,16 +791,23 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHONG_QUANLY", new global::System.Data.DataColumn[] {
-                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAQLColumn});
-            this.tablePHONG.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGVIEC_PHANQUYEN", new global::System.Data.DataColumn[] {
+                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGVIEC.MAPQColumn});
+            this.tablePHANCONGVIEC.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_PHONG_LOAIPHONG", new global::System.Data.DataColumn[] {
                         this.tableLOAIPHONG.MALOAIPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHONG.MALOAIPHONGColumn});
+            this.tablePHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAQLColumn});
             this.tablePHONG.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -767,16 +819,16 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_TAIKHOAN", new global::System.Data.DataColumn[] {
-                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableQUYENTAIKHOAN.USERNAMEColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_PHANQUYEN", new global::System.Data.DataColumn[] {
+                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUYENTAIKHOAN.MAPQColumn});
             this.tableQUYENTAIKHOAN.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_PHANQUYEN", new global::System.Data.DataColumn[] {
-                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
-                        this.tableQUYENTAIKHOAN.MAPQColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_QUYENTAIKHOAN_TAIKHOAN", new global::System.Data.DataColumn[] {
+                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUYENTAIKHOAN.USERNAMEColumn});
             this.tableQUYENTAIKHOAN.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -795,13 +847,6 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVT_PHONG.MAPHONGColumn});
-            this.tableVT_PHONG.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_VT_PHONG_VATTU", new global::System.Data.DataColumn[] {
                         this.tableVATTU.MAVTColumn}, new global::System.Data.DataColumn[] {
                         this.tableVT_PHONG.MAVTColumn});
@@ -809,54 +854,61 @@ namespace NMCNPM_QuanLyKTX {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_HOADONDIEN_QUANLY = new global::System.Data.DataRelation("FK_HOADONDIEN_QUANLY", new global::System.Data.DataColumn[] {
-                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADONDIEN.MAQLColumn}, false);
-            this.Relations.Add(this.relationFK_HOADONDIEN_QUANLY);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVT_PHONG.MAPHONGColumn});
+            this.tableVT_PHONG.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_HOADONDIEN_PHONG = new global::System.Data.DataRelation("FK_HOADONDIEN_PHONG", new global::System.Data.DataColumn[] {
                         this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOADONDIEN.MAPHONGColumn}, false);
             this.Relations.Add(this.relationFK_HOADONDIEN_PHONG);
-            this.relationFK_HOPDONG_QUANLY = new global::System.Data.DataRelation("FK_HOPDONG_QUANLY", new global::System.Data.DataColumn[] {
+            this.relationFK_HOADONDIEN_QUANLY = new global::System.Data.DataRelation("FK_HOADONDIEN_QUANLY", new global::System.Data.DataColumn[] {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOPDONG.MAQLColumn}, false);
-            this.Relations.Add(this.relationFK_HOPDONG_QUANLY);
-            this.relationFK_HOPDONG_PHONG = new global::System.Data.DataRelation("FK_HOPDONG_PHONG", new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOPDONG.MAPHONGColumn}, false);
-            this.Relations.Add(this.relationFK_HOPDONG_PHONG);
+                        this.tableHOADONDIEN.MAQLColumn}, false);
+            this.Relations.Add(this.relationFK_HOADONDIEN_QUANLY);
             this.relationFK_HOPDONG_SINHVIEN = new global::System.Data.DataRelation("FK_HOPDONG_SINHVIEN", new global::System.Data.DataColumn[] {
                         this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOPDONG.MASVColumn}, false);
             this.Relations.Add(this.relationFK_HOPDONG_SINHVIEN);
-            this.relationFK_PHANCONGVIEC_PHANQUYEN = new global::System.Data.DataRelation("FK_PHANCONGVIEC_PHANQUYEN", new global::System.Data.DataColumn[] {
-                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGVIEC.MAPQColumn}, false);
-            this.Relations.Add(this.relationFK_PHANCONGVIEC_PHANQUYEN);
+            this.relationFK_HOPDONG_PHONG = new global::System.Data.DataRelation("FK_HOPDONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MAPHONGColumn}, false);
+            this.Relations.Add(this.relationFK_HOPDONG_PHONG);
+            this.relationFK_HOPDONG_QUANLY = new global::System.Data.DataRelation("FK_HOPDONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOPDONG.MAQLColumn}, false);
+            this.Relations.Add(this.relationFK_HOPDONG_QUANLY);
             this.relationFK_PHANCONGVIEC_PERMISSION = new global::System.Data.DataRelation("FK_PHANCONGVIEC_PERMISSION", new global::System.Data.DataColumn[] {
                         this.tablePERMISSION.MAPMSColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHANCONGVIEC.MAPMSColumn}, false);
             this.Relations.Add(this.relationFK_PHANCONGVIEC_PERMISSION);
-            this.relationFK_PHONG_QUANLY = new global::System.Data.DataRelation("FK_PHONG_QUANLY", new global::System.Data.DataColumn[] {
-                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAQLColumn}, false);
-            this.Relations.Add(this.relationFK_PHONG_QUANLY);
+            this.relationFK_PHANCONGVIEC_PHANQUYEN = new global::System.Data.DataRelation("FK_PHANCONGVIEC_PHANQUYEN", new global::System.Data.DataColumn[] {
+                        this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGVIEC.MAPQColumn}, false);
+            this.Relations.Add(this.relationFK_PHANCONGVIEC_PHANQUYEN);
             this.relationFK_PHONG_LOAIPHONG = new global::System.Data.DataRelation("FK_PHONG_LOAIPHONG", new global::System.Data.DataColumn[] {
                         this.tableLOAIPHONG.MALOAIPHONGColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHONG.MALOAIPHONGColumn}, false);
             this.Relations.Add(this.relationFK_PHONG_LOAIPHONG);
+            this.relationFK_PHONG_QUANLY = new global::System.Data.DataRelation("FK_PHONG_QUANLY", new global::System.Data.DataColumn[] {
+                        this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAQLColumn}, false);
+            this.Relations.Add(this.relationFK_PHONG_QUANLY);
             this.relationFK_QUANLY_TAIKHOAN1 = new global::System.Data.DataRelation("FK_QUANLY_TAIKHOAN1", new global::System.Data.DataColumn[] {
                         this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
                         this.tableQUANLY.USERNAMEColumn}, false);
             this.Relations.Add(this.relationFK_QUANLY_TAIKHOAN1);
-            this.relationFK_QUYENTAIKHOAN_TAIKHOAN = new global::System.Data.DataRelation("FK_QUYENTAIKHOAN_TAIKHOAN", new global::System.Data.DataColumn[] {
-                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableQUYENTAIKHOAN.USERNAMEColumn}, false);
-            this.Relations.Add(this.relationFK_QUYENTAIKHOAN_TAIKHOAN);
             this.relationFK_QUYENTAIKHOAN_PHANQUYEN = new global::System.Data.DataRelation("FK_QUYENTAIKHOAN_PHANQUYEN", new global::System.Data.DataColumn[] {
                         this.tablePHANQUYEN.MAPQColumn}, new global::System.Data.DataColumn[] {
                         this.tableQUYENTAIKHOAN.MAPQColumn}, false);
             this.Relations.Add(this.relationFK_QUYENTAIKHOAN_PHANQUYEN);
+            this.relationFK_QUYENTAIKHOAN_TAIKHOAN = new global::System.Data.DataRelation("FK_QUYENTAIKHOAN_TAIKHOAN", new global::System.Data.DataColumn[] {
+                        this.tableTAIKHOAN.USERNAMEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQUYENTAIKHOAN.USERNAMEColumn}, false);
+            this.Relations.Add(this.relationFK_QUYENTAIKHOAN_TAIKHOAN);
             this.relationFK_SINHVIEN_QUANLY = new global::System.Data.DataRelation("FK_SINHVIEN_QUANLY", new global::System.Data.DataColumn[] {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
                         this.tableSINHVIEN.MAQLColumn}, false);
@@ -865,14 +917,14 @@ namespace NMCNPM_QuanLyKTX {
                         this.tableQUANLY.MAQLColumn}, new global::System.Data.DataColumn[] {
                         this.tableVATTU.MAQLColumn}, false);
             this.Relations.Add(this.relationFK_VATTU_QUANLY);
-            this.relationFK_VT_PHONG_PHONG = new global::System.Data.DataRelation("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
-                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVT_PHONG.MAPHONGColumn}, false);
-            this.Relations.Add(this.relationFK_VT_PHONG_PHONG);
             this.relationFK_VT_PHONG_VATTU = new global::System.Data.DataRelation("FK_VT_PHONG_VATTU", new global::System.Data.DataColumn[] {
                         this.tableVATTU.MAVTColumn}, new global::System.Data.DataColumn[] {
                         this.tableVT_PHONG.MAVTColumn}, false);
             this.Relations.Add(this.relationFK_VT_PHONG_VATTU);
+            this.relationFK_VT_PHONG_PHONG = new global::System.Data.DataRelation("FK_VT_PHONG_PHONG", new global::System.Data.DataColumn[] {
+                        this.tablePHONG.MAPHONGColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVT_PHONG.MAPHONGColumn}, false);
+            this.Relations.Add(this.relationFK_VT_PHONG_PHONG);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -985,6 +1037,18 @@ namespace NMCNPM_QuanLyKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_GETUSERPHANQUYEN() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_GETPHANQUYENPERMISSION() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1091,6 +1155,12 @@ namespace NMCNPM_QuanLyKTX {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_GETTHONGTINPHONGCONCHOTRONGRowChangeEventHandler(object sender, SP_GETTHONGTINPHONGCONCHOTRONGRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_GETUSERPHANQUYENRowChangeEventHandler(object sender, SP_GETUSERPHANQUYENRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_GETPHANQUYENPERMISSIONRowChangeEventHandler(object sender, SP_GETPHANQUYENPERMISSIONRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6983,6 +7053,606 @@ namespace NMCNPM_QuanLyKTX {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_GETUSERPHANQUYENDataTable : global::System.Data.TypedTableBase<SP_GETUSERPHANQUYENRow> {
+            
+            private global::System.Data.DataColumn columnUSERNAME;
+            
+            private global::System.Data.DataColumn columnMAPQ;
+            
+            private global::System.Data.DataColumn columnNGAYSET;
+            
+            private global::System.Data.DataColumn columnVAITRO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENDataTable() {
+                this.TableName = "SP_GETUSERPHANQUYEN";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_GETUSERPHANQUYENDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_GETUSERPHANQUYENDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn USERNAMEColumn {
+                get {
+                    return this.columnUSERNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MAPQColumn {
+                get {
+                    return this.columnMAPQ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NGAYSETColumn {
+                get {
+                    return this.columnNGAYSET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn VAITROColumn {
+                get {
+                    return this.columnVAITRO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRow this[int index] {
+                get {
+                    return ((SP_GETUSERPHANQUYENRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETUSERPHANQUYENRowChangeEventHandler SP_GETUSERPHANQUYENRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETUSERPHANQUYENRowChangeEventHandler SP_GETUSERPHANQUYENRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETUSERPHANQUYENRowChangeEventHandler SP_GETUSERPHANQUYENRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETUSERPHANQUYENRowChangeEventHandler SP_GETUSERPHANQUYENRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_GETUSERPHANQUYENRow(SP_GETUSERPHANQUYENRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRow AddSP_GETUSERPHANQUYENRow(string USERNAME, string MAPQ, System.DateTime NGAYSET, string VAITRO) {
+                SP_GETUSERPHANQUYENRow rowSP_GETUSERPHANQUYENRow = ((SP_GETUSERPHANQUYENRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        USERNAME,
+                        MAPQ,
+                        NGAYSET,
+                        VAITRO};
+                rowSP_GETUSERPHANQUYENRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_GETUSERPHANQUYENRow);
+                return rowSP_GETUSERPHANQUYENRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRow FindByUSERNAMEMAPQNGAYSET(string USERNAME, string MAPQ, System.DateTime NGAYSET) {
+                return ((SP_GETUSERPHANQUYENRow)(this.Rows.Find(new object[] {
+                            USERNAME,
+                            MAPQ,
+                            NGAYSET})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_GETUSERPHANQUYENDataTable cln = ((SP_GETUSERPHANQUYENDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_GETUSERPHANQUYENDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnUSERNAME = base.Columns["USERNAME"];
+                this.columnMAPQ = base.Columns["MAPQ"];
+                this.columnNGAYSET = base.Columns["NGAYSET"];
+                this.columnVAITRO = base.Columns["VAITRO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnUSERNAME = new global::System.Data.DataColumn("USERNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSERNAME);
+                this.columnMAPQ = new global::System.Data.DataColumn("MAPQ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAPQ);
+                this.columnNGAYSET = new global::System.Data.DataColumn("NGAYSET", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAYSET);
+                this.columnVAITRO = new global::System.Data.DataColumn("VAITRO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVAITRO);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnUSERNAME,
+                                this.columnMAPQ,
+                                this.columnNGAYSET}, true));
+                this.columnUSERNAME.AllowDBNull = false;
+                this.columnUSERNAME.MaxLength = 30;
+                this.columnMAPQ.AllowDBNull = false;
+                this.columnMAPQ.MaxLength = 4;
+                this.columnNGAYSET.AllowDBNull = false;
+                this.columnVAITRO.AllowDBNull = false;
+                this.columnVAITRO.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRow NewSP_GETUSERPHANQUYENRow() {
+                return ((SP_GETUSERPHANQUYENRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_GETUSERPHANQUYENRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_GETUSERPHANQUYENRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_GETUSERPHANQUYENRowChanged != null)) {
+                    this.SP_GETUSERPHANQUYENRowChanged(this, new SP_GETUSERPHANQUYENRowChangeEvent(((SP_GETUSERPHANQUYENRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_GETUSERPHANQUYENRowChanging != null)) {
+                    this.SP_GETUSERPHANQUYENRowChanging(this, new SP_GETUSERPHANQUYENRowChangeEvent(((SP_GETUSERPHANQUYENRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_GETUSERPHANQUYENRowDeleted != null)) {
+                    this.SP_GETUSERPHANQUYENRowDeleted(this, new SP_GETUSERPHANQUYENRowChangeEvent(((SP_GETUSERPHANQUYENRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_GETUSERPHANQUYENRowDeleting != null)) {
+                    this.SP_GETUSERPHANQUYENRowDeleting(this, new SP_GETUSERPHANQUYENRowChangeEvent(((SP_GETUSERPHANQUYENRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_GETUSERPHANQUYENRow(SP_GETUSERPHANQUYENRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ql_KTXDataSet ds = new ql_KTXDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_GETUSERPHANQUYENDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_GETPHANQUYENPERMISSIONDataTable : global::System.Data.TypedTableBase<SP_GETPHANQUYENPERMISSIONRow> {
+            
+            private global::System.Data.DataColumn columnMAPQ;
+            
+            private global::System.Data.DataColumn columnMAPMS;
+            
+            private global::System.Data.DataColumn columnCONGVIEC;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONDataTable() {
+                this.TableName = "SP_GETPHANQUYENPERMISSION";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_GETPHANQUYENPERMISSIONDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_GETPHANQUYENPERMISSIONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MAPQColumn {
+                get {
+                    return this.columnMAPQ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MAPMSColumn {
+                get {
+                    return this.columnMAPMS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CONGVIECColumn {
+                get {
+                    return this.columnCONGVIEC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRow this[int index] {
+                get {
+                    return ((SP_GETPHANQUYENPERMISSIONRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETPHANQUYENPERMISSIONRowChangeEventHandler SP_GETPHANQUYENPERMISSIONRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETPHANQUYENPERMISSIONRowChangeEventHandler SP_GETPHANQUYENPERMISSIONRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETPHANQUYENPERMISSIONRowChangeEventHandler SP_GETPHANQUYENPERMISSIONRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_GETPHANQUYENPERMISSIONRowChangeEventHandler SP_GETPHANQUYENPERMISSIONRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_GETPHANQUYENPERMISSIONRow(SP_GETPHANQUYENPERMISSIONRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRow AddSP_GETPHANQUYENPERMISSIONRow(string MAPQ, string MAPMS, string CONGVIEC) {
+                SP_GETPHANQUYENPERMISSIONRow rowSP_GETPHANQUYENPERMISSIONRow = ((SP_GETPHANQUYENPERMISSIONRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MAPQ,
+                        MAPMS,
+                        CONGVIEC};
+                rowSP_GETPHANQUYENPERMISSIONRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_GETPHANQUYENPERMISSIONRow);
+                return rowSP_GETPHANQUYENPERMISSIONRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRow FindByMAPQMAPMS(string MAPQ, string MAPMS) {
+                return ((SP_GETPHANQUYENPERMISSIONRow)(this.Rows.Find(new object[] {
+                            MAPQ,
+                            MAPMS})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_GETPHANQUYENPERMISSIONDataTable cln = ((SP_GETPHANQUYENPERMISSIONDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_GETPHANQUYENPERMISSIONDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnMAPQ = base.Columns["MAPQ"];
+                this.columnMAPMS = base.Columns["MAPMS"];
+                this.columnCONGVIEC = base.Columns["CONGVIEC"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnMAPQ = new global::System.Data.DataColumn("MAPQ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAPQ);
+                this.columnMAPMS = new global::System.Data.DataColumn("MAPMS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAPMS);
+                this.columnCONGVIEC = new global::System.Data.DataColumn("CONGVIEC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONGVIEC);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMAPQ,
+                                this.columnMAPMS}, true));
+                this.columnMAPQ.AllowDBNull = false;
+                this.columnMAPQ.MaxLength = 4;
+                this.columnMAPMS.AllowDBNull = false;
+                this.columnMAPMS.MaxLength = 10;
+                this.columnCONGVIEC.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRow NewSP_GETPHANQUYENPERMISSIONRow() {
+                return ((SP_GETPHANQUYENPERMISSIONRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_GETPHANQUYENPERMISSIONRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_GETPHANQUYENPERMISSIONRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_GETPHANQUYENPERMISSIONRowChanged != null)) {
+                    this.SP_GETPHANQUYENPERMISSIONRowChanged(this, new SP_GETPHANQUYENPERMISSIONRowChangeEvent(((SP_GETPHANQUYENPERMISSIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_GETPHANQUYENPERMISSIONRowChanging != null)) {
+                    this.SP_GETPHANQUYENPERMISSIONRowChanging(this, new SP_GETPHANQUYENPERMISSIONRowChangeEvent(((SP_GETPHANQUYENPERMISSIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_GETPHANQUYENPERMISSIONRowDeleted != null)) {
+                    this.SP_GETPHANQUYENPERMISSIONRowDeleted(this, new SP_GETPHANQUYENPERMISSIONRowChangeEvent(((SP_GETPHANQUYENPERMISSIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_GETPHANQUYENPERMISSIONRowDeleting != null)) {
+                    this.SP_GETPHANQUYENPERMISSIONRowDeleting(this, new SP_GETPHANQUYENPERMISSIONRowChangeEvent(((SP_GETPHANQUYENPERMISSIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_GETPHANQUYENPERMISSIONRow(SP_GETPHANQUYENPERMISSIONRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ql_KTXDataSet ds = new ql_KTXDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_GETPHANQUYENPERMISSIONDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class HOADONDIENRow : global::System.Data.DataRow {
@@ -7091,23 +7761,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public QUANLYRow QUANLYRow {
-                get {
-                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOADONDIEN_QUANLY"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOADONDIEN_QUANLY"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PHONGRow PHONGRow {
                 get {
                     return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOADONDIEN_PHONG"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_HOADONDIEN_PHONG"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public QUANLYRow QUANLYRow {
+                get {
+                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOADONDIEN_QUANLY"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOADONDIEN_QUANLY"]);
                 }
             }
             
@@ -7244,12 +7914,12 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public QUANLYRow QUANLYRow {
+            public SINHVIENRow SINHVIENRow {
                 get {
-                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_QUANLY"])));
+                    return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_QUANLY"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"]);
                 }
             }
             
@@ -7266,12 +7936,12 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SINHVIENRow SINHVIENRow {
+            public QUANLYRow QUANLYRow {
                 get {
-                    return ((SINHVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"])));
+                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_HOPDONG_QUANLY"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_SINHVIEN"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HOPDONG_QUANLY"]);
                 }
             }
             
@@ -7461,23 +8131,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PHANQUYENRow PHANQUYENRow {
-                get {
-                    return ((PHANQUYENRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGVIEC_PHANQUYEN"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGVIEC_PHANQUYEN"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PERMISSIONRow PERMISSIONRow {
                 get {
                     return ((PERMISSIONRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGVIEC_PERMISSION"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGVIEC_PERMISSION"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PHANQUYENRow PHANQUYENRow {
+                get {
+                    return ((PHANQUYENRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGVIEC_PHANQUYEN"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGVIEC_PHANQUYEN"]);
                 }
             }
         }
@@ -7623,23 +8293,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public QUANLYRow QUANLYRow {
-                get {
-                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHONG_QUANLY"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHONG_QUANLY"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LOAIPHONGRow LOAIPHONGRow {
                 get {
                     return ((LOAIPHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHONG_LOAIPHONG"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_PHONG_LOAIPHONG"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public QUANLYRow QUANLYRow {
+                get {
+                    return ((QUANLYRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHONG_QUANLY"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHONG_QUANLY"]);
                 }
             }
             
@@ -7862,23 +8532,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TAIKHOANRow TAIKHOANRow {
-                get {
-                    return ((TAIKHOANRow)(this.GetParentRow(this.Table.ParentRelations["FK_QUYENTAIKHOAN_TAIKHOAN"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_QUYENTAIKHOAN_TAIKHOAN"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PHANQUYENRow PHANQUYENRow {
                 get {
                     return ((PHANQUYENRow)(this.GetParentRow(this.Table.ParentRelations["FK_QUYENTAIKHOAN_PHANQUYEN"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_QUYENTAIKHOAN_PHANQUYEN"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TAIKHOANRow TAIKHOANRow {
+                get {
+                    return ((TAIKHOANRow)(this.GetParentRow(this.Table.ParentRelations["FK_QUYENTAIKHOAN_TAIKHOAN"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_QUYENTAIKHOAN_TAIKHOAN"]);
                 }
             }
         }
@@ -8331,23 +9001,23 @@ namespace NMCNPM_QuanLyKTX {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PHONGRow PHONGRow {
-                get {
-                    return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_PHONG"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_PHONG"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VATTURow VATTURow {
                 get {
                     return ((VATTURow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_VATTU"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_VATTU"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PHONGRow PHONGRow {
+                get {
+                    return ((PHONGRow)(this.GetParentRow(this.Table.ParentRelations["FK_VT_PHONG_PHONG"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_VT_PHONG_PHONG"]);
                 }
             }
         }
@@ -8857,6 +9527,130 @@ namespace NMCNPM_QuanLyKTX {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCONTRONGNull() {
                 this[this.tableSP_GETTHONGTINPHONGCONCHOTRONG.CONTRONGColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_GETUSERPHANQUYENRow : global::System.Data.DataRow {
+            
+            private SP_GETUSERPHANQUYENDataTable tableSP_GETUSERPHANQUYEN;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_GETUSERPHANQUYENRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_GETUSERPHANQUYEN = ((SP_GETUSERPHANQUYENDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string USERNAME {
+                get {
+                    return ((string)(this[this.tableSP_GETUSERPHANQUYEN.USERNAMEColumn]));
+                }
+                set {
+                    this[this.tableSP_GETUSERPHANQUYEN.USERNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MAPQ {
+                get {
+                    return ((string)(this[this.tableSP_GETUSERPHANQUYEN.MAPQColumn]));
+                }
+                set {
+                    this[this.tableSP_GETUSERPHANQUYEN.MAPQColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NGAYSET {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_GETUSERPHANQUYEN.NGAYSETColumn]));
+                }
+                set {
+                    this[this.tableSP_GETUSERPHANQUYEN.NGAYSETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string VAITRO {
+                get {
+                    return ((string)(this[this.tableSP_GETUSERPHANQUYEN.VAITROColumn]));
+                }
+                set {
+                    this[this.tableSP_GETUSERPHANQUYEN.VAITROColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_GETPHANQUYENPERMISSIONRow : global::System.Data.DataRow {
+            
+            private SP_GETPHANQUYENPERMISSIONDataTable tableSP_GETPHANQUYENPERMISSION;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_GETPHANQUYENPERMISSIONRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_GETPHANQUYENPERMISSION = ((SP_GETPHANQUYENPERMISSIONDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MAPQ {
+                get {
+                    return ((string)(this[this.tableSP_GETPHANQUYENPERMISSION.MAPQColumn]));
+                }
+                set {
+                    this[this.tableSP_GETPHANQUYENPERMISSION.MAPQColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MAPMS {
+                get {
+                    return ((string)(this[this.tableSP_GETPHANQUYENPERMISSION.MAPMSColumn]));
+                }
+                set {
+                    this[this.tableSP_GETPHANQUYENPERMISSION.MAPMSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CONGVIEC {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GETPHANQUYENPERMISSION.CONGVIECColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CONGVIEC\' in table \'SP_GETPHANQUYENPERMISSION\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GETPHANQUYENPERMISSION.CONGVIECColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCONGVIECNull() {
+                return this.IsNull(this.tableSP_GETPHANQUYENPERMISSION.CONGVIECColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCONGVIECNull() {
+                this[this.tableSP_GETPHANQUYENPERMISSION.CONGVIECColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9458,6 +10252,74 @@ namespace NMCNPM_QuanLyKTX {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_GETTHONGTINPHONGCONCHOTRONGRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_GETUSERPHANQUYENRowChangeEvent : global::System.EventArgs {
+            
+            private SP_GETUSERPHANQUYENRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRowChangeEvent(SP_GETUSERPHANQUYENRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETUSERPHANQUYENRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_GETPHANQUYENPERMISSIONRowChangeEvent : global::System.EventArgs {
+            
+            private SP_GETPHANQUYENPERMISSIONRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRowChangeEvent(SP_GETPHANQUYENPERMISSIONRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_GETPHANQUYENPERMISSIONRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15787,6 +16649,373 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_GETUSERPHANQUYENTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_GETUSERPHANQUYENTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_GETUSERPHANQUYEN";
+            tableMapping.ColumnMappings.Add("USERNAME", "USERNAME");
+            tableMapping.ColumnMappings.Add("MAPQ", "MAPQ");
+            tableMapping.ColumnMappings.Add("NGAYSET", "NGAYSET");
+            tableMapping.ColumnMappings.Add("VAITRO", "VAITRO");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NMCNPM_QuanLyKTX.Properties.Settings.Default.ql_KTXConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SP_GETUSERPHANQUYEN";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERNAME", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ql_KTXDataSet.SP_GETUSERPHANQUYENDataTable dataTable, string USERNAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERNAME == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(USERNAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ql_KTXDataSet.SP_GETUSERPHANQUYENDataTable GetData(string USERNAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERNAME == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(USERNAME));
+            }
+            ql_KTXDataSet.SP_GETUSERPHANQUYENDataTable dataTable = new ql_KTXDataSet.SP_GETUSERPHANQUYENDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_GETPHANQUYENPERMISSIONTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_GETPHANQUYENPERMISSIONTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_GETPHANQUYENPERMISSION";
+            tableMapping.ColumnMappings.Add("MAPQ", "MAPQ");
+            tableMapping.ColumnMappings.Add("MAPMS", "MAPMS");
+            tableMapping.ColumnMappings.Add("CONGVIEC", "CONGVIEC");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NMCNPM_QuanLyKTX.Properties.Settings.Default.ql_KTXConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SP_GETPHANQUYENPERMISSION";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAPQ", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ql_KTXDataSet.SP_GETPHANQUYENPERMISSIONDataTable dataTable, string MAPQ) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MAPQ == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MAPQ));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ql_KTXDataSet.SP_GETPHANQUYENPERMISSIONDataTable GetData(string MAPQ) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MAPQ == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MAPQ));
+            }
+            ql_KTXDataSet.SP_GETPHANQUYENPERMISSIONDataTable dataTable = new ql_KTXDataSet.SP_GETPHANQUYENPERMISSIONDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16182,6 +17411,15 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._sINHVIENTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sINHVIENTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._pERMISSIONTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.PERMISSION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16206,15 +17444,6 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._pHONGTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sINHVIENTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sINHVIENTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16306,6 +17535,14 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._sINHVIENTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sINHVIENTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._pERMISSIONTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.PERMISSION.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16327,14 +17564,6 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._pHONGTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sINHVIENTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sINHVIENTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16444,14 +17673,6 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sINHVIENTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sINHVIENTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._pHONGTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.PHONG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16473,6 +17694,14 @@ SELECT MAPHONG, MAVT, NGAYTHEM, SOLUONG, TINHTRANG, TIENNO FROM VT_PHONG WHERE (
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._pERMISSIONTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sINHVIENTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SINHVIEN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sINHVIENTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
