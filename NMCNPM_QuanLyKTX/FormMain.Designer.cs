@@ -72,6 +72,8 @@ namespace NMCNPM_QuanLyKTX
             this.SP_GetUserInfoTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERINFOTableAdapter();
             this.tableAdapterManager = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.TableAdapterManager();
             this.SP_GetUserPermissionTableAdapter = new NMCNPM_QuanLyKTX.ql_KTXDataSetTableAdapters.SP_GETUSERPERMISSIONTableAdapter();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.Logout_Btn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.accCtlSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -294,7 +296,9 @@ namespace NMCNPM_QuanLyKTX
             this.NamHocLbl,
             this.NamHocVal,
             this.HocKyLbl,
-            this.HocKyVal});
+            this.HocKyVal,
+            this.barStaticItem1,
+            this.Logout_Btn});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -315,6 +319,8 @@ namespace NMCNPM_QuanLyKTX
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.NamHocVal);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.HocKyLbl);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.HocKyVal);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.Logout_Btn);
             // 
             // barButtonItem1
             // 
@@ -392,8 +398,10 @@ namespace NMCNPM_QuanLyKTX
             this.NamHocLbl,
             this.NamHocVal,
             this.HocKyLbl,
-            this.HocKyVal});
-            this.fluentFormDefaultManager1.MaxItemId = 14;
+            this.HocKyVal,
+            this.barStaticItem1,
+            this.Logout_Btn});
+            this.fluentFormDefaultManager1.MaxItemId = 16;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1,
             this.repositoryItemPictureEdit1,
@@ -470,6 +478,19 @@ namespace NMCNPM_QuanLyKTX
             // 
             this.SP_GetUserPermissionTableAdapter.ClearBeforeFill = true;
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "                       ";
+            this.barStaticItem1.Id = 14;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // Logout_Btn
+            // 
+            this.Logout_Btn.Caption = "Logout";
+            this.Logout_Btn.Id = 15;
+            this.Logout_Btn.Name = "Logout_Btn";
+            this.Logout_Btn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Logout_Btn_ItemClick);
+            // 
             // FormMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -543,6 +564,8 @@ namespace NMCNPM_QuanLyKTX
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_CapQuyenTaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_MaQuanly;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acCtlEle_ThongTinLoaiPhong;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarButtonItem Logout_Btn;
     }
 }
 

@@ -476,5 +476,10 @@ namespace NMCNPM_QuanLyKTX
                 this.UC_QLMQL.BringToFront();
             }
         }
+
+        private void Logout_Btn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

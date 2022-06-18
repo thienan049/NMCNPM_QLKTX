@@ -82,6 +82,28 @@ namespace NMCNPM_QuanLyKTX
             }
         }
 
+        public static void RunProgram(bool rs)
+        {
+            /*
+             * Display the login form
+             * Login succeed -> Run MainForm application
+             */
+            if (rs){
+                if (new FormLogin().ShowDialog() == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
+            else
+            {
+                if (new FormLogin().ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new FormMain());
+                }
+            }
+           
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -91,14 +113,7 @@ namespace NMCNPM_QuanLyKTX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /*
-             * Display the login form
-             * Login succeed -> Run MainForm application
-             */
-            if (new FormLogin().ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new FormMain());
-            }
+            RunProgram(false);
         }
     }
 }
