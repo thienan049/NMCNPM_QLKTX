@@ -359,6 +359,7 @@ namespace NMCNPM_QuanLyKTX
                         {
                             acCtlQuanLyPhong.Enabled = true;
                             acCtlEle_ThongTinPhong.Enabled = true;
+                            acCtlEle_ThongTinLoaiPhong.Enabled = true;
                         }
                         else if (detailPMS.Equals(CommonConstant.MaPMS.HDD))
                         {
